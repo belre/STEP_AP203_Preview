@@ -1,10 +1,5 @@
-#
-# CMakeLists.txt for AP203 Minimum
-#
-#  This file is released to the public domain.  Any part of this file may be
-# freely copied in part or in full for any purpose.  No acknowledgment is required
-# for the use of this file.
-#
+
+
 project(pattern_matching)
 cmake_minimum_required(VERSION 3.12)
 
@@ -39,7 +34,7 @@ set(SC_BUILD_TYPE ${CMAKE_BUILD_TYPE})
 set(STEPCODE_BUILD_DIR ${CMAKE_BINARY_DIR}/sc CACHE PATH "STEPcode build subdir")
 
 # STEP schema to build and link against.
-set(SCHEMA ap203e2)
+set(SCHEMA ap203)
 set(SC_BUILD_SCHEMAS ${SCHEMA} CACHE INTERNAL "Schema, internal, immutable" FORCE)
 
 # Parse out schema name and library.
@@ -52,7 +47,7 @@ endif(NOT EXISTS ${SCHEMA_FILE})
 
 
 get_filename_component(SCHEMA_SN ${SCHEMA_FILE} NAME)
-string(REGEX REPLACE "\(.*\).[Ee][Xx][Pp]" "sdai_\\1" SCHEMA_LINK_NAME ${SCHEMA_SN})
+set(SCHEMA_LINK_NAME "sdai_${SCHEMA}")
 set(STEPCODE_LIBRARIES stepcore stepeditor stepdai steputils ${SCHEMA_LINK_NAME})
 
 # Add STEPCode project to CMake build.
@@ -83,6 +78,11 @@ set(SRCS main.cpp)
 
 set(HDRS )
 
+
 add_executable(${PROJECT_NAME} ${SRCS} ${HDRS})
 
 target_link_libraries(${PROJECT_NAME} ${STEPCODE_LIBRARIES})
+
+set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
+
+
