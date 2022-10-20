@@ -1,10 +1,16 @@
 #include "StepNode.h"
 
 
-StepNode::StepNode(SDAI_Application_instance*& inst)
+StepNode::StepNode()
 {
-	_inst = inst;
 }
+
+bool StepNode::ContainFileId(int id)
+{
+	return false;
+}
+
+
 
 StepNode::~StepNode()
 {

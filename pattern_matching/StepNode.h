@@ -5,10 +5,10 @@
 class StepNode : public StepComponent
 {
 public:
-	StepNode(SDAI_Application_instance*& inst);
+	StepNode();
 	virtual ~StepNode();
 
-private:
-	SDAI_Application_instance* _inst;
+	bool ContainFileId(int id) override;
+
 };
 

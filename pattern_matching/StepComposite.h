@@ -13,7 +13,10 @@ public:
 	virtual ~StepComposite();
 
 public:
-	void AddComponent(StepComponent*&);
+
+	bool ContainFileId(int id) override;
+
+	void AddComponent(StepComponent*&) override;
 
 private:
 	std::vector<StepComponent*> _component;

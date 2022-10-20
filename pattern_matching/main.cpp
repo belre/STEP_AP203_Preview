@@ -17,17 +17,15 @@
 #include "StepDerivedNode.h"
 #include "StepNode.h"
 
-void AddNode(StepComposite* root_component, SDAI_Application_instance* const& instance, int loop_count)
+void AddNode(StepComponent* base_component, SDAI_Application_instance* const& instance, int loop_count)
 {
 	int id = instance->GetFileId();
 
-
 	for (int j = 0; j < instance->AttributeCount(); j++)
 	{
-		auto attribute = instance->attributes[j];
+		auto attribute = &instance->attributes[j];
 
-		auto type = attribute.BaseType();
-
+		auto type = attribute->BaseType();
 
 		for (int i = 0; i < loop_count; i++)
 		{
@@ -36,23 +34,28 @@ void AddNode(StepComposite* root_component, SDAI_Application_instance* const& in
 
 		if ((type & BASE_TYPE::sdaiINSTANCE) == 0)
 		{
-			std::cout << id  << ":node" << std::endl;
+			StepComponent* simple_node = new StepNode();
+			base_component->AddComponent(simple_node);
+
+			std::cout << id << ":node(" << attribute->Name() << "):" << attribute->asStr() << std::endl;
 			continue;
 		}
 
-		auto attr_instance = attribute.Entity();
-		auto attr_aggr = attribute.Aggregate();
+		auto attr_instance = attribute->Entity();
+		auto attr_aggr = attribute->Aggregate();
 		if (attr_instance == nullptr && attr_aggr == nullptr)
 		{
-			std::cout << id  << ":node" << std::endl;
+			StepComponent* simple_node = new StepNode();
+			base_component->AddComponent(simple_node);
+
+			std::cout << id << ":node(" << attribute->Name() << "):" << attribute->asStr() << std::endl;
 			continue;
 		}
 
-
-		if (attribute.IsDerived())
+		if (attribute->IsDerived())
 		{
 			StepComponent* derived_node = new StepDerivedNode();
-			root_component->AddComponent(derived_node);
+			base_component->AddComponent(derived_node);
 
 			std::cout << id << "," << ":derived" << std::endl;
 		}
@@ -64,16 +67,19 @@ void AddNode(StepComposite* root_component, SDAI_Application_instance* const& in
 
 			for(auto node = head_node; node != nullptr; node = dynamic_cast<const EntityNode*>(node->next))
 			{
-				AddNode(root_component, node->node, loop_count + 1);
+				StepComponent* child_node = new StepComposite(attr_instance);
+				base_component->AddComponent(child_node);
+
+				AddNode(child_node, node->node, loop_count + 1);
 			}
 		}
 		else if(attr_instance != nullptr)
 		{
-			StepComponent* child_node = new StepNode(attr_instance);
-			root_component->AddComponent(child_node);
+			StepComponent* child_node = new StepComposite(attr_instance);
+			base_component->AddComponent(child_node);
 
 			std::cout << id << "," << attr_instance->GetFileId() << ":instance" << std::endl;
-			AddNode(root_component, attr_instance, loop_count + 1);
+			AddNode(child_node, attr_instance, loop_count + 1);
 		}
 	}
 }
@@ -97,9 +103,17 @@ int main( int argv, char** argc)
 	for(int i = 0 ; i < instance_list->InstanceCount(); i++ ) 
 	{
 		auto instance = instance_list->GetSTEPentity(i);
+		int file_id = instance->GetFileId();
 
-		std::cout << i << "Extraction" << std::endl;
-		AddNode(root_component, instance, 1);
+		if(!root_component->ContainFileId(file_id) )
+		{
+			std::cout << file_id << "Extraction" << std::endl;
+
+			StepComponent* base_node = new StepComposite(instance);
+			root_component->AddComponent(base_node);
+
+			AddNode(base_node, instance, 1);
+		}
 	}
 
 	return 0;
