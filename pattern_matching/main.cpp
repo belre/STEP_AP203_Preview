@@ -18,15 +18,18 @@
 #include "StepDerivedNode.h"
 #include "StepNode.h"
 
-void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application_instance* const& instance, int loop_count)
+void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application_instance* const& instance, std::stringstream& debug_log, int loop_count)
 {
 	int id = instance->GetFileId();
 
 	for (int j = 0; j < instance->AttributeCount(); j++)
 	{
-		auto attribute = &instance->attributes[j];
+		for (int p = 0; p < loop_count; p++)
+		{
+			debug_log << "  ";
+		}
 
-		auto type = attribute->BaseType();
+		auto attribute = &instance->attributes[j];
 
 		auto attr_select = attribute->Select();
 		auto attr_instance = attribute->Entity();
@@ -34,24 +37,26 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 		if (!attr_select && !attr_instance && !attr_aggr)
 		{
+			debug_log << id << ":node(" << attribute->Name() << "):" << std::endl;
+
 			StepComponent* simple_node = new StepNode();
 			base_component->AddComponent(simple_node);
 
 			continue;
 		}
 
-
 		if (attribute->IsDerived())
 		{
+			debug_log << id << ":derived(" << attribute->Name() << "):" << std::endl;
+
 			StepComponent* derived_node = new StepDerivedNode();
 			base_component->AddComponent(derived_node);
-
-			//std::cout << id << ":derived(" << attribute->Name() << "):" << std::endl;
 		}
 		else if(attr_aggr != nullptr)
 		{
-			auto head_node = dynamic_cast<const EntityNode*>(attr_aggr->GetHead());
+			debug_log << id << ":aggregate(" << attribute->Name() << "):" << std::endl;
 
+			auto head_node = dynamic_cast<const EntityNode*>(attr_aggr->GetHead());
 			for(auto node = head_node; node != nullptr; node = dynamic_cast<const EntityNode*>(node->next))
 			{
 				auto inst = node->node;
@@ -59,7 +64,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 				StepComponent* child_node = new StepComposite(inst);
 				base_component->AddComponent(child_node);
 
-				AddNode(inst_mgr, child_node, node->node, loop_count + 1);
+				AddNode(inst_mgr, child_node, node->node, debug_log, loop_count + 1);
 			}
 		}
 		else if(attr_select != nullptr) 
@@ -102,19 +107,23 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 					continue;
 				}
 
+				debug_log << id << ":selector(" << attribute->Name() << "):" << std::endl;
+
 				auto select_instance = select_entity->GetApplication_instance();
 				StepComponent* child_node = new StepComposite(select_instance);
 				base_component->AddComponent(child_node);
 
-				AddNode(inst_mgr, child_node, select_instance, loop_count + 1);
+				AddNode(inst_mgr, child_node, select_instance, debug_log, loop_count + 1);
 			}
 		}
 		else if(attr_instance != nullptr)
 		{
+			debug_log << id << ":instance(" << attribute->Name() << "):" << std::endl;
+
 			StepComponent* child_node = new StepComposite(attr_instance);
 			base_component->AddComponent(child_node);
 
-			AddNode(inst_mgr, child_node, attr_instance, loop_count + 1);
+			AddNode(inst_mgr, child_node, attr_instance, debug_log, loop_count + 1);
 		}
 	}
 }
@@ -134,6 +143,7 @@ int main( int argv, char** argc)
 	// STEPfile takes care of reading and writing Part 21 files
 	STEPfile* sfile = new STEPfile(*registry, *instance_list, ".\\StepData\\BSP35B20-N-12.stp", false);
 
+	std::stringstream debug_log;
 	auto root_component = new StepComposite();
 	for(int i = 0 ; i < instance_list->InstanceCount(); i++ ) 
 	{
@@ -142,14 +152,21 @@ int main( int argv, char** argc)
 
 		if(!root_component->ContainFileId(file_id) )
 		{
-			std::cout << file_id << "Extraction" << std::endl;
+			debug_log << file_id << ":originated" << std::endl;
 
 			StepComponent* base_node = new StepComposite(instance);
 			root_component->AddComponent(base_node);
 
-			AddNode(instance_list, base_node, instance, 1);
+			AddNode(instance_list, base_node, instance, debug_log, 1);
 		}
 	}
+
+	std::ofstream ofs("result.txt");
+	if(!ofs) 
+	{
+		return 2;
+	}
+	ofs << debug_log.str();
 
 	return 0;
 }
