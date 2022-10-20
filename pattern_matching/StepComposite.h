@@ -9,12 +9,24 @@ class StepComposite : public StepComponent
 {
 public:
 	StepComposite();
-	StepComposite(SDAI_Application_instance*& inst);
+	StepComposite(SDAI_Application_instance*& inst) ;
 	virtual ~StepComposite();
 
 public:
 
 	bool ContainFileId(int id) override;
+
+	int GetFileId() const
+	{
+		if(_inst != nullptr) 
+		{
+			return _inst->GetFileId();
+		}
+		else 
+		{
+			return -1;
+		}
+	}
 
 	void AddComponent(StepComponent*&) override;
 

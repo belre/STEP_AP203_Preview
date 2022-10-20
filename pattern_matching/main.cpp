@@ -4,6 +4,7 @@
 #include <ExpDict.h>
 #include <Registry.h>
 #include <errordesc.h>
+#include <regex>
 
 #include <STEPcomplex.h>
 #include <SdaiHeaderSchema.h>
@@ -17,7 +18,7 @@
 #include "StepDerivedNode.h"
 #include "StepNode.h"
 
-void AddNode(StepComponent* base_component, SDAI_Application_instance* const& instance, int loop_count)
+void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application_instance* const& instance, int loop_count)
 {
 	int id = instance->GetFileId();
 
@@ -27,50 +28,85 @@ void AddNode(StepComponent* base_component, SDAI_Application_instance* const& in
 
 		auto type = attribute->BaseType();
 
-		for (int i = 0; i < loop_count; i++)
-		{
-			std::cout << "  ";
-		}
-
-		if ((type & BASE_TYPE::sdaiINSTANCE) == 0)
-		{
-			StepComponent* simple_node = new StepNode();
-			base_component->AddComponent(simple_node);
-
-			std::cout << id << ":node(" << attribute->Name() << "):" << attribute->asStr() << std::endl;
-			continue;
-		}
-
+		auto attr_select = attribute->Select();
 		auto attr_instance = attribute->Entity();
 		auto attr_aggr = attribute->Aggregate();
-		if (attr_instance == nullptr && attr_aggr == nullptr)
+
+		if (!attr_select && !attr_instance && !attr_aggr)
 		{
 			StepComponent* simple_node = new StepNode();
 			base_component->AddComponent(simple_node);
 
-			std::cout << id << ":node(" << attribute->Name() << "):" << attribute->asStr() << std::endl;
 			continue;
 		}
+
 
 		if (attribute->IsDerived())
 		{
 			StepComponent* derived_node = new StepDerivedNode();
 			base_component->AddComponent(derived_node);
 
-			std::cout << id << "," << ":derived" << std::endl;
+			//std::cout << id << ":derived(" << attribute->Name() << "):" << std::endl;
 		}
 		else if(attr_aggr != nullptr)
 		{
 			auto head_node = dynamic_cast<const EntityNode*>(attr_aggr->GetHead());
 
-			std::cout << id  << ":aggregate" << std::endl;
-
 			for(auto node = head_node; node != nullptr; node = dynamic_cast<const EntityNode*>(node->next))
 			{
-				StepComponent* child_node = new StepComposite(attr_instance);
+				auto inst = node->node;
+
+				StepComponent* child_node = new StepComposite(inst);
 				base_component->AddComponent(child_node);
 
-				AddNode(child_node, node->node, loop_count + 1);
+				AddNode(inst_mgr, child_node, node->node, loop_count + 1);
+			}
+		}
+		else if(attr_select != nullptr) 
+		{
+			auto type = attr_select->ValueType();
+
+			if((type & sdaiINSTANCE) != 0 ) 
+			{
+				auto aDesc = attribute->getADesc();
+				auto dd = attribute->asStr();
+
+				std::string out_text;
+				attr_select->STEPwrite(out_text);
+
+				// ap203 only?
+				std::regex id_detect_regex("\\#(\\d+)");
+				std::smatch match;
+				if(!std::regex_search(out_text, match, id_detect_regex) || 
+ 					match.length() < 2)
+				{
+					std::cout << "Regex Pattern Match failed" << std::endl;
+					continue;
+				}
+
+				int id = 0;
+				try 
+				{
+					id = std::stol(match[1].str());
+				}
+				catch(exception) 
+				{
+					std::cout << "Regex ID error" << std::endl;
+					continue;
+				}
+
+				auto select_entity = inst_mgr->FindFileId(id);
+				if(select_entity == nullptr) 
+				{
+					std::cout << "Regex Conversion error" << std::endl;
+					continue;
+				}
+
+				auto select_instance = select_entity->GetApplication_instance();
+				StepComponent* child_node = new StepComposite(select_instance);
+				base_component->AddComponent(child_node);
+
+				AddNode(inst_mgr, child_node, select_instance, loop_count + 1);
 			}
 		}
 		else if(attr_instance != nullptr)
@@ -78,8 +114,7 @@ void AddNode(StepComponent* base_component, SDAI_Application_instance* const& in
 			StepComponent* child_node = new StepComposite(attr_instance);
 			base_component->AddComponent(child_node);
 
-			std::cout << id << "," << attr_instance->GetFileId() << ":instance" << std::endl;
-			AddNode(child_node, attr_instance, loop_count + 1);
+			AddNode(inst_mgr, child_node, attr_instance, loop_count + 1);
 		}
 	}
 }
@@ -112,7 +147,7 @@ int main( int argv, char** argc)
 			StepComponent* base_node = new StepComposite(instance);
 			root_component->AddComponent(base_node);
 
-			AddNode(base_node, instance, 1);
+			AddNode(instance_list, base_node, instance, 1);
 		}
 	}
 

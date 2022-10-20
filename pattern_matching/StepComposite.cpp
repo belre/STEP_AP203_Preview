@@ -8,6 +8,7 @@ StepComposite::StepComposite()
 StepComposite::StepComposite(SDAI_Application_instance*& inst)
 {
 	_inst = inst;
+	_component.resize(0);
 }
 
 void StepComposite::AddComponent(StepComponent*& component)
