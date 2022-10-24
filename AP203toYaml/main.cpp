@@ -146,8 +146,6 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 			if((type & sdaiINSTANCE) != 0 ) 
 			{
-				auto aDesc = attribute->getADesc();
-				auto dd = attribute->asStr();
 
 				std::string out_text;
 				attr_select->STEPwrite(out_text);
