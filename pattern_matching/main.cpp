@@ -37,25 +37,25 @@ void PrintDebugMessage(int id, STEPattribute* attribute, std::stringstream& debu
 
 	if (!attr_select && !attr_instance && !attr_aggr)
 	{
-		debug_log << id << ":node(" << attribute->Name() << "):" << std::endl;
+		debug_log << id << ":" << attribute->Name() << ":" << attribute->asStr() << std::endl;
 		return;
 	}
 
 	if (attribute->IsDerived())
 	{
-		debug_log << id << ":derived(" << attribute->Name() << "):" << std::endl;
+		debug_log << id << ":derived(" << attribute->Name() << ")" << std::endl;
 	}
 	else if (attr_aggr != nullptr)
 	{
-		debug_log << id << ":aggregate(" << attribute->Name() << "):" << std::endl;
+		debug_log << id << ":aggregate(" << attribute->Name() << ")" << std::endl;
 	}
 	else if (attr_select != nullptr)
 	{
-		debug_log << id << ":selector(" << attribute->Name() << "):" << std::endl;
+		debug_log << id << ":selector(" << attribute->Name() << ")" << std::endl;
 	}
 	else if (attr_instance != nullptr)
 	{
-		debug_log << id << ":instance(" << attribute->Name() << "):" << std::endl;
+		debug_log << id << ":instance(" << attribute->Name() << ")" << std::endl;
 	}
 }
 
@@ -191,7 +191,7 @@ int main( int argv, char** argc)
 	instance_list->NextFileId();
 
 	// STEPfile takes care of reading and writing Part 21 files
-	STEPfile* sfile = new STEPfile(*registry, *instance_list, ".\\StepData\\BSP35B20-N-12.stp", false);
+	STEPfile* sfile = new STEPfile(*registry, *instance_list, ".\\StepData\\BSP35B20-N-12_separate.stp", false);
 
 	std::stringstream debug_log;
 	auto root_component = new StepComposite();
@@ -202,7 +202,8 @@ int main( int argv, char** argc)
 
 		if(!root_component->ContainFileId(file_id) )
 		{
-			debug_log << file_id << ":originated" << std::endl;
+			std::cout << "#" << file_id << "export" << std::endl;
+			debug_log << file_id << ":root(" << instance->EntityName() << ")" << std::endl;
 
 			StepComponent* base_node = new StepComposite(instance);
 			root_component->AddComponent(base_node);
