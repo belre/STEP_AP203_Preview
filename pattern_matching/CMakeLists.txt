@@ -65,13 +65,16 @@ set(STEPCODE_INCLUDE_DIR
   ${STEPCODE_BUILD_DIR}/schemas/${SCHEMA_LINK_NAME}
  )
 
-set(YAML_CPP_INCLUDE_DIR 
- ${CMAKE_BINARY_DIR}/../../yaml-cpp/
+set(YAML_CPP_LIBRARY_DIR ${CMAKE_BINARY_DIR}/../../yaml-cpp/)
+
+set(YAML_CPP_INCLUDE_DIR
+   ${YAML_CPP_LIBRARY_DIR}
+   ${YAML_CPP_LIBRARY_DIR}/include
 )
 
 set(YAML_CPP_LIBRARIES ${YAML_CPP_INCLUDE_DIR})
 
-add_subdirectory(${YAML_CPP_INCLUDE_DIR} "${CMAKE_CURRENT_BINARY_DIR}/yaml-cpp" EXCLUDE_FROM_ALL)
+add_subdirectory(${YAML_CPP_LIBRARY_DIR} "${CMAKE_CURRENT_BINARY_DIR}/yaml-cpp" EXCLUDE_FROM_ALL)
 
 
 # Reset sane values for build destination.  Otherwise, everything ends up in ${CMAKE_BINARY_DIR}/sc
@@ -102,6 +105,7 @@ set(HDRS
 add_executable(${PROJECT_NAME} ${SRCS} ${HDRS})
 
 target_link_libraries(${PROJECT_NAME} ${STEPCODE_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} yaml-cpp)
 
 set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_BINARY_DIR})
 

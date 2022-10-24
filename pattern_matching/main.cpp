@@ -3,15 +3,13 @@
 #include <STEPattribute.h>
 #include <ExpDict.h>
 #include <Registry.h>
-#include <errordesc.h>
+
 #include <regex>
 
-#include <STEPcomplex.h>
-#include <SdaiHeaderSchema.h>
 
 #include "schema.h"
 
-#include <SdaiCONFIG_CONTROL_DESIGN.h>
+#include <yaml-cpp/yaml.h>
 
 #include "StepComponent.h"
 #include "StepComposite.h"
