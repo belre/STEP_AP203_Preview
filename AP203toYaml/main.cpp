@@ -203,6 +203,12 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 int main( int argv, char** argc)
 {
+	std::string path = ".\\StepData\\BSP35B20-N-12.stp";
+	if(argv >= 2) 
+	{
+		path = argc[1];
+	}
+
 	// The registry contains information about types present in the current schema; SchemaInit is a function in the schema-specific SDAI library
 	Registry* registry = new Registry(SchemaInit);
 
@@ -213,7 +219,7 @@ int main( int argv, char** argc)
 	instance_list->NextFileId();
 
 	// STEPfile takes care of reading and writing Part 21 files
-	STEPfile* sfile = new STEPfile(*registry, *instance_list, ".\\StepData\\BSP35B20-N-12.stp", false);
+	STEPfile* sfile = new STEPfile(*registry, *instance_list, path, false);
 
 	std::stringstream debug_log;
 	YAML::Node root_node;
