@@ -57,7 +57,7 @@ void PrintDebugMessage(int id, STEPattribute* attribute, std::stringstream& debu
 	}
 }
 
-void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application_instance* const& instance, std::stringstream& debug_log, int loop_count)
+void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application_instance* const& instance, std::stringstream& debug_log, YAML::Node& yaml_node, int loop_count)
 {
 	int id = instance->GetFileId();
 
@@ -73,23 +73,31 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 		if (!attr_select && !attr_instance && !attr_aggr)
 		{
-			StepComponent* simple_node = new StepNode();
+			StepComponent* simple_node = new StepNode(instance);
 			base_component->AddComponent(simple_node);
 
+			yaml_node[attribute->Name()] = attribute->asStr();
 			continue;
 		}
 
 		if (attribute->IsDerived())
 		{
-			StepComponent* derived_node = new StepDerivedNode();
+			StepComponent* derived_node = new StepDerivedNode(instance);
 			base_component->AddComponent(derived_node);
+
+			yaml_node[attribute->Name()] = attribute->asStr();
 		}
 		else if(attr_aggr != nullptr)
 		{
 			auto head_node = attr_aggr->GetHead();
+
+			std::vector<string> sub_node;
+			std::map<std::string, YAML::Node> named_map;
+
 			for (auto node = head_node; node != nullptr; node = node->next)
 			{
 				auto conv_node = dynamic_cast<const EntityNode*>(node);
+				auto conv_raw_node = dynamic_cast<STEPnode*>(node);
 
 				if(conv_node != nullptr) 
 				{
@@ -98,7 +106,20 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 					StepComponent* child_node = new StepComposite(inst);
 					base_component->AddComponent(child_node);
 
-					AddNode(inst_mgr, child_node, inst, debug_log, loop_count + 1);
+					YAML::Node yaml_child_node;
+					AddNode(inst_mgr, child_node, inst, debug_log, yaml_child_node, loop_count + 1);
+
+					std::stringstream ss_str;
+					ss_str << "#" << inst->GetFileId();
+					named_map[ss_str.str()] = yaml_child_node;
+				}
+				else if(conv_raw_node != nullptr) 
+				{
+					PrintDebugMessage(id, nullptr, debug_log, loop_count + 1);
+
+					std::string str;
+					conv_raw_node->asStr(str);
+					sub_node.push_back(str);
 				}
 				else 
 				{
@@ -106,18 +127,14 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 				}
 			}
 
-			/*
-			auto head_node = dynamic_cast<const EntityNode*>(attr_aggr->GetHead());
-			for(auto node = head_node; node != nullptr; node = dynamic_cast<const EntityNode*>(node->next))
+			if(named_map.size() != 0 ) 
 			{
-				auto inst = node->node;
-
-				StepComponent* child_node = new StepComposite(inst);
-				base_component->AddComponent(child_node);
-
-				AddNode(inst_mgr, child_node, node->node, debug_log, loop_count + 1);
+				yaml_node[attribute->Name()] = named_map;
 			}
-			*/
+			else if(sub_node.size() != 0) 
+			{
+				yaml_node[attribute->Name()] = sub_node;
+			}
 		}
 		else if(attr_select != nullptr) 
 		{
@@ -163,7 +180,11 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 				StepComponent* child_node = new StepComposite(select_instance);
 				base_component->AddComponent(child_node);
 
-				AddNode(inst_mgr, child_node, select_instance, debug_log, loop_count + 1);
+				YAML::Node yaml_child_node;
+				AddNode(inst_mgr, child_node, select_instance, debug_log, yaml_child_node, loop_count + 1);
+
+				yaml_node[attribute->Name()] = yaml_child_node;
+
 			}
 		}
 		else if(attr_instance != nullptr)
@@ -171,7 +192,10 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 			StepComponent* child_node = new StepComposite(attr_instance);
 			base_component->AddComponent(child_node);
 
-			AddNode(inst_mgr, child_node, attr_instance, debug_log, loop_count + 1);
+			YAML::Node yaml_child_node;
+			AddNode(inst_mgr, child_node, attr_instance, debug_log, yaml_child_node, loop_count + 1);
+
+			yaml_node[attribute->Name()] = yaml_child_node;
 		}
 	}
 }
@@ -192,21 +216,28 @@ int main( int argv, char** argc)
 	STEPfile* sfile = new STEPfile(*registry, *instance_list, ".\\StepData\\BSP35B20-N-12.stp", false);
 
 	std::stringstream debug_log;
+	YAML::Node root_node;
 	auto root_component = new StepComposite();
 	for(int i = 0 ; i < instance_list->InstanceCount(); i++ ) 
 	{
 		auto instance = instance_list->GetSTEPentity(i);
 		int file_id = instance->GetFileId();
 
-		if(!root_component->ContainFileId(file_id) )
+		if (!root_component->ContainFileId(file_id))
 		{
+
 			std::cout << "#" << file_id << "export" << std::endl;
 			debug_log << file_id << ":root(" << instance->EntityName() << ")" << std::endl;
 
 			StepComponent* base_node = new StepComposite(instance);
 			root_component->AddComponent(base_node);
 
-			AddNode(instance_list, base_node, instance, debug_log, 1);
+			YAML::Node step_node;
+			AddNode(instance_list, base_node, instance, debug_log, step_node, 1);
+
+			std::stringstream ss_str;
+			ss_str << "#" << instance->GetFileId();
+			root_node[ss_str.str()] = step_node;
 		}
 	}
 
@@ -216,6 +247,16 @@ int main( int argv, char** argc)
 		return 2;
 	}
 	ofs << debug_log.str();
+	ofs.close();
+
+	std::ofstream ofs_yaml("result.yaml");
+	if(!ofs_yaml) 
+	{
+		return 2;
+	}
+	YAML::Emitter yaml_emitter(ofs_yaml);
+	yaml_emitter << root_node;
+	ofs_yaml.close();
 
 	return 0;
 }

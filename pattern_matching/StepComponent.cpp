@@ -1,5 +1,7 @@
 #include "StepComponent.h"
 
+YAML::Node StepComponent::InvalidNode = YAML::Node();
+
 StepComponent::StepComponent()
 {
 	
