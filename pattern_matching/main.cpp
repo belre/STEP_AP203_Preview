@@ -191,7 +191,7 @@ int main( int argv, char** argc)
 	instance_list->NextFileId();
 
 	// STEPfile takes care of reading and writing Part 21 files
-	STEPfile* sfile = new STEPfile(*registry, *instance_list, ".\\StepData\\BSP35B20-N-12_separate.stp", false);
+	STEPfile* sfile = new STEPfile(*registry, *instance_list, ".\\StepData\\BSP35B20-N-12.stp", false);
 
 	std::stringstream debug_log;
 	auto root_component = new StepComposite();
