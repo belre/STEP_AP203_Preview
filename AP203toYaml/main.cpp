@@ -5,6 +5,7 @@
 #include <Registry.h>
 
 #include <regex>
+#include <STEPaggrEntity.h>
 
 
 #include "schema.h"
@@ -91,7 +92,8 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 		{
 			auto head_node = attr_aggr->GetHead();
 
-			std::vector<string> sub_node;
+			std::vector<std::string> sub_node;
+			std::vector<YAML::Node> aggr_node;
 			std::map<std::string, YAML::Node> named_map;
 
 			for (auto node = head_node; node != nullptr; node = node->next)
@@ -108,6 +110,8 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 					YAML::Node yaml_child_node;
 					AddNode(inst_mgr, child_node, inst, debug_log, yaml_child_node, loop_count + 1);
+
+					aggr_node.push_back(yaml_child_node);
 
 					std::stringstream ss_str;
 					ss_str << "#" << inst->GetFileId();
@@ -127,9 +131,9 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 				}
 			}
 
-			if(named_map.size() != 0 ) 
+			if(aggr_node.size() != 0 )
 			{
-				yaml_node[attribute->Name()] = named_map;
+				yaml_node[attribute->Name()] = aggr_node;
 			}
 			else if(sub_node.size() != 0) 
 			{
@@ -219,7 +223,7 @@ int main( int argv, char** argc)
 	instance_list->NextFileId();
 
 	// STEPfile takes care of reading and writing Part 21 files
-	STEPfile* sfile = new STEPfile(*registry, *instance_list, path, false);
+	STEPfile* sfile = new STEPfile(*registry, *instance_list, path.c_str(), false);
 
 	std::stringstream debug_log;
 	YAML::Node root_node;
