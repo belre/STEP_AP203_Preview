@@ -65,19 +65,39 @@ set(STEPCODE_INCLUDE_DIR
   ${STEPCODE_BUILD_DIR}/schemas/${SCHEMA_LINK_NAME}
  )
 
+set(YAML_CPP_INCLUDE_DIR 
+ ${CMAKE_BINARY_DIR}/../../yaml-cpp/
+)
+
+set(YAML_CPP_LIBRARIES ${YAML_CPP_INCLUDE_DIR})
+
+add_subdirectory(${YAML_CPP_INCLUDE_DIR} "${CMAKE_CURRENT_BINARY_DIR}/yaml-cpp" EXCLUDE_FROM_ALL)
+
+
 # Reset sane values for build destination.  Otherwise, everything ends up in ${CMAKE_BINARY_DIR}/sc
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 include_directories(
   ${STEPCODE_INCLUDE_DIR}
+  ${YAML_CPP_INCLUDE_DIR}
  )
 
 # Application sources and headers
-set(SRCS main.cpp)
+set(SRCS 
+  main.cpp
+  StepComponent.cpp
+  StepComposite.cpp
+  StepDerivedNode.cpp
+  StepNode.cpp
+)
 
-set(HDRS )
-
+set(HDRS 
+  StepComponent.h
+  StepComposite.h
+  StepDerivedNode.h
+  StepNode.h
+)
 
 add_executable(${PROJECT_NAME} ${SRCS} ${HDRS})
 
