@@ -5,6 +5,7 @@
 #include <Registry.h>
 
 #include <regex>
+#include <STEPaggrEntity.h>
 
 
 #include "schema.h"
@@ -23,7 +24,7 @@ void PrintDebugMessage(int id, STEPattribute* attribute, std::stringstream& debu
 		debug_log << "  ";
 	}
 
-	if( !attribute ) 
+	if (!attribute)
 	{
 		debug_log << id << ":node" << std::endl;
 		return;
@@ -71,6 +72,9 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 		PrintDebugMessage(id, attribute, debug_log, loop_count);
 
+		yaml_node["sc_fileid"] = id;
+		yaml_node["sc_function"] = instance->EntityName();
+
 		if (!attr_select && !attr_instance && !attr_aggr)
 		{
 			StepComponent* simple_node = new StepNode(instance);
@@ -87,11 +91,12 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 			yaml_node[attribute->Name()] = attribute->asStr();
 		}
-		else if(attr_aggr != nullptr)
+		else if (attr_aggr != nullptr)
 		{
 			auto head_node = attr_aggr->GetHead();
 
-			std::vector<string> sub_node;
+			std::vector<std::string> sub_node;
+			std::vector<YAML::Node> aggr_node;
 			std::map<std::string, YAML::Node> named_map;
 
 			for (auto node = head_node; node != nullptr; node = node->next)
@@ -99,7 +104,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 				auto conv_node = dynamic_cast<const EntityNode*>(node);
 				auto conv_raw_node = dynamic_cast<STEPnode*>(node);
 
-				if(conv_node != nullptr) 
+				if (conv_node != nullptr)
 				{
 					auto inst = conv_node->node;
 
@@ -109,11 +114,13 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 					YAML::Node yaml_child_node;
 					AddNode(inst_mgr, child_node, inst, debug_log, yaml_child_node, loop_count + 1);
 
+					aggr_node.push_back(yaml_child_node);
+
 					std::stringstream ss_str;
 					ss_str << "#" << inst->GetFileId();
 					named_map[ss_str.str()] = yaml_child_node;
 				}
-				else if(conv_raw_node != nullptr) 
+				else if (conv_raw_node != nullptr)
 				{
 					PrintDebugMessage(id, nullptr, debug_log, loop_count + 1);
 
@@ -121,29 +128,27 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 					conv_raw_node->asStr(str);
 					sub_node.push_back(str);
 				}
-				else 
+				else
 				{
 					PrintDebugMessage(id, nullptr, debug_log, loop_count + 1);
 				}
 			}
 
-			if(named_map.size() != 0 ) 
+			if (aggr_node.size() != 0)
 			{
-				yaml_node[attribute->Name()] = named_map;
+				yaml_node[attribute->Name()] = aggr_node;
 			}
-			else if(sub_node.size() != 0) 
+			else if (sub_node.size() != 0)
 			{
 				yaml_node[attribute->Name()] = sub_node;
 			}
 		}
-		else if(attr_select != nullptr) 
+		else if (attr_select != nullptr)
 		{
 			auto type = attr_select->ValueType();
 
-			if((type & sdaiINSTANCE) != 0 ) 
+			if ((type & sdaiINSTANCE) != 0)
 			{
-				auto aDesc = attribute->getADesc();
-				auto dd = attribute->asStr();
 
 				std::string out_text;
 				attr_select->STEPwrite(out_text);
@@ -151,26 +156,26 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 				// ap203 only?
 				std::regex id_detect_regex("\\#(\\d+)");
 				std::smatch match;
-				if(!std::regex_search(out_text, match, id_detect_regex) || 
- 					match.length() < 2)
+				if (!std::regex_search(out_text, match, id_detect_regex) ||
+					match.length() < 2)
 				{
 					std::cout << "Regex Pattern Match failed" << std::endl;
 					continue;
 				}
 
 				int id = 0;
-				try 
+				try
 				{
 					id = std::stol(match[1].str());
 				}
-				catch(exception) 
+				catch (exception)
 				{
 					std::cout << "Regex ID error" << std::endl;
 					continue;
 				}
 
 				auto select_entity = inst_mgr->FindFileId(id);
-				if(select_entity == nullptr) 
+				if (select_entity == nullptr)
 				{
 					std::cout << "Regex Conversion error" << std::endl;
 					continue;
@@ -187,7 +192,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 			}
 		}
-		else if(attr_instance != nullptr)
+		else if (attr_instance != nullptr)
 		{
 			StepComponent* child_node = new StepComposite(attr_instance);
 			base_component->AddComponent(child_node);
@@ -201,8 +206,14 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 }
 
 
-int main( int argv, char** argc)
+int main(int argv, char** argc)
 {
+	std::string path = ".\\StepData\\BSP35B20-N-12.stp";
+	if (argv >= 2)
+	{
+		path = argc[1];
+	}
+
 	// The registry contains information about types present in the current schema; SchemaInit is a function in the schema-specific SDAI library
 	Registry* registry = new Registry(SchemaInit);
 
@@ -213,19 +224,18 @@ int main( int argv, char** argc)
 	instance_list->NextFileId();
 
 	// STEPfile takes care of reading and writing Part 21 files
-	STEPfile* sfile = new STEPfile(*registry, *instance_list, ".\\StepData\\BSP35B20-N-12.stp", false);
+	STEPfile* sfile = new STEPfile(*registry, *instance_list, path.c_str(), false);
 
 	std::stringstream debug_log;
 	YAML::Node root_node;
 	auto root_component = new StepComposite();
-	for(int i = 0 ; i < instance_list->InstanceCount(); i++ ) 
+	for (int i = 0; i < instance_list->InstanceCount(); i++)
 	{
 		auto instance = instance_list->GetSTEPentity(i);
 		int file_id = instance->GetFileId();
 
 		if (!root_component->ContainFileId(file_id))
 		{
-
 			std::cout << "#" << file_id << "export" << std::endl;
 			debug_log << file_id << ":root(" << instance->EntityName() << ")" << std::endl;
 
@@ -237,12 +247,12 @@ int main( int argv, char** argc)
 
 			std::stringstream ss_str;
 			ss_str << "#" << instance->GetFileId();
-			root_node[ss_str.str()] = step_node;
+			root_node.push_back(step_node);
 		}
 	}
 
 	std::ofstream ofs("result.txt");
-	if(!ofs) 
+	if (!ofs)
 	{
 		return 2;
 	}
@@ -250,7 +260,7 @@ int main( int argv, char** argc)
 	ofs.close();
 
 	std::ofstream ofs_yaml("result.yaml");
-	if(!ofs_yaml) 
+	if (!ofs_yaml)
 	{
 		return 2;
 	}
