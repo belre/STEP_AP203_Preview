@@ -1,5 +1,6 @@
 #pragma once
 
+#include <STEPcomplex.h>
 #include <vector>
 #include "StepComponent.h"
 
@@ -10,6 +11,7 @@ class StepComposite : public StepComponent
 public:
 	StepComposite();
 	StepComposite(SDAI_Application_instance*& inst) ;
+
 	virtual ~StepComposite();
 
 public:
@@ -28,10 +30,11 @@ public:
 		}
 	}
 
-	void AddComponent(StepComponent*&) override;
+	void AddComponent(StepComponent*&, bool is_complex) override;
 
 private:
 	std::vector<StepComponent*> _component;
 	SDAI_Application_instance* _inst;
+	bool _is_complex;
 };
 

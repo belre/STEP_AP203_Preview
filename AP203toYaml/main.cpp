@@ -6,7 +6,7 @@
 
 #include <regex>
 #include <STEPaggrEntity.h>
-
+#include <STEPcomplex.h>
 
 #include "schema.h"
 
@@ -61,6 +61,27 @@ void PrintDebugMessage(int id, STEPattribute* attribute, std::stringstream& debu
 void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application_instance* const& instance, std::stringstream& debug_log, YAML::Node& yaml_node, int loop_count)
 {
 	int id = instance->GetFileId();
+	yaml_node["sc_fileid"] = id;
+	yaml_node["sc_function"] = instance->EntityName();
+
+	auto instance_complex = dynamic_cast<const STEPcomplex*>(instance);
+	if(instance_complex != nullptr) 
+	{
+		yaml_node["is_complex"] = true;
+		for (auto iter = instance_complex->sc; iter != nullptr; iter = iter->sc)
+		{
+			SDAI_Application_instance* child_instance = iter->Replicate();
+
+			StepComponent* child_node = new StepComposite(child_instance);
+			base_component->AddComponent(child_node, true);
+
+			YAML::Node yaml_child_node;
+			AddNode(inst_mgr, base_component, iter, debug_log, yaml_child_node, loop_count + 1);
+		}
+
+		return;
+	}
+
 
 	for (int j = 0; j < instance->AttributeCount(); j++)
 	{
@@ -72,13 +93,10 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 		PrintDebugMessage(id, attribute, debug_log, loop_count);
 
-		yaml_node["sc_fileid"] = id;
-		yaml_node["sc_function"] = instance->EntityName();
-
 		if (!attr_select && !attr_instance && !attr_aggr)
 		{
 			StepComponent* simple_node = new StepNode(instance);
-			base_component->AddComponent(simple_node);
+			base_component->AddComponent(simple_node, false);
 
 			yaml_node[attribute->Name()] = attribute->asStr();
 			continue;
@@ -87,7 +105,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 		if (attribute->IsDerived())
 		{
 			StepComponent* derived_node = new StepDerivedNode(instance);
-			base_component->AddComponent(derived_node);
+			base_component->AddComponent(derived_node, false);
 
 			yaml_node[attribute->Name()] = attribute->asStr();
 		}
@@ -109,7 +127,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 					auto inst = conv_node->node;
 
 					StepComponent* child_node = new StepComposite(inst);
-					base_component->AddComponent(child_node);
+					base_component->AddComponent(child_node, false);
 
 					YAML::Node yaml_child_node;
 					AddNode(inst_mgr, child_node, inst, debug_log, yaml_child_node, loop_count + 1);
@@ -183,7 +201,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 				auto select_instance = select_entity->GetApplication_instance();
 				StepComponent* child_node = new StepComposite(select_instance);
-				base_component->AddComponent(child_node);
+				base_component->AddComponent(child_node, false);
 
 				YAML::Node yaml_child_node;
 				AddNode(inst_mgr, child_node, select_instance, debug_log, yaml_child_node, loop_count + 1);
@@ -195,7 +213,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 		else if(attr_instance != nullptr)
 		{
 			StepComponent* child_node = new StepComposite(attr_instance);
-			base_component->AddComponent(child_node);
+			base_component->AddComponent(child_node, false);
 
 			YAML::Node yaml_child_node;
 			AddNode(inst_mgr, child_node, attr_instance, debug_log, yaml_child_node, loop_count + 1);
@@ -229,6 +247,7 @@ int main( int argv, char** argc)
 	std::stringstream debug_log;
 	YAML::Node root_node;
 	auto root_component = new StepComposite();
+
 	for(int i = 0 ; i < instance_list->InstanceCount(); i++ ) 
 	{
 		auto instance = instance_list->GetSTEPentity(i);
@@ -240,7 +259,7 @@ int main( int argv, char** argc)
 			debug_log << file_id << ":root(" << instance->EntityName() << ")" << std::endl;
 
 			StepComponent* base_node = new StepComposite(instance);
-			root_component->AddComponent(base_node);
+			root_component->AddComponent(base_node, false);
 
 			YAML::Node step_node;
 			AddNode(instance_list, base_node, instance, debug_log, step_node, 1);
@@ -248,6 +267,7 @@ int main( int argv, char** argc)
 			std::stringstream ss_str;
 			ss_str << "#" << instance->GetFileId();
 			root_node.push_back(step_node);
+
 		}
 	}
 

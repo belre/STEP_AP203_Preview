@@ -332,7 +332,6 @@
           156:node
           156:node
     69:instance(context_of_items)
-      112:coordinate_space_dimension:3
 23:root(Product_Category_Relationship)
   23:name:'NONE'
   23:description:'NONE'
@@ -505,113 +504,6 @@
     33:node
 34:root(Context_Dependent_Shape_Representation)
   34:instance(representation_relation)
-    76:name:''
-    76:description:''
-    76:instance(rep_1)
-      79:name:'_BSP35B20-N-12_b'
-      79:aggregate(items)
-        108:name:''
-        108:instance(location)
-          145:name:''
-          145:aggregate(coordinates)
-            145:node
-            145:node
-            145:node
-        108:instance(axis)
-          146:name:''
-          146:aggregate(direction_ratios)
-            146:node
-            146:node
-            146:node
-        108:instance(ref_direction)
-          147:name:''
-          147:aggregate(direction_ratios)
-            147:node
-            147:node
-            147:node
-      79:instance(context_of_items)
-        112:coordinate_space_dimension:3
-    76:instance(rep_2)
-      69:name:'BSP35B20-N-12'
-      69:aggregate(items)
-        108:name:''
-        108:instance(location)
-          145:name:''
-          145:aggregate(coordinates)
-            145:node
-            145:node
-            145:node
-        108:instance(axis)
-          146:name:''
-          146:aggregate(direction_ratios)
-            146:node
-            146:node
-            146:node
-        108:instance(ref_direction)
-          147:name:''
-          147:aggregate(direction_ratios)
-            147:node
-            147:node
-            147:node
-        109:name:''
-        109:instance(location)
-          148:name:''
-          148:aggregate(coordinates)
-            148:node
-            148:node
-            148:node
-        109:instance(axis)
-          149:name:''
-          149:aggregate(direction_ratios)
-            149:node
-            149:node
-            149:node
-        109:instance(ref_direction)
-          150:name:''
-          150:aggregate(direction_ratios)
-            150:node
-            150:node
-            150:node
-        110:name:''
-        110:instance(location)
-          151:name:''
-          151:aggregate(coordinates)
-            151:node
-            151:node
-            151:node
-        110:instance(axis)
-          152:name:''
-          152:aggregate(direction_ratios)
-            152:node
-            152:node
-            152:node
-        110:instance(ref_direction)
-          153:name:''
-          153:aggregate(direction_ratios)
-            153:node
-            153:node
-            153:node
-        111:name:''
-        111:instance(location)
-          154:name:''
-          154:aggregate(coordinates)
-            154:node
-            154:node
-            154:node
-        111:instance(axis)
-          155:name:''
-          155:aggregate(direction_ratios)
-            155:node
-            155:node
-            155:node
-        111:instance(ref_direction)
-          156:name:''
-          156:aggregate(direction_ratios)
-            156:node
-            156:node
-            156:node
-      69:instance(context_of_items)
-        112:coordinate_space_dimension:3
   34:instance(represented_product_relation)
     77:name:'NAUO-PROD-DEF'
     77:description:'NAUO-PROD-DEF'
@@ -710,7 +602,6 @@
           147:node
           147:node
     79:instance(context_of_items)
-      112:coordinate_space_dimension:3
 36:root(Shape_Representation_Relationship)
   36:name:'NONE'
   36:description:'NONE'
@@ -737,7 +628,6 @@
           147:node
           147:node
     79:instance(context_of_items)
-      112:coordinate_space_dimension:3
   36:instance(rep_2)
     80:name:'_BSP35B20-N-12_b'
     80:aggregate(items)
@@ -50398,7 +50288,6 @@
             620:minor_radius:9.5252945763
           316:same_sense:T
     80:instance(context_of_items)
-      52:coordinate_space_dimension:3
 37:root(Product_Category_Relationship)
   37:name:'NONE'
   37:description:'NONE'
@@ -50571,113 +50460,6 @@
     47:node
 48:root(Context_Dependent_Shape_Representation)
   48:instance(representation_relation)
-    87:name:''
-    87:description:''
-    87:instance(rep_1)
-      90:name:'_SET-SCREW5-5'
-      90:aggregate(items)
-        108:name:''
-        108:instance(location)
-          145:name:''
-          145:aggregate(coordinates)
-            145:node
-            145:node
-            145:node
-        108:instance(axis)
-          146:name:''
-          146:aggregate(direction_ratios)
-            146:node
-            146:node
-            146:node
-        108:instance(ref_direction)
-          147:name:''
-          147:aggregate(direction_ratios)
-            147:node
-            147:node
-            147:node
-      90:instance(context_of_items)
-        112:coordinate_space_dimension:3
-    87:instance(rep_2)
-      69:name:'BSP35B20-N-12'
-      69:aggregate(items)
-        108:name:''
-        108:instance(location)
-          145:name:''
-          145:aggregate(coordinates)
-            145:node
-            145:node
-            145:node
-        108:instance(axis)
-          146:name:''
-          146:aggregate(direction_ratios)
-            146:node
-            146:node
-            146:node
-        108:instance(ref_direction)
-          147:name:''
-          147:aggregate(direction_ratios)
-            147:node
-            147:node
-            147:node
-        109:name:''
-        109:instance(location)
-          148:name:''
-          148:aggregate(coordinates)
-            148:node
-            148:node
-            148:node
-        109:instance(axis)
-          149:name:''
-          149:aggregate(direction_ratios)
-            149:node
-            149:node
-            149:node
-        109:instance(ref_direction)
-          150:name:''
-          150:aggregate(direction_ratios)
-            150:node
-            150:node
-            150:node
-        110:name:''
-        110:instance(location)
-          151:name:''
-          151:aggregate(coordinates)
-            151:node
-            151:node
-            151:node
-        110:instance(axis)
-          152:name:''
-          152:aggregate(direction_ratios)
-            152:node
-            152:node
-            152:node
-        110:instance(ref_direction)
-          153:name:''
-          153:aggregate(direction_ratios)
-            153:node
-            153:node
-            153:node
-        111:name:''
-        111:instance(location)
-          154:name:''
-          154:aggregate(coordinates)
-            154:node
-            154:node
-            154:node
-        111:instance(axis)
-          155:name:''
-          155:aggregate(direction_ratios)
-            155:node
-            155:node
-            155:node
-        111:instance(ref_direction)
-          156:name:''
-          156:aggregate(direction_ratios)
-            156:node
-            156:node
-            156:node
-      69:instance(context_of_items)
-        112:coordinate_space_dimension:3
   48:instance(represented_product_relation)
     88:name:'NAUO-PROD-DEF'
     88:description:'NAUO-PROD-DEF'
@@ -50776,7 +50558,6 @@
           147:node
           147:node
     90:instance(context_of_items)
-      112:coordinate_space_dimension:3
 50:root(Shape_Representation_Relationship)
   50:name:'NONE'
   50:description:'NONE'
@@ -50803,7 +50584,6 @@
           147:node
           147:node
     90:instance(context_of_items)
-      112:coordinate_space_dimension:3
   50:instance(rep_2)
     91:name:'_SET-SCREW5-5'
     91:aggregate(items)
@@ -54231,116 +54011,8 @@
                   2302:node
           334:same_sense:F
     91:instance(context_of_items)
-      52:coordinate_space_dimension:3
 51:root(Context_Dependent_Shape_Representation)
   51:instance(representation_relation)
-    92:name:''
-    92:description:''
-    92:instance(rep_1)
-      90:name:'_SET-SCREW5-5'
-      90:aggregate(items)
-        108:name:''
-        108:instance(location)
-          145:name:''
-          145:aggregate(coordinates)
-            145:node
-            145:node
-            145:node
-        108:instance(axis)
-          146:name:''
-          146:aggregate(direction_ratios)
-            146:node
-            146:node
-            146:node
-        108:instance(ref_direction)
-          147:name:''
-          147:aggregate(direction_ratios)
-            147:node
-            147:node
-            147:node
-      90:instance(context_of_items)
-        112:coordinate_space_dimension:3
-    92:instance(rep_2)
-      69:name:'BSP35B20-N-12'
-      69:aggregate(items)
-        108:name:''
-        108:instance(location)
-          145:name:''
-          145:aggregate(coordinates)
-            145:node
-            145:node
-            145:node
-        108:instance(axis)
-          146:name:''
-          146:aggregate(direction_ratios)
-            146:node
-            146:node
-            146:node
-        108:instance(ref_direction)
-          147:name:''
-          147:aggregate(direction_ratios)
-            147:node
-            147:node
-            147:node
-        109:name:''
-        109:instance(location)
-          148:name:''
-          148:aggregate(coordinates)
-            148:node
-            148:node
-            148:node
-        109:instance(axis)
-          149:name:''
-          149:aggregate(direction_ratios)
-            149:node
-            149:node
-            149:node
-        109:instance(ref_direction)
-          150:name:''
-          150:aggregate(direction_ratios)
-            150:node
-            150:node
-            150:node
-        110:name:''
-        110:instance(location)
-          151:name:''
-          151:aggregate(coordinates)
-            151:node
-            151:node
-            151:node
-        110:instance(axis)
-          152:name:''
-          152:aggregate(direction_ratios)
-            152:node
-            152:node
-            152:node
-        110:instance(ref_direction)
-          153:name:''
-          153:aggregate(direction_ratios)
-            153:node
-            153:node
-            153:node
-        111:name:''
-        111:instance(location)
-          154:name:''
-          154:aggregate(coordinates)
-            154:node
-            154:node
-            154:node
-        111:instance(axis)
-          155:name:''
-          155:aggregate(direction_ratios)
-            155:node
-            155:node
-            155:node
-        111:instance(ref_direction)
-          156:name:''
-          156:aggregate(direction_ratios)
-            156:node
-            156:node
-            156:node
-      69:instance(context_of_items)
-        112:coordinate_space_dimension:3
   51:instance(represented_product_relation)
     93:name:'NAUO-PROD-DEF'
     93:description:'NAUO-PROD-DEF'
@@ -54394,16 +54066,10 @@
 96:root(Uncertainty_Measure_With_Unit)
   96:selector(value_component)
   96:selector(unit_component)
-    98:name:'MILLIMETRE'
-    98:instance(conversion_factor)
-      134:selector(value_component)
-      134:selector(unit_component)
   96:name:''
   96:description:''
 99:root(Named_Unit)
-  99:derived(dimensions)
 100:root(Named_Unit)
-  100:derived(dimensions)
 116:root(Item_Defined_Transformation)
   116:name:''
   116:description:''
@@ -54533,6 +54199,9 @@
         156:node
         156:node
         156:node
+134:root(Length_Measure_With_Unit)
+  134:selector(value_component)
+  134:selector(unit_component)
 137:root(Dimensional_Exponents)
   137:length_exponent:1
   137:mass_exponent:0
@@ -54552,16 +54221,13 @@
 159:root(Uncertainty_Measure_With_Unit)
   159:selector(value_component)
   159:selector(unit_component)
-    161:name:'MILLIMETRE'
-    161:instance(conversion_factor)
-      170:selector(value_component)
-      170:selector(unit_component)
   159:name:''
   159:description:''
 162:root(Named_Unit)
-  162:derived(dimensions)
 163:root(Named_Unit)
-  163:derived(dimensions)
+170:root(Length_Measure_With_Unit)
+  170:selector(value_component)
+  170:selector(unit_component)
 173:root(Dimensional_Exponents)
   173:length_exponent:1
   173:mass_exponent:0

@@ -11,9 +11,13 @@ StepComposite::StepComposite(SDAI_Application_instance*& inst)
 	_component.resize(0);
 }
 
-void StepComposite::AddComponent(StepComponent*& component)
+
+
+void StepComposite::AddComponent(StepComponent*& component, bool is_complex)
 {
 	_component.push_back(component);
+
+	_is_complex = is_complex;
 }
 
 bool StepComposite::ContainFileId(int id)

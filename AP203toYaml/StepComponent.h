@@ -18,9 +18,10 @@ public:
 		return InvalidNode;
 	}
 	
-	virtual void AddComponent(StepComponent*&)
+	virtual void AddComponent(StepComponent*&, bool is_complex)
 	{
 		
 	}
+
 };
 
