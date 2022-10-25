@@ -72,6 +72,9 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 
 		PrintDebugMessage(id, attribute, debug_log, loop_count);
 
+		yaml_node["sc_fileid"] = id;
+		yaml_node["sc_function"] = instance->EntityName();
+
 		if (!attr_select && !attr_instance && !attr_aggr)
 		{
 			StepComponent* simple_node = new StepNode(instance);
@@ -233,7 +236,6 @@ int main( int argv, char** argc)
 
 		if (!root_component->ContainFileId(file_id))
 		{
-
 			std::cout << "#" << file_id << "export" << std::endl;
 			debug_log << file_id << ":root(" << instance->EntityName() << ")" << std::endl;
 
@@ -245,7 +247,7 @@ int main( int argv, char** argc)
 
 			std::stringstream ss_str;
 			ss_str << "#" << instance->GetFileId();
-			root_node[ss_str.str()] = step_node;
+			root_node.push_back(step_node);
 		}
 	}
 
