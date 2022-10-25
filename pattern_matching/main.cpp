@@ -301,8 +301,14 @@ int main(int argv, char** argc)
 			continue;
 		}
 
+		
+
+
+			
+
 		if(file_schema != "Shape_Definition_Representation" && 
-			 file_schema != "Shape_Representation_Relationship") 
+			 file_schema != "Shape_Representation_Relationship" &&
+			 file_schema != "Context_Dependent_Shape_Representation") 
 		{
 			continue;
 		}
