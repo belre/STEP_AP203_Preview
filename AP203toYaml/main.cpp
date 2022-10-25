@@ -58,30 +58,39 @@ void PrintDebugMessage(int id, STEPattribute* attribute, std::stringstream& debu
 	}
 }
 
-void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application_instance* const& instance, std::stringstream& debug_log, YAML::Node& yaml_node, int loop_count)
+void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application_instance* const& instance, std::stringstream& debug_log, YAML::Node& yaml_node, int loop_count, bool is_complex)
 {
 	int id = instance->GetFileId();
-	yaml_node["sc_fileid"] = id;
+
+	if(!is_complex) 
+	{
+		yaml_node["sc_fileid"] = id;
+	}
 	yaml_node["sc_function"] = instance->EntityName();
 
 	auto instance_complex = dynamic_cast<const STEPcomplex*>(instance);
-	if(instance_complex != nullptr) 
+	if(instance_complex != nullptr && !is_complex)  
 	{
 		yaml_node["is_complex"] = true;
-		for (auto iter = instance_complex->sc; iter != nullptr; iter = iter->sc)
-		{
-			SDAI_Application_instance* child_instance = iter->Replicate();
+		std::cout << "#" << id << std::endl;
+		int cnt = 0;
+		for (auto iter = instance_complex->head; iter != nullptr; iter = iter->sc, ++cnt);
+		std::cout << "instance count:" << cnt << std::endl;
 
-			StepComponent* child_node = new StepComposite(child_instance);
+		for (auto iter = instance_complex->head; iter != nullptr; iter = iter->sc)
+		{
+			auto inst = dynamic_cast<SDAI_Application_instance*>(iter);
+
+			StepComponent* child_node = new StepComposite(inst);
 			base_component->AddComponent(child_node, true);
 
 			YAML::Node yaml_child_node;
-			AddNode(inst_mgr, base_component, iter, debug_log, yaml_child_node, loop_count + 1);
+			AddNode(inst_mgr, base_component, inst, debug_log, yaml_child_node, loop_count + 1, true);
+			yaml_node["complex_element"].push_back(yaml_child_node);
 		}
 
 		return;
 	}
-
 
 	for (int j = 0; j < instance->AttributeCount(); j++)
 	{
@@ -98,7 +107,8 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 			StepComponent* simple_node = new StepNode(instance);
 			base_component->AddComponent(simple_node, false);
 
-			yaml_node[attribute->Name()] = attribute->asStr();
+			auto name = attribute->Name();
+			yaml_node[name] = attribute->asStr();
 			continue;
 		}
 
@@ -130,7 +140,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 					base_component->AddComponent(child_node, false);
 
 					YAML::Node yaml_child_node;
-					AddNode(inst_mgr, child_node, inst, debug_log, yaml_child_node, loop_count + 1);
+					AddNode(inst_mgr, child_node, inst, debug_log, yaml_child_node, loop_count + 1, false);
 
 					aggr_node.push_back(yaml_child_node);
 
@@ -204,7 +214,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 				base_component->AddComponent(child_node, false);
 
 				YAML::Node yaml_child_node;
-				AddNode(inst_mgr, child_node, select_instance, debug_log, yaml_child_node, loop_count + 1);
+				AddNode(inst_mgr, child_node, select_instance, debug_log, yaml_child_node, loop_count + 1, false);
 
 				yaml_node[attribute->Name()] = yaml_child_node;
 
@@ -216,7 +226,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 			base_component->AddComponent(child_node, false);
 
 			YAML::Node yaml_child_node;
-			AddNode(inst_mgr, child_node, attr_instance, debug_log, yaml_child_node, loop_count + 1);
+			AddNode(inst_mgr, child_node, attr_instance, debug_log, yaml_child_node, loop_count + 1, false);
 
 			yaml_node[attribute->Name()] = yaml_child_node;
 		}
@@ -262,12 +272,11 @@ int main( int argv, char** argc)
 			root_component->AddComponent(base_node, false);
 
 			YAML::Node step_node;
-			AddNode(instance_list, base_node, instance, debug_log, step_node, 1);
+			AddNode(instance_list, base_node, instance, debug_log, step_node, 1, false);
 
 			std::stringstream ss_str;
 			ss_str << "#" << instance->GetFileId();
 			root_node.push_back(step_node);
-
 		}
 	}
 
@@ -285,7 +294,9 @@ int main( int argv, char** argc)
 		return 2;
 	}
 	YAML::Emitter yaml_emitter(ofs_yaml);
-	yaml_emitter << root_node;
+	YAML::Node master_node;
+	master_node["step"] = root_node;
+	yaml_emitter << master_node;
 	ofs_yaml.close();
 
 	return 0;
