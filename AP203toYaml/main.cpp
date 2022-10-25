@@ -58,11 +58,11 @@ void PrintDebugMessage(int id, STEPattribute* attribute, std::stringstream& debu
 	}
 }
 
-bool ExtractSelectInstanceId(InstMgr*& inst_mgr, SDAI_Select* select, std::vector<int>& id_list)
+bool ExtractSelectInstanceId(InstMgr*& inst_mgr, SDAI_Select* select, BASE_TYPE &recog_type, int& answer_id)
 {
-	id_list.clear();
 
 	auto type = select->ValueType();
+	recog_type = type;
 
 	if ((type & sdaiINSTANCE) == 0)
 	{
@@ -93,7 +93,7 @@ bool ExtractSelectInstanceId(InstMgr*& inst_mgr, SDAI_Select* select, std::vecto
 		return false;
 	}
 
-	id_list.push_back(id);
+	answer_id = id;
 
 	return true;
 }
@@ -223,18 +223,19 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 		}
 		else if(attr_select != nullptr) 
 		{
-			std::vector<int> id_list;
-			if(!ExtractSelectInstanceId(inst_mgr, attr_select, id_list)) 
+			BASE_TYPE recog_type;
+			int answer_id;
+			if(!ExtractSelectInstanceId(inst_mgr, attr_select, recog_type, answer_id)) 
 			{
 				continue;
 			}
 
-			if(id_list.empty()) 
+			if((recog_type & sdaiINSTANCE ) == 0) 
 			{
 				continue;
-			}
-
-			auto select_entity = inst_mgr->FindFileId(id_list[0]);
+			} 
+			
+			auto select_entity = inst_mgr->FindFileId(answer_id);
 			if (select_entity == nullptr)
 			{
 				std::cout << "Regex Conversion error" << std::endl;
@@ -249,54 +250,6 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 			AddNode(inst_mgr, child_node, select_instance, debug_log, yaml_child_node, loop_count + 1, false);
 
 			yaml_node[attribute->Name()] = yaml_child_node;
-
-			/*
-			auto type = attr_select->ValueType();
-
-			if((type & sdaiINSTANCE) != 0 ) 
-			{
-
-				std::string out_text;
-				attr_select->STEPwrite(out_text);
-
-				// ap203 only?
-				std::regex id_detect_regex("\\#(\\d+)");
-				std::smatch match;
-				if(!std::regex_search(out_text, match, id_detect_regex) || 
- 					match.length() < 2)
-				{
-					std::cout << "Regex Pattern Match failed" << std::endl;
-					continue;
-				}
-
-				int id = 0;
-				try 
-				{
-					id = std::stol(match[1].str());
-				}
-				catch(exception) 
-				{
-					std::cout << "Regex ID error" << std::endl;
-					continue;
-				}
-
-				auto select_entity = inst_mgr->FindFileId(id);
-				if(select_entity == nullptr) 
-				{
-					std::cout << "Regex Conversion error" << std::endl;
-					continue;
-				}
-
-				auto select_instance = select_entity->GetApplication_instance();
-				StepComponent* child_node = new StepComposite(select_instance);
-				base_component->AddComponent(child_node, false);
-
-				YAML::Node yaml_child_node;
-				AddNode(inst_mgr, child_node, select_instance, debug_log, yaml_child_node, loop_count + 1, false);
-
-				yaml_node[attribute->Name()] = yaml_child_node; 
-			}
-			*/
 		}
 		else if(attr_instance != nullptr)
 		{
