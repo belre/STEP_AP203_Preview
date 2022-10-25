@@ -6,6 +6,7 @@
 
 #include <regex>
 #include <STEPaggrEntity.h>
+#include <unordered_set>
 
 
 #include "schema.h"
@@ -205,13 +206,45 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 	}
 }
 
+void CountChildNodeId(YAML::Node& node, std::vector<int>& id_stock)
+{
+	if(node.IsSequence())
+	{
+		for (auto tmp = node.begin(); tmp != node.end(); ++tmp)
+		{
+			CountChildNodeId(*tmp, id_stock);
+		}
+	}
+	else if(node.IsMap()) 
+	{
+		if (!node["sc_fileid"])
+		{
+			return;
+		}
+
+		int file_id = node["sc_fileid"].as<int>();
+		id_stock.push_back(file_id);
+
+		for (auto tmp = node.begin(); tmp != node.end(); ++tmp)
+		{
+			auto key = tmp->first;
+			auto value = tmp->second;
+			
+			CountChildNodeId(value, id_stock);
+		}
+	}
+}
+
 
 int main(int argv, char** argc)
 {
-	std::string path = ".\\StepData\\BSP35B20-N-12.stp";
-	if (argv >= 2)
+	std::string step_path = ".\\StepData\\BSP35B20-N-12.stp";
+	std::string yaml_path = ".\\YamlData\\BSP35B20-N-12.yaml";
+
+	if (argv >= 3)
 	{
-		path = argc[1];
+		step_path = argc[1];
+		step_path = argc[2];
 	}
 
 	// The registry contains information about types present in the current schema; SchemaInit is a function in the schema-specific SDAI library
@@ -224,49 +257,78 @@ int main(int argv, char** argc)
 	instance_list->NextFileId();
 
 	// STEPfile takes care of reading and writing Part 21 files
-	STEPfile* sfile = new STEPfile(*registry, *instance_list, path.c_str(), false);
+	STEPfile* sfile = new STEPfile(*registry, *instance_list, step_path.c_str(), false);
 
-	std::stringstream debug_log;
-	YAML::Node root_node;
-	auto root_component = new StepComposite();
-	for (int i = 0; i < instance_list->InstanceCount(); i++)
+
+	std::ifstream ifs(yaml_path, std::ios::in);
+	if(!ifs) 
+	{
+		std::cerr << "YAML Parser error" << std::endl;
+		return 3;
+	}
+
+	auto yaml_map = YAML::Load(ifs);
+	ifs.close();
+
+	std::vector<int> all_stock_id;
+
+	std::vector<int> all_registered_id;
+	for(int i = 0 ; i < instance_list->InstanceCount(); i ++ ) 
 	{
 		auto instance = instance_list->GetSTEPentity(i);
-		int file_id = instance->GetFileId();
 
-		if (!root_component->ContainFileId(file_id))
+		all_registered_id.push_back(instance->GetFileId());
+	}
+
+
+	auto step_root = yaml_map["step"];
+
+	for(auto tmp = step_root.begin() ; tmp != step_root.end(); tmp ++ ) 
+	{
+		int file_id = (*tmp)["sc_fileid"].as<int>();
+		std::string file_schema = (*tmp)["sc_function"].as<std::string>();
+
+		auto ptr = instance_list->FindFileId(file_id);
+		if(ptr == nullptr) 
 		{
-			std::cout << "#" << file_id << "export" << std::endl;
-			debug_log << file_id << ":root(" << instance->EntityName() << ")" << std::endl;
-
-			StepComponent* base_node = new StepComposite(instance);
-			root_component->AddComponent(base_node);
-
-			YAML::Node step_node;
-			AddNode(instance_list, base_node, instance, debug_log, step_node, 1);
-
-			std::stringstream ss_str;
-			ss_str << "#" << instance->GetFileId();
-			root_node.push_back(step_node);
+			continue;
 		}
+
+		if(file_schema != "Shape_Definition_Representation" && 
+			 file_schema != "Shape_Representation_Relationship") 
+		{
+			continue;
+		}
+		
+		// read valid node recursively
+		YAML::Node tmp_node = *tmp;
+		std::vector<int> stock_id;
+		CountChildNodeId( tmp_node, stock_id);
+
+		// Remove duplicated id
+		std::copy_if(stock_id.begin(), stock_id.end(), std::back_inserter(all_stock_id),
+			[&all_stock_id](const int& i) {
+				return std::find(all_stock_id.begin(), all_stock_id.end(), i) == all_stock_id.end();
+			});
 	}
 
-	std::ofstream ofs("result.txt");
-	if (!ofs)
-	{
-		return 2;
-	}
-	ofs << debug_log.str();
-	ofs.close();
+	// Extract unfiltered id
+	std::vector<int> unregistered_id;
+	std::copy(all_registered_id.begin(), all_registered_id.end(), std::back_inserter(unregistered_id));
+	auto filtered_target = std::remove_if(unregistered_id.begin(), unregistered_id.end(),
+		[&all_stock_id](const int& i) {
+			return std::find(all_stock_id.begin(), all_stock_id.end(), i) != all_stock_id.end();
+		});
+	unregistered_id.erase(filtered_target, unregistered_id.end());
 
-	std::ofstream ofs_yaml("result.yaml");
-	if (!ofs_yaml)
+	// Remove from instmgr
+	for(auto iter = unregistered_id.begin(); iter != unregistered_id.end(); ++iter ) 
 	{
-		return 2;
+		auto node = instance_list->FindFileId(*iter);
+		instance_list->Delete(node);
 	}
-	YAML::Emitter yaml_emitter(ofs_yaml);
-	yaml_emitter << root_node;
-	ofs_yaml.close();
+	sfile->WriteExchangeFile("test.step");
+
 
 	return 0;
 }
