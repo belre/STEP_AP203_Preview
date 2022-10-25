@@ -502,6 +502,48 @@ step:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
         is_complex: true
+        complex_element:
+          - coordinate_space_dimension: 3
+          - uncertainty:
+              - sc_fileid: 159
+                sc_function: Uncertainty_Measure_With_Unit
+                unit_component:
+                  sc_fileid: 161
+                  sc_function: Conversion_Based_Unit
+                  is_complex: true
+                  complex_element:
+                    - name: "'MILLIMETRE'"
+                      conversion_factor:
+                        sc_fileid: 170
+                        sc_function: Length_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 336
+                          sc_function: Length_Unit
+                          is_complex: true
+                          complex_element:
+                            - ~
+                            - dimensions: "*"
+                            - prefix: MILLI
+                              name: METRE
+                    - ~
+                    - dimensions:
+                        sc_fileid: 173
+                        sc_function: Dimensional_Exponents
+                        length_exponent: 1
+                        mass_exponent: 0
+                        time_exponent: 0
+                        electric_current_exponent: 0
+                        thermodynamic_temperature_exponent: 0
+                        amount_of_substance_exponent: 0
+                        luminous_intensity_exponent: 0
+                name: "''"
+                description: "''"
+          - units:
+              - "#161\x00"
+              - "#162\x00"
+              - "#163\x00"
+          - context_identifier: "'NONE'"
+            context_type: "'WORKSPACE'"
   - sc_fileid: 23
     sc_function: Product_Category_Relationship
     name: "'NONE'"
@@ -765,6 +807,308 @@ step:
       sc_fileid: 76
       sc_function: Representation_Relationship
       is_complex: true
+      complex_element:
+        - name: "''"
+          description: "''"
+          rep_1:
+            sc_fileid: 79
+            sc_function: Shape_Representation
+            name: "'_BSP35B20-N-12_b'"
+            items:
+              - sc_fileid: 108
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 145
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 0.
+                    - 0.
+                axis:
+                  sc_fileid: 146
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - 0.
+                    - 1.
+                ref_direction:
+                  sc_fileid: 147
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 1.
+                    - 0.
+                    - 0.
+            context_of_items:
+              sc_fileid: 112
+              sc_function: Geometric_Representation_Context
+              is_complex: true
+              complex_element:
+                - coordinate_space_dimension: 3
+                - uncertainty:
+                    - sc_fileid: 159
+                      sc_function: Uncertainty_Measure_With_Unit
+                      unit_component:
+                        sc_fileid: 161
+                        sc_function: Conversion_Based_Unit
+                        is_complex: true
+                        complex_element:
+                          - name: "'MILLIMETRE'"
+                            conversion_factor:
+                              sc_fileid: 170
+                              sc_function: Length_Measure_With_Unit
+                              unit_component:
+                                sc_fileid: 336
+                                sc_function: Length_Unit
+                                is_complex: true
+                                complex_element:
+                                  - ~
+                                  - dimensions: "*"
+                                  - prefix: MILLI
+                                    name: METRE
+                          - ~
+                          - dimensions:
+                              sc_fileid: 173
+                              sc_function: Dimensional_Exponents
+                              length_exponent: 1
+                              mass_exponent: 0
+                              time_exponent: 0
+                              electric_current_exponent: 0
+                              thermodynamic_temperature_exponent: 0
+                              amount_of_substance_exponent: 0
+                              luminous_intensity_exponent: 0
+                      name: "''"
+                      description: "''"
+                - units:
+                    - "#161\x00"
+                    - "#162\x00"
+                    - "#163\x00"
+                - context_identifier: "'NONE'"
+                  context_type: "'WORKSPACE'"
+          rep_2:
+            sc_fileid: 69
+            sc_function: Shape_Representation
+            name: "'BSP35B20-N-12'"
+            items:
+              - sc_fileid: 108
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 145
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 0.
+                    - 0.
+                axis:
+                  sc_fileid: 146
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - 0.
+                    - 1.
+                ref_direction:
+                  sc_fileid: 147
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 1.
+                    - 0.
+                    - 0.
+              - sc_fileid: 109
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 148
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 0.
+                    - 0.
+                axis:
+                  sc_fileid: 149
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - 0.
+                    - 1.
+                ref_direction:
+                  sc_fileid: 150
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 1.
+                    - 0.
+                    - 0.
+              - sc_fileid: 110
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 151
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 7.8
+                    - 14.
+                axis:
+                  sc_fileid: 152
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - -1.
+                    - 0.
+                    - 0.
+                ref_direction:
+                  sc_fileid: 153
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - -1.
+                    - 0.
+              - sc_fileid: 111
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 154
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 5.19615242270663
+                    - -3.
+                    - 14.
+                axis:
+                  sc_fileid: 155
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.5
+                    - 0.866025403784439
+                    - -0.
+                ref_direction:
+                  sc_fileid: 156
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - -0.866025403784439
+                    - 0.5
+                    - 0.
+            context_of_items:
+              sc_fileid: 112
+              sc_function: Geometric_Representation_Context
+              is_complex: true
+              complex_element:
+                - coordinate_space_dimension: 3
+                - uncertainty:
+                    - sc_fileid: 159
+                      sc_function: Uncertainty_Measure_With_Unit
+                      unit_component:
+                        sc_fileid: 161
+                        sc_function: Conversion_Based_Unit
+                        is_complex: true
+                        complex_element:
+                          - name: "'MILLIMETRE'"
+                            conversion_factor:
+                              sc_fileid: 170
+                              sc_function: Length_Measure_With_Unit
+                              unit_component:
+                                sc_fileid: 336
+                                sc_function: Length_Unit
+                                is_complex: true
+                                complex_element:
+                                  - ~
+                                  - dimensions: "*"
+                                  - prefix: MILLI
+                                    name: METRE
+                          - ~
+                          - dimensions:
+                              sc_fileid: 173
+                              sc_function: Dimensional_Exponents
+                              length_exponent: 1
+                              mass_exponent: 0
+                              time_exponent: 0
+                              electric_current_exponent: 0
+                              thermodynamic_temperature_exponent: 0
+                              amount_of_substance_exponent: 0
+                              luminous_intensity_exponent: 0
+                      name: "''"
+                      description: "''"
+                - units:
+                    - "#161\x00"
+                    - "#162\x00"
+                    - "#163\x00"
+                - context_identifier: "'NONE'"
+                  context_type: "'WORKSPACE'"
+        - transformation_operator:
+            sc_fileid: 116
+            sc_function: Item_Defined_Transformation
+            name: "''"
+            description: "''"
+            transform_item_1:
+              sc_fileid: 108
+              sc_function: Axis2_Placement_3d
+              name: "''"
+              location:
+                sc_fileid: 145
+                sc_function: Cartesian_Point
+                name: "''"
+                coordinates:
+                  - 0.
+                  - 0.
+                  - 0.
+              axis:
+                sc_fileid: 146
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - 0.
+                  - 0.
+                  - 1.
+              ref_direction:
+                sc_fileid: 147
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - 1.
+                  - 0.
+                  - 0.
+            transform_item_2:
+              sc_fileid: 109
+              sc_function: Axis2_Placement_3d
+              name: "''"
+              location:
+                sc_fileid: 148
+                sc_function: Cartesian_Point
+                name: "''"
+                coordinates:
+                  - 0.
+                  - 0.
+                  - 0.
+              axis:
+                sc_fileid: 149
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - 0.
+                  - 0.
+                  - 1.
+              ref_direction:
+                sc_fileid: 150
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - 1.
+                  - 0.
+                  - 0.
+        - ~
     represented_product_relation:
       sc_fileid: 77
       sc_function: Product_Definition_Shape
@@ -925,6 +1269,48 @@ step:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
         is_complex: true
+        complex_element:
+          - coordinate_space_dimension: 3
+          - uncertainty:
+              - sc_fileid: 159
+                sc_function: Uncertainty_Measure_With_Unit
+                unit_component:
+                  sc_fileid: 161
+                  sc_function: Conversion_Based_Unit
+                  is_complex: true
+                  complex_element:
+                    - name: "'MILLIMETRE'"
+                      conversion_factor:
+                        sc_fileid: 170
+                        sc_function: Length_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 336
+                          sc_function: Length_Unit
+                          is_complex: true
+                          complex_element:
+                            - ~
+                            - dimensions: "*"
+                            - prefix: MILLI
+                              name: METRE
+                    - ~
+                    - dimensions:
+                        sc_fileid: 173
+                        sc_function: Dimensional_Exponents
+                        length_exponent: 1
+                        mass_exponent: 0
+                        time_exponent: 0
+                        electric_current_exponent: 0
+                        thermodynamic_temperature_exponent: 0
+                        amount_of_substance_exponent: 0
+                        luminous_intensity_exponent: 0
+                name: "''"
+                description: "''"
+          - units:
+              - "#161\x00"
+              - "#162\x00"
+              - "#163\x00"
+          - context_identifier: "'NONE'"
+            context_type: "'WORKSPACE'"
   - sc_fileid: 36
     sc_function: Shape_Representation_Relationship
     name: "'NONE'"
@@ -965,6 +1351,48 @@ step:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
         is_complex: true
+        complex_element:
+          - coordinate_space_dimension: 3
+          - uncertainty:
+              - sc_fileid: 159
+                sc_function: Uncertainty_Measure_With_Unit
+                unit_component:
+                  sc_fileid: 161
+                  sc_function: Conversion_Based_Unit
+                  is_complex: true
+                  complex_element:
+                    - name: "'MILLIMETRE'"
+                      conversion_factor:
+                        sc_fileid: 170
+                        sc_function: Length_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 336
+                          sc_function: Length_Unit
+                          is_complex: true
+                          complex_element:
+                            - ~
+                            - dimensions: "*"
+                            - prefix: MILLI
+                              name: METRE
+                    - ~
+                    - dimensions:
+                        sc_fileid: 173
+                        sc_function: Dimensional_Exponents
+                        length_exponent: 1
+                        mass_exponent: 0
+                        time_exponent: 0
+                        electric_current_exponent: 0
+                        thermodynamic_temperature_exponent: 0
+                        amount_of_substance_exponent: 0
+                        luminous_intensity_exponent: 0
+                name: "''"
+                description: "''"
+          - units:
+              - "#161\x00"
+              - "#162\x00"
+              - "#163\x00"
+          - context_identifier: "'NONE'"
+            context_type: "'WORKSPACE'"
     rep_2:
       sc_fileid: 80
       sc_function: Advanced_Brep_Shape_Representation
@@ -71994,6 +72422,48 @@ step:
         sc_fileid: 52
         sc_function: Geometric_Representation_Context
         is_complex: true
+        complex_element:
+          - coordinate_space_dimension: 3
+          - uncertainty:
+              - sc_fileid: 96
+                sc_function: Uncertainty_Measure_With_Unit
+                unit_component:
+                  sc_fileid: 98
+                  sc_function: Conversion_Based_Unit
+                  is_complex: true
+                  complex_element:
+                    - name: "'MILLIMETRE'"
+                      conversion_factor:
+                        sc_fileid: 134
+                        sc_function: Length_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 167
+                          sc_function: Length_Unit
+                          is_complex: true
+                          complex_element:
+                            - ~
+                            - dimensions: "*"
+                            - prefix: MILLI
+                              name: METRE
+                    - ~
+                    - dimensions:
+                        sc_fileid: 137
+                        sc_function: Dimensional_Exponents
+                        length_exponent: 1
+                        mass_exponent: 0
+                        time_exponent: 0
+                        electric_current_exponent: 0
+                        thermodynamic_temperature_exponent: 0
+                        amount_of_substance_exponent: 0
+                        luminous_intensity_exponent: 0
+                name: "''"
+                description: "''"
+          - units:
+              - "#98\x00"
+              - "#99\x00"
+              - "#100\x00"
+          - context_identifier: "'NONE'"
+            context_type: "'WORKSPACE'"
   - sc_fileid: 37
     sc_function: Product_Category_Relationship
     name: "'NONE'"
@@ -72257,6 +72727,308 @@ step:
       sc_fileid: 87
       sc_function: Representation_Relationship
       is_complex: true
+      complex_element:
+        - name: "''"
+          description: "''"
+          rep_1:
+            sc_fileid: 90
+            sc_function: Shape_Representation
+            name: "'_SET-SCREW5-5'"
+            items:
+              - sc_fileid: 108
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 145
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 0.
+                    - 0.
+                axis:
+                  sc_fileid: 146
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - 0.
+                    - 1.
+                ref_direction:
+                  sc_fileid: 147
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 1.
+                    - 0.
+                    - 0.
+            context_of_items:
+              sc_fileid: 112
+              sc_function: Geometric_Representation_Context
+              is_complex: true
+              complex_element:
+                - coordinate_space_dimension: 3
+                - uncertainty:
+                    - sc_fileid: 159
+                      sc_function: Uncertainty_Measure_With_Unit
+                      unit_component:
+                        sc_fileid: 161
+                        sc_function: Conversion_Based_Unit
+                        is_complex: true
+                        complex_element:
+                          - name: "'MILLIMETRE'"
+                            conversion_factor:
+                              sc_fileid: 170
+                              sc_function: Length_Measure_With_Unit
+                              unit_component:
+                                sc_fileid: 336
+                                sc_function: Length_Unit
+                                is_complex: true
+                                complex_element:
+                                  - ~
+                                  - dimensions: "*"
+                                  - prefix: MILLI
+                                    name: METRE
+                          - ~
+                          - dimensions:
+                              sc_fileid: 173
+                              sc_function: Dimensional_Exponents
+                              length_exponent: 1
+                              mass_exponent: 0
+                              time_exponent: 0
+                              electric_current_exponent: 0
+                              thermodynamic_temperature_exponent: 0
+                              amount_of_substance_exponent: 0
+                              luminous_intensity_exponent: 0
+                      name: "''"
+                      description: "''"
+                - units:
+                    - "#161\x00"
+                    - "#162\x00"
+                    - "#163\x00"
+                - context_identifier: "'NONE'"
+                  context_type: "'WORKSPACE'"
+          rep_2:
+            sc_fileid: 69
+            sc_function: Shape_Representation
+            name: "'BSP35B20-N-12'"
+            items:
+              - sc_fileid: 108
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 145
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 0.
+                    - 0.
+                axis:
+                  sc_fileid: 146
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - 0.
+                    - 1.
+                ref_direction:
+                  sc_fileid: 147
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 1.
+                    - 0.
+                    - 0.
+              - sc_fileid: 109
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 148
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 0.
+                    - 0.
+                axis:
+                  sc_fileid: 149
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - 0.
+                    - 1.
+                ref_direction:
+                  sc_fileid: 150
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 1.
+                    - 0.
+                    - 0.
+              - sc_fileid: 110
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 151
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 7.8
+                    - 14.
+                axis:
+                  sc_fileid: 152
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - -1.
+                    - 0.
+                    - 0.
+                ref_direction:
+                  sc_fileid: 153
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - -1.
+                    - 0.
+              - sc_fileid: 111
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 154
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 5.19615242270663
+                    - -3.
+                    - 14.
+                axis:
+                  sc_fileid: 155
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.5
+                    - 0.866025403784439
+                    - -0.
+                ref_direction:
+                  sc_fileid: 156
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - -0.866025403784439
+                    - 0.5
+                    - 0.
+            context_of_items:
+              sc_fileid: 112
+              sc_function: Geometric_Representation_Context
+              is_complex: true
+              complex_element:
+                - coordinate_space_dimension: 3
+                - uncertainty:
+                    - sc_fileid: 159
+                      sc_function: Uncertainty_Measure_With_Unit
+                      unit_component:
+                        sc_fileid: 161
+                        sc_function: Conversion_Based_Unit
+                        is_complex: true
+                        complex_element:
+                          - name: "'MILLIMETRE'"
+                            conversion_factor:
+                              sc_fileid: 170
+                              sc_function: Length_Measure_With_Unit
+                              unit_component:
+                                sc_fileid: 336
+                                sc_function: Length_Unit
+                                is_complex: true
+                                complex_element:
+                                  - ~
+                                  - dimensions: "*"
+                                  - prefix: MILLI
+                                    name: METRE
+                          - ~
+                          - dimensions:
+                              sc_fileid: 173
+                              sc_function: Dimensional_Exponents
+                              length_exponent: 1
+                              mass_exponent: 0
+                              time_exponent: 0
+                              electric_current_exponent: 0
+                              thermodynamic_temperature_exponent: 0
+                              amount_of_substance_exponent: 0
+                              luminous_intensity_exponent: 0
+                      name: "''"
+                      description: "''"
+                - units:
+                    - "#161\x00"
+                    - "#162\x00"
+                    - "#163\x00"
+                - context_identifier: "'NONE'"
+                  context_type: "'WORKSPACE'"
+        - transformation_operator:
+            sc_fileid: 123
+            sc_function: Item_Defined_Transformation
+            name: "''"
+            description: "''"
+            transform_item_1:
+              sc_fileid: 108
+              sc_function: Axis2_Placement_3d
+              name: "''"
+              location:
+                sc_fileid: 145
+                sc_function: Cartesian_Point
+                name: "''"
+                coordinates:
+                  - 0.
+                  - 0.
+                  - 0.
+              axis:
+                sc_fileid: 146
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - 0.
+                  - 0.
+                  - 1.
+              ref_direction:
+                sc_fileid: 147
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - 1.
+                  - 0.
+                  - 0.
+            transform_item_2:
+              sc_fileid: 110
+              sc_function: Axis2_Placement_3d
+              name: "''"
+              location:
+                sc_fileid: 151
+                sc_function: Cartesian_Point
+                name: "''"
+                coordinates:
+                  - 0.
+                  - 7.8
+                  - 14.
+              axis:
+                sc_fileid: 152
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - -1.
+                  - 0.
+                  - 0.
+              ref_direction:
+                sc_fileid: 153
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - 0.
+                  - -1.
+                  - 0.
+        - ~
     represented_product_relation:
       sc_fileid: 88
       sc_function: Product_Definition_Shape
@@ -72417,6 +73189,48 @@ step:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
         is_complex: true
+        complex_element:
+          - coordinate_space_dimension: 3
+          - uncertainty:
+              - sc_fileid: 159
+                sc_function: Uncertainty_Measure_With_Unit
+                unit_component:
+                  sc_fileid: 161
+                  sc_function: Conversion_Based_Unit
+                  is_complex: true
+                  complex_element:
+                    - name: "'MILLIMETRE'"
+                      conversion_factor:
+                        sc_fileid: 170
+                        sc_function: Length_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 336
+                          sc_function: Length_Unit
+                          is_complex: true
+                          complex_element:
+                            - ~
+                            - dimensions: "*"
+                            - prefix: MILLI
+                              name: METRE
+                    - ~
+                    - dimensions:
+                        sc_fileid: 173
+                        sc_function: Dimensional_Exponents
+                        length_exponent: 1
+                        mass_exponent: 0
+                        time_exponent: 0
+                        electric_current_exponent: 0
+                        thermodynamic_temperature_exponent: 0
+                        amount_of_substance_exponent: 0
+                        luminous_intensity_exponent: 0
+                name: "''"
+                description: "''"
+          - units:
+              - "#161\x00"
+              - "#162\x00"
+              - "#163\x00"
+          - context_identifier: "'NONE'"
+            context_type: "'WORKSPACE'"
   - sc_fileid: 50
     sc_function: Shape_Representation_Relationship
     name: "'NONE'"
@@ -72457,6 +73271,48 @@ step:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
         is_complex: true
+        complex_element:
+          - coordinate_space_dimension: 3
+          - uncertainty:
+              - sc_fileid: 159
+                sc_function: Uncertainty_Measure_With_Unit
+                unit_component:
+                  sc_fileid: 161
+                  sc_function: Conversion_Based_Unit
+                  is_complex: true
+                  complex_element:
+                    - name: "'MILLIMETRE'"
+                      conversion_factor:
+                        sc_fileid: 170
+                        sc_function: Length_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 336
+                          sc_function: Length_Unit
+                          is_complex: true
+                          complex_element:
+                            - ~
+                            - dimensions: "*"
+                            - prefix: MILLI
+                              name: METRE
+                    - ~
+                    - dimensions:
+                        sc_fileid: 173
+                        sc_function: Dimensional_Exponents
+                        length_exponent: 1
+                        mass_exponent: 0
+                        time_exponent: 0
+                        electric_current_exponent: 0
+                        thermodynamic_temperature_exponent: 0
+                        amount_of_substance_exponent: 0
+                        luminous_intensity_exponent: 0
+                name: "''"
+                description: "''"
+          - units:
+              - "#161\x00"
+              - "#162\x00"
+              - "#163\x00"
+          - context_identifier: "'NONE'"
+            context_type: "'WORKSPACE'"
     rep_2:
       sc_fileid: 91
       sc_function: Advanced_Brep_Shape_Representation
@@ -77605,12 +78461,356 @@ step:
         sc_fileid: 52
         sc_function: Geometric_Representation_Context
         is_complex: true
+        complex_element:
+          - coordinate_space_dimension: 3
+          - uncertainty:
+              - sc_fileid: 96
+                sc_function: Uncertainty_Measure_With_Unit
+                unit_component:
+                  sc_fileid: 98
+                  sc_function: Conversion_Based_Unit
+                  is_complex: true
+                  complex_element:
+                    - name: "'MILLIMETRE'"
+                      conversion_factor:
+                        sc_fileid: 134
+                        sc_function: Length_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 167
+                          sc_function: Length_Unit
+                          is_complex: true
+                          complex_element:
+                            - ~
+                            - dimensions: "*"
+                            - prefix: MILLI
+                              name: METRE
+                    - ~
+                    - dimensions:
+                        sc_fileid: 137
+                        sc_function: Dimensional_Exponents
+                        length_exponent: 1
+                        mass_exponent: 0
+                        time_exponent: 0
+                        electric_current_exponent: 0
+                        thermodynamic_temperature_exponent: 0
+                        amount_of_substance_exponent: 0
+                        luminous_intensity_exponent: 0
+                name: "''"
+                description: "''"
+          - units:
+              - "#98\x00"
+              - "#99\x00"
+              - "#100\x00"
+          - context_identifier: "'NONE'"
+            context_type: "'WORKSPACE'"
   - sc_fileid: 51
     sc_function: Context_Dependent_Shape_Representation
     representation_relation:
       sc_fileid: 92
       sc_function: Representation_Relationship
       is_complex: true
+      complex_element:
+        - name: "''"
+          description: "''"
+          rep_1:
+            sc_fileid: 90
+            sc_function: Shape_Representation
+            name: "'_SET-SCREW5-5'"
+            items:
+              - sc_fileid: 108
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 145
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 0.
+                    - 0.
+                axis:
+                  sc_fileid: 146
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - 0.
+                    - 1.
+                ref_direction:
+                  sc_fileid: 147
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 1.
+                    - 0.
+                    - 0.
+            context_of_items:
+              sc_fileid: 112
+              sc_function: Geometric_Representation_Context
+              is_complex: true
+              complex_element:
+                - coordinate_space_dimension: 3
+                - uncertainty:
+                    - sc_fileid: 159
+                      sc_function: Uncertainty_Measure_With_Unit
+                      unit_component:
+                        sc_fileid: 161
+                        sc_function: Conversion_Based_Unit
+                        is_complex: true
+                        complex_element:
+                          - name: "'MILLIMETRE'"
+                            conversion_factor:
+                              sc_fileid: 170
+                              sc_function: Length_Measure_With_Unit
+                              unit_component:
+                                sc_fileid: 336
+                                sc_function: Length_Unit
+                                is_complex: true
+                                complex_element:
+                                  - ~
+                                  - dimensions: "*"
+                                  - prefix: MILLI
+                                    name: METRE
+                          - ~
+                          - dimensions:
+                              sc_fileid: 173
+                              sc_function: Dimensional_Exponents
+                              length_exponent: 1
+                              mass_exponent: 0
+                              time_exponent: 0
+                              electric_current_exponent: 0
+                              thermodynamic_temperature_exponent: 0
+                              amount_of_substance_exponent: 0
+                              luminous_intensity_exponent: 0
+                      name: "''"
+                      description: "''"
+                - units:
+                    - "#161\x00"
+                    - "#162\x00"
+                    - "#163\x00"
+                - context_identifier: "'NONE'"
+                  context_type: "'WORKSPACE'"
+          rep_2:
+            sc_fileid: 69
+            sc_function: Shape_Representation
+            name: "'BSP35B20-N-12'"
+            items:
+              - sc_fileid: 108
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 145
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 0.
+                    - 0.
+                axis:
+                  sc_fileid: 146
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - 0.
+                    - 1.
+                ref_direction:
+                  sc_fileid: 147
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 1.
+                    - 0.
+                    - 0.
+              - sc_fileid: 109
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 148
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 0.
+                    - 0.
+                axis:
+                  sc_fileid: 149
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - 0.
+                    - 1.
+                ref_direction:
+                  sc_fileid: 150
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 1.
+                    - 0.
+                    - 0.
+              - sc_fileid: 110
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 151
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 0.
+                    - 7.8
+                    - 14.
+                axis:
+                  sc_fileid: 152
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - -1.
+                    - 0.
+                    - 0.
+                ref_direction:
+                  sc_fileid: 153
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.
+                    - -1.
+                    - 0.
+              - sc_fileid: 111
+                sc_function: Axis2_Placement_3d
+                name: "''"
+                location:
+                  sc_fileid: 154
+                  sc_function: Cartesian_Point
+                  name: "''"
+                  coordinates:
+                    - 5.19615242270663
+                    - -3.
+                    - 14.
+                axis:
+                  sc_fileid: 155
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - 0.5
+                    - 0.866025403784439
+                    - -0.
+                ref_direction:
+                  sc_fileid: 156
+                  sc_function: Direction
+                  name: "''"
+                  direction_ratios:
+                    - -0.866025403784439
+                    - 0.5
+                    - 0.
+            context_of_items:
+              sc_fileid: 112
+              sc_function: Geometric_Representation_Context
+              is_complex: true
+              complex_element:
+                - coordinate_space_dimension: 3
+                - uncertainty:
+                    - sc_fileid: 159
+                      sc_function: Uncertainty_Measure_With_Unit
+                      unit_component:
+                        sc_fileid: 161
+                        sc_function: Conversion_Based_Unit
+                        is_complex: true
+                        complex_element:
+                          - name: "'MILLIMETRE'"
+                            conversion_factor:
+                              sc_fileid: 170
+                              sc_function: Length_Measure_With_Unit
+                              unit_component:
+                                sc_fileid: 336
+                                sc_function: Length_Unit
+                                is_complex: true
+                                complex_element:
+                                  - ~
+                                  - dimensions: "*"
+                                  - prefix: MILLI
+                                    name: METRE
+                          - ~
+                          - dimensions:
+                              sc_fileid: 173
+                              sc_function: Dimensional_Exponents
+                              length_exponent: 1
+                              mass_exponent: 0
+                              time_exponent: 0
+                              electric_current_exponent: 0
+                              thermodynamic_temperature_exponent: 0
+                              amount_of_substance_exponent: 0
+                              luminous_intensity_exponent: 0
+                      name: "''"
+                      description: "''"
+                - units:
+                    - "#161\x00"
+                    - "#162\x00"
+                    - "#163\x00"
+                - context_identifier: "'NONE'"
+                  context_type: "'WORKSPACE'"
+        - transformation_operator:
+            sc_fileid: 129
+            sc_function: Item_Defined_Transformation
+            name: "''"
+            description: "''"
+            transform_item_1:
+              sc_fileid: 108
+              sc_function: Axis2_Placement_3d
+              name: "''"
+              location:
+                sc_fileid: 145
+                sc_function: Cartesian_Point
+                name: "''"
+                coordinates:
+                  - 0.
+                  - 0.
+                  - 0.
+              axis:
+                sc_fileid: 146
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - 0.
+                  - 0.
+                  - 1.
+              ref_direction:
+                sc_fileid: 147
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - 1.
+                  - 0.
+                  - 0.
+            transform_item_2:
+              sc_fileid: 111
+              sc_function: Axis2_Placement_3d
+              name: "''"
+              location:
+                sc_fileid: 154
+                sc_function: Cartesian_Point
+                name: "''"
+                coordinates:
+                  - 5.19615242270663
+                  - -3.
+                  - 14.
+              axis:
+                sc_fileid: 155
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - 0.5
+                  - 0.866025403784439
+                  - -0.
+              ref_direction:
+                sc_fileid: 156
+                sc_function: Direction
+                name: "''"
+                direction_ratios:
+                  - -0.866025403784439
+                  - 0.5
+                  - 0.
+        - ~
     represented_product_relation:
       sc_fileid: 93
       sc_function: Product_Definition_Shape
@@ -77693,215 +78893,22 @@ step:
               application: "'configuration controlled 3D designs of mechanical parts and assemblies'"
             life_cycle_stage: "'design'"
         reference_designator: ""
-  - sc_fileid: 96
-    sc_function: Uncertainty_Measure_With_Unit
-    unit_component:
-      sc_fileid: 98
-      sc_function: Conversion_Based_Unit
-      is_complex: true
-    name: "''"
-    description: "''"
   - sc_fileid: 99
     sc_function: Named_Unit
     is_complex: true
+    complex_element:
+      - dimensions: "*"
+      - ~
+      - prefix: ""
+        name: RADIAN
   - sc_fileid: 100
     sc_function: Named_Unit
     is_complex: true
-  - sc_fileid: 116
-    sc_function: Item_Defined_Transformation
-    name: "''"
-    description: "''"
-    transform_item_1:
-      sc_fileid: 108
-      sc_function: Axis2_Placement_3d
-      name: "''"
-      location:
-        sc_fileid: 145
-        sc_function: Cartesian_Point
-        name: "''"
-        coordinates:
-          - 0.
-          - 0.
-          - 0.
-      axis:
-        sc_fileid: 146
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - 0.
-          - 0.
-          - 1.
-      ref_direction:
-        sc_fileid: 147
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - 1.
-          - 0.
-          - 0.
-    transform_item_2:
-      sc_fileid: 109
-      sc_function: Axis2_Placement_3d
-      name: "''"
-      location:
-        sc_fileid: 148
-        sc_function: Cartesian_Point
-        name: "''"
-        coordinates:
-          - 0.
-          - 0.
-          - 0.
-      axis:
-        sc_fileid: 149
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - 0.
-          - 0.
-          - 1.
-      ref_direction:
-        sc_fileid: 150
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - 1.
-          - 0.
-          - 0.
-  - sc_fileid: 123
-    sc_function: Item_Defined_Transformation
-    name: "''"
-    description: "''"
-    transform_item_1:
-      sc_fileid: 108
-      sc_function: Axis2_Placement_3d
-      name: "''"
-      location:
-        sc_fileid: 145
-        sc_function: Cartesian_Point
-        name: "''"
-        coordinates:
-          - 0.
-          - 0.
-          - 0.
-      axis:
-        sc_fileid: 146
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - 0.
-          - 0.
-          - 1.
-      ref_direction:
-        sc_fileid: 147
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - 1.
-          - 0.
-          - 0.
-    transform_item_2:
-      sc_fileid: 110
-      sc_function: Axis2_Placement_3d
-      name: "''"
-      location:
-        sc_fileid: 151
-        sc_function: Cartesian_Point
-        name: "''"
-        coordinates:
-          - 0.
-          - 7.8
-          - 14.
-      axis:
-        sc_fileid: 152
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - -1.
-          - 0.
-          - 0.
-      ref_direction:
-        sc_fileid: 153
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - 0.
-          - -1.
-          - 0.
-  - sc_fileid: 129
-    sc_function: Item_Defined_Transformation
-    name: "''"
-    description: "''"
-    transform_item_1:
-      sc_fileid: 108
-      sc_function: Axis2_Placement_3d
-      name: "''"
-      location:
-        sc_fileid: 145
-        sc_function: Cartesian_Point
-        name: "''"
-        coordinates:
-          - 0.
-          - 0.
-          - 0.
-      axis:
-        sc_fileid: 146
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - 0.
-          - 0.
-          - 1.
-      ref_direction:
-        sc_fileid: 147
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - 1.
-          - 0.
-          - 0.
-    transform_item_2:
-      sc_fileid: 111
-      sc_function: Axis2_Placement_3d
-      name: "''"
-      location:
-        sc_fileid: 154
-        sc_function: Cartesian_Point
-        name: "''"
-        coordinates:
-          - 5.19615242270663
-          - -3.
-          - 14.
-      axis:
-        sc_fileid: 155
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - 0.5
-          - 0.866025403784439
-          - -0.
-      ref_direction:
-        sc_fileid: 156
-        sc_function: Direction
-        name: "''"
-        direction_ratios:
-          - -0.866025403784439
-          - 0.5
-          - 0.
-  - sc_fileid: 134
-    sc_function: Length_Measure_With_Unit
-    unit_component:
-      sc_fileid: 167
-      sc_function: Length_Unit
-      is_complex: true
-  - sc_fileid: 137
-    sc_function: Dimensional_Exponents
-    length_exponent: 1
-    mass_exponent: 0
-    time_exponent: 0
-    electric_current_exponent: 0
-    thermodynamic_temperature_exponent: 0
-    amount_of_substance_exponent: 0
-    luminous_intensity_exponent: 0
+    complex_element:
+      - dimensions: "*"
+      - prefix: ""
+        name: STERADIAN
+      - ~
   - sc_fileid: 139
     sc_function: Dimensional_Exponents
     length_exponent: 0
@@ -77911,35 +78918,22 @@ step:
     thermodynamic_temperature_exponent: 0
     amount_of_substance_exponent: 0
     luminous_intensity_exponent: 0
-  - sc_fileid: 159
-    sc_function: Uncertainty_Measure_With_Unit
-    unit_component:
-      sc_fileid: 161
-      sc_function: Conversion_Based_Unit
-      is_complex: true
-    name: "''"
-    description: "''"
   - sc_fileid: 162
     sc_function: Named_Unit
     is_complex: true
+    complex_element:
+      - dimensions: "*"
+      - ~
+      - prefix: ""
+        name: RADIAN
   - sc_fileid: 163
     sc_function: Named_Unit
     is_complex: true
-  - sc_fileid: 170
-    sc_function: Length_Measure_With_Unit
-    unit_component:
-      sc_fileid: 336
-      sc_function: Length_Unit
-      is_complex: true
-  - sc_fileid: 173
-    sc_function: Dimensional_Exponents
-    length_exponent: 1
-    mass_exponent: 0
-    time_exponent: 0
-    electric_current_exponent: 0
-    thermodynamic_temperature_exponent: 0
-    amount_of_substance_exponent: 0
-    luminous_intensity_exponent: 0
+    complex_element:
+      - dimensions: "*"
+      - prefix: ""
+        name: STERADIAN
+      - ~
   - sc_fileid: 175
     sc_function: Dimensional_Exponents
     length_exponent: 0

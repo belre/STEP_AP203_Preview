@@ -65,8 +65,8 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 	if(!is_complex) 
 	{
 		yaml_node["sc_fileid"] = id;
+		yaml_node["sc_function"] = instance->EntityName();
 	}
-	yaml_node["sc_function"] = instance->EntityName();
 
 	auto instance_complex = dynamic_cast<const STEPcomplex*>(instance);
 	if(instance_complex != nullptr && !is_complex)  

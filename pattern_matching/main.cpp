@@ -217,6 +217,13 @@ void CountChildNodeId(YAML::Node& node, std::vector<int>& id_stock)
 	}
 	else if(node.IsMap()) 
 	{
+		if( node["complex_element"] ) 
+		{
+			auto complex_node = node["complex_element"];
+			CountChildNodeId(complex_node, id_stock);
+			return;
+		}
+
 		if (!node["sc_fileid"])
 		{
 			return;
