@@ -89,17 +89,9 @@ include_directories(
 # Application sources and headers
 set(SRCS 
   main.cpp
-  StepComponent.cpp
-  StepComposite.cpp
-  StepDerivedNode.cpp
-  StepNode.cpp
 )
 
 set(HDRS 
-  StepComponent.h
-  StepComposite.h
-  StepDerivedNode.h
-  StepNode.h
 )
 
 add_executable(${PROJECT_NAME} ${SRCS} ${HDRS})

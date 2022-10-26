@@ -269,7 +269,7 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 
 int main( int argv, char** argc)
 {
-	std::string path = ".\\StepData\\BSP35B20-N-12.stp";
+	std::string path = ".\\StepData\\simple_shapes.stp";
 	if(argv >= 2) 
 	{
 		path = argc[1];

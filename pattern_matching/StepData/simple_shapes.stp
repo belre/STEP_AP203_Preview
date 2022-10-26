@@ -1,110 +1,41 @@
 ISO-10303-21;
 HEADER;
-FILE_DESCRIPTION( ( 'STEP AP203' ), '1' );
-FILE_NAME( 'p:/temp/worker_12/temp/exporttempdir_1116_122_Ki9Cs/format_0/BSP35B20-N-12.stp', '2020-10-26T06:46:25', ( 'License CC BY-ND 4.0' ), ( 'CADENAS' ), ' ', 'PARTsolutions', ' ' );
-FILE_SCHEMA( ( 'CONFIG_CONTROL_DESIGN' ) );
+ FILE_DESCRIPTION( ( 'STEP AP203' ), '1' );
+ FILE_NAME( 'simple_shapes.stp', '2022-10-26T06:46:25', ( 'License CC BY 4.0' ), ( '' ), '', '', '' );
+ FILE_SCHEMA( ( 'CONFIG_CONTROL_DESIGN' ) );
 ENDSEC;
+
+
 DATA;
 
-#2=APPLICATION_PROTOCOL_DEFINITION('international standard','config_control_design',1994,#56);
+#1=APPLICATION_PROTOCOL_DEFINITION('international standard','config_control_design',1994, #56);
   #56=APPLICATION_CONTEXT('configuration controlled 3D designs of mechanical parts and assemblies');
 
 #35=SHAPE_DEFINITION_REPRESENTATION(#78,#79);
   #78=PRODUCT_DEFINITION_SHAPE('NONE','NONE',#74);
-    #74=PRODUCT_DEFINITION('_BSP35B20-N-12_b','_BSP35B20-N-12_b',#73,#1);
+    #74=PRODUCT_DEFINITION('simple_shape','simple_shape',#73,#2);
       #73=PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE(' ','NONE',#75,.NOT_KNOWN.);
-        #75=PRODUCT('_BSP35B20-N-12_b','_BSP35B20-N-12_b','PART-_BSP35B20-N-12_b-DESC',(#107));
-          #107=MECHANICAL_CONTEXT('',#56,'mechanical');
-      #1=DESIGN_CONTEXT('',#56,'design');
-  #79=SHAPE_REPRESENTATION('_BSP35B20-N-12_b',(#108),#112);
+        #75=PRODUCT('simple_shape','simple_shape','PART-simple_shape-DESC',(#107));
+          #107=SIMPLE_CONTEXT('',#56,'mechanical');
+      #2=DESIGN_CONTEXT('',#56,'design');
+  #79=SHAPE_REPRESENTATION('simple_shape',(#108),#112);
     #108=AXIS2_PLACEMENT_3D('',#145,#146,#147);
       #145=CARTESIAN_POINT('',(0.,0.,0.));
       #146=DIRECTION('',(0.,0.,1.));
       #147=DIRECTION('',(1.,0.,0.));
-    #112=(
-		GEOMETRIC_REPRESENTATION_CONTEXT(3)
-		GLOBAL_UNCERTAINTY_ASSIGNED_CONTEXT((#159))
-		GLOBAL_UNIT_ASSIGNED_CONTEXT((#161,#162,#163))
-		REPRESENTATION_CONTEXT('NONE','WORKSPACE')
-		);
-      #159=UNCERTAINTY_MEASURE_WITH_UNIT(LENGTH_MEASURE(0.001),#161,'','');
-        #161=(
-			CONVERSION_BASED_UNIT('MILLIMETRE',#170)
-			LENGTH_UNIT()
-			NAMED_UNIT(#173)
-			);
-          #170=LENGTH_MEASURE_WITH_UNIT(LENGTH_MEASURE(1.),#336);
-            #336=(
-			LENGTH_UNIT()
-			NAMED_UNIT(*)
-			SI_UNIT(.MILLI.,.METRE.)
-			);
-          #173=DIMENSIONAL_EXPONENTS(1.,0.,0.,0.,0.,0.,0.);
-      #162=(
-		NAMED_UNIT(*)
-		PLANE_ANGLE_UNIT()
-		SI_UNIT($,.RADIAN.)
-		);
-      #163=(
-		NAMED_UNIT(*)
-		SI_UNIT($,.STERADIAN.)
-		SOLID_ANGLE_UNIT()
-		);
+    #112=GEOMETRIC_REPRESENTATION_CONTEXT(3)
+
 
 #36=SHAPE_REPRESENTATION_RELATIONSHIP('NONE','NONE',#79,#80);
-  #80=ADVANCED_BREP_SHAPE_REPRESENTATION('_BSP35B20-N-12_b',(#119),#52);
-    #119=MANIFOLD_SOLID_BREP('_BSP35B20-N-12_b',#165);
+  #80=ADVANCED_BREP_SHAPE_REPRESENTATION('simple_shape',(#119),#52);
+    #119=MANIFOLD_SOLID_BREP('simple_shape',#165);
       #165=CLOSED_SHELL('',(#261));
         #261=ADVANCED_FACE('',(#507),#508,.T.);
-          #507=FACE_OUTER_BOUND('',#833,.T.);
-            #833=EDGE_LOOP('',(#1685,#1686,#1687,#1688));
-              #1685=ORIENTED_EDGE('',*,*,#2558,.F.);
-                #2558=EDGE_CURVE('',#3185,#3161,#3187,.T.);
-                  #3185=VERTEX_POINT('',#4749);
-                    #4749=CARTESIAN_POINT('',(20.289959903083,-26.0253247267212,3.02385093961796));
-                  #3161=VERTEX_POINT('',#4683);
-                    #4683=CARTESIAN_POINT('',(20.289959903083,-26.0253247267212,1.27614906038204));
-                  #3187=LINE('',#4756,#4757);
-                    #4756=CARTESIAN_POINT('',(20.289959903083,-26.0253247267212,0.));
-                    #4757=VECTOR('',#5622,1000.);
-                      #5622=DIRECTION('',(-0.,-0.,-1.));
-              #1686=ORIENTED_EDGE('',*,*,#2636,.T.);
-                #2636=EDGE_CURVE('',#3185,#3180,#3322,.T.);
-                  #3185=VERTEX_POINT('',#4749);
-                    #4749=CARTESIAN_POINT('',(20.289959903083,-26.0253247267212,3.02385093961796));
-                  #3180=VERTEX_POINT('',#4737);
-                    #4737=CARTESIAN_POINT('',(18.4816122448067,-27.3391662058778,3.02385093961796));
-                  #3322=CIRCLE('',#5167,33.);
-                    #5167=AXIS2_PLACEMENT_3D('',#5670,#5671,#5672);
-                      #5670=CARTESIAN_POINT('',(0.,0.,3.02385093961796));
-                      #5671=DIRECTION('',(-0.,0.,-1.));
-                      #5672=DIRECTION('',(-1.,0.,0.));
-              #1687=ORIENTED_EDGE('',*,*,#2554,.F.);
-                #2554=EDGE_CURVE('',#3163,#3180,#3181,.F.);
-                  #3163=VERTEX_POINT('',#4690);
-                    #4690=CARTESIAN_POINT('',(18.4816122448067,-27.3391662058778,1.27614906038204));
-                  #3180=VERTEX_POINT('',#4737);
-                    #4737=CARTESIAN_POINT('',(18.4816122448067,-27.3391662058778,3.02385093961796));
-                  #3181=LINE('',#4738,#4739);
-                    #4738=CARTESIAN_POINT('',(18.4816122448067,-27.3391662058778,0.));
-                    #4739=VECTOR('',#5620,1000.);
-                      #5620=DIRECTION('',(-0.,-0.,-1.));
-              #1688=ORIENTED_EDGE('',*,*,#2544,.F.);
-                #2544=EDGE_CURVE('',#3161,#3163,#3164,.T.);
-                  #3161=VERTEX_POINT('',#4683);
-                    #4683=CARTESIAN_POINT('',(20.289959903083,-26.0253247267212,1.27614906038204));
-                  #3163=VERTEX_POINT('',#4690);
-                    #4690=CARTESIAN_POINT('',(18.4816122448067,-27.3391662058778,1.27614906038204));
-                  #3164=CIRCLE('',#4691,33.);
-                    #4691=AXIS2_PLACEMENT_3D('',#5611,#5612,#5613);
-                      #5611=CARTESIAN_POINT('',(0.,0.,1.27614906038204));
-                      #5612=DIRECTION('',(-0.,0.,-1.));
-                      #5613=DIRECTION('',(-1.,0.,0.));
-          #508=CYLINDRICAL_SURFACE('',#834,33.);
-            #834=AXIS2_PLACEMENT_3D('',#1689,#1690,#1691);
-              #1689=CARTESIAN_POINT('',(0.,0.,0.));
-              #1690=DIRECTION('',(0.,-0.,1.));
-              #1691=DIRECTION('',(-1.,0.,0.));
+		    #508=PLANE('',#10001);
+            #10001=AXIS2_PLACEMENT_3D('',#10002,#10003,#10004);
+              #10002=CARTESIAN_POINT('',(4.5,-5.88111794481757,16.4821858902011));
+              #10003=DIRECTION('',(0.,0.988739005626582,-0.149650187946951));
+              #10004=DIRECTION('',(0.,0.149650187946951,0.988739005626582));
 
     #52=(
 		GEOMETRIC_REPRESENTATION_CONTEXT(3)
