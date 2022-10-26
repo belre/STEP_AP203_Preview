@@ -246,7 +246,7 @@ void CountChildNodeId(YAML::Node& node, std::vector<int>& id_stock)
 int main(int argv, char** argc)
 {
 	std::string step_path = ".\\StepData\\BSP35B20-N-12.stp";
-	std::string yaml_path = ".\\YamlData\\BSP35B20-N-12.yaml";
+	std::string yaml_path = ".\\YamlData\\BSP35B20-N-12-gear.yaml";
 
 	if (argv >= 3)
 	{
@@ -302,8 +302,7 @@ int main(int argv, char** argc)
 		}
 
 		if(file_schema != "Shape_Definition_Representation" && 
-			 file_schema != "Shape_Representation_Relationship" &&
-			 file_schema != "Product_Definition_Formation_With_Specified_Source") 
+			 file_schema != "Shape_Representation_Relationship") 
 		{
 			continue;
 		}
