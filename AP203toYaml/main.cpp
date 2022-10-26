@@ -146,10 +146,8 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 		{
 			auto head_node = attr_aggr->GetHead();
 
-			std::vector<std::string> sub_node;
-			std::vector<YAML::Node> select_node;
-			std::vector<YAML::Node> aggr_node;
-			std::map<std::string, YAML::Node> named_map;
+			std::vector<std::string> sub_node_vec;
+			std::vector<YAML::Node> aggr_node_vec;
 
 			for (auto node = head_node; node != nullptr; node = node->next)
 			{
@@ -165,11 +163,7 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 					YAML::Node yaml_child_node;
 					AddNode(inst_mgr, stock_id, inst, debug_log, yaml_child_node, loop_count + 1, false);
 
-					aggr_node.push_back(yaml_child_node);
-
-					std::stringstream ss_str;
-					ss_str << "#" << inst->GetFileId();
-					named_map[ss_str.str()] = yaml_child_node;
+					aggr_node_vec.push_back(yaml_child_node);
 				}
 				else if(select_node != nullptr) 
 				{
@@ -177,7 +171,7 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 
 					std::string str;
 					conv_raw_node->asStr(str);
-					sub_node.push_back(str);
+					sub_node_vec.push_back(str);
 				}
 				else if(conv_raw_node != nullptr) 
 				{
@@ -185,7 +179,7 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 
 					std::string str;
 					conv_raw_node->asStr(str);
-					sub_node.push_back(str);
+					sub_node_vec.push_back(str);
 				}
 				else 
 				{
@@ -195,30 +189,22 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 
 			if(is_complex) 
 			{
-				if (aggr_node.size() != 0)
+				if (aggr_node_vec.size() != 0)
 				{
-					yaml_node[attribute->Name()]["aggregate_element"] = aggr_node;
+					yaml_node[attribute->Name()]["aggregate_element"] = aggr_node_vec;
 				}
-				else if(select_node.size() != 0) 
+				else if (sub_node_vec.size() != 0)
 				{
-					yaml_node[attribute->Name()]["aggregate_element"] = select_node;
-				}
-				else if (sub_node.size() != 0)
-				{
-					yaml_node[attribute->Name()]["aggregate_element"] = sub_node;
+					yaml_node[attribute->Name()]["aggregate_element"] = sub_node_vec;
 				}
 			}
-			else if(aggr_node.size() != 0 )
+			else if(aggr_node_vec.size() != 0 )
 			{
-				yaml_node[attribute->Name()] = aggr_node;
+				yaml_node[attribute->Name()] = aggr_node_vec;
 			}
-			else if (select_node.size() != 0)
+			else if(sub_node_vec.size() != 0) 
 			{
-				yaml_node[attribute->Name()] = select_node;
-			}
-			else if(sub_node.size() != 0) 
-			{
-				yaml_node[attribute->Name()] = sub_node;
+				yaml_node[attribute->Name()] = sub_node_vec;
 			}
 		}
 		else if(attr_select != nullptr) 
