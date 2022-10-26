@@ -13,13 +13,27 @@
 
 #include <yaml-cpp/yaml.h>
 
-void CountChildNodeId(YAML::Node& node, std::vector<int>& id_stock)
+
+struct DepthCount
+{
+public:
+	int _id;
+	int _depth;
+
+public:
+	DepthCount(int id, int depth) : _id(id), _depth(depth)
+	{
+		
+	}
+};
+
+void CountChildNodeId(int depth, YAML::Node& node, std::vector<DepthCount> &depth_stock)
 {
 	if(node.IsSequence())
 	{
 		for (auto tmp = node.begin(); tmp != node.end(); ++tmp)
 		{
-			CountChildNodeId(*tmp, id_stock);
+			CountChildNodeId(depth, *tmp, depth_stock);
 		}
 	}
 	else if(node.IsMap()) 
@@ -27,7 +41,9 @@ void CountChildNodeId(YAML::Node& node, std::vector<int>& id_stock)
 		if (node["sc_fileid"])
 		{
 			int file_id = node["sc_fileid"].as<int>();
-			id_stock.push_back(file_id);
+			depth_stock.emplace_back(DepthCount(file_id, depth));
+
+			depth++;
 		}
 		
 		for (auto tmp = node.begin(); tmp != node.end(); ++tmp)
@@ -35,12 +51,12 @@ void CountChildNodeId(YAML::Node& node, std::vector<int>& id_stock)
 			auto key = tmp->first;
 			auto value = tmp->second;
 			
-			CountChildNodeId(value, id_stock);
+			CountChildNodeId(depth, value, depth_stock);
 		}
 	}
 }
 
-void ExtractUnfilteredId(InstMgr* instance_list, YAML::Node yaml_map, std::vector<int>& unregistered_id)
+void ExtractUnfilteredId(InstMgr* instance_list, YAML::Node yaml_map, std::vector<int>& unregistered_id, std::vector<DepthCount> &all_depth_count)
 {
 	unregistered_id.clear();
 	auto step_root = yaml_map["step"];
@@ -62,13 +78,22 @@ void ExtractUnfilteredId(InstMgr* instance_list, YAML::Node yaml_map, std::vecto
 		// read valid node recursively
 		YAML::Node tmp_node = *tmp;
 		std::vector<int> stock_id;
-		CountChildNodeId(tmp_node, stock_id);
+		std::vector<DepthCount> depth_count;
+		CountChildNodeId(0, tmp_node,  depth_count);
 
+		for(auto iter = depth_count.begin(); iter != depth_count.end(); iter++) 
+		{
+			stock_id.push_back(iter->_id);
+		}
+
+		
 		// Remove duplicated id
 		std::copy_if(stock_id.begin(), stock_id.end(), std::back_inserter(all_stock_id),
 			[&all_stock_id](const int& i) {
 				return std::find(all_stock_id.begin(), all_stock_id.end(), i) == all_stock_id.end();
 			});
+
+		std::copy(depth_count.begin(), depth_count.end(), std::back_inserter(all_depth_count));
 	}
 	std::sort(all_stock_id.begin(), all_stock_id.end());
 
@@ -128,8 +153,38 @@ int main(int argv, char** argc)
 
 	// Project STEP File by YAML
 	std::vector<int> unfiltered_id;
-	ExtractUnfilteredId(instance_list, yaml_map, unfiltered_id);
+	std::vector<DepthCount> depth_count;
+	ExtractUnfilteredId(instance_list, yaml_map, unfiltered_id, depth_count);
 
+
+	// generate including indent file
+	std::ofstream ofs_indent("indent.step.txt");
+	if (!ofs_indent)
+	{
+		std::cerr << "indent.step.txt create error" << std::endl;
+		return 3;
+	}
+
+	for (auto iter = depth_count.begin(); iter != depth_count.end(); ++iter)
+	{
+		for(int j = 0 ; j < iter->_depth; j++ ) 
+		{
+			ofs_indent << "  ";
+		}
+
+		auto node = instance_list->FindFileId(iter->_id);
+		if(node == nullptr) 
+		{
+			ofs_indent << "(" << iter->_id << "):Node Not Detected" << std::endl;
+			continue;
+		}
+
+		auto inst = node->GetApplication_instance();
+
+		inst->STEPwrite(ofs_indent);
+	}
+
+	ofs_indent.close();
 
 
 	// Remove from instmgr
@@ -138,8 +193,9 @@ int main(int argv, char** argc)
 		auto node = instance_list->FindFileId(*iter);
 		instance_list->Delete(node);
 	}
-	sfile->WriteExchangeFile("test.step");
+	sfile->WriteExchangeFile("project.step");
 
+	
 
 	return 0;
 }
