@@ -10,29 +10,24 @@ step:
       application: "'configuration controlled 3D designs of mechanical parts and assemblies'"
   - sc_fileid: 35
     sc_function: Shape_Definition_Representation
-    ## --- https://www.steptools.com/stds/stp_aim/html/t_shape_definition_representation.html --- ##
     definition:
       sc_fileid: 78
       sc_function: Product_Definition_Shape
-      ## --- https://www.steptools.com/stds/stp_aim/html/t_product_definition_shape.html --- ##
       name: "'NONE'"
       description: "'NONE'"
       definition:
         sc_fileid: 74
         sc_function: Product_Definition
-        ## --- https://www.steptools.com/stds/stp_aim/html/t_product_definition.html --- ##
         id: "'_BSP35B20-N-12_b'"
         description: "'_BSP35B20-N-12_b'"
         formation:
           sc_fileid: 73
           sc_function: Product_Definition_Formation_With_Specified_Source
-          ## --- https://www.steptools.com/stds/stp_aim/html/t_product_definition_formation_with_specified_source.html --- ##
           id: "' '"
           description: "'NONE'"
           of_product:
             sc_fileid: 75
             sc_function: Product
-            ## --- https://www.steptools.com/stds/stp_aim/html/t_product.html --- ##
             id: "'_BSP35B20-N-12_b'"
             name: "'_BSP35B20-N-12_b'"
             description: "'PART-_BSP35B20-N-12_b-DESC'"
@@ -43,7 +38,6 @@ step:
                 frame_of_reference:
                   sc_fileid: 56
                   sc_function: Application_Context
-                  ## --- https://www.steptools.com/stds/stp_aim/html/t_application_context.html --- ##
                   application: "'configuration controlled 3D designs of mechanical parts and assemblies'"
                 discipline_type: "'mechanical'"
           make_or_buy: NOT_KNOWN
@@ -54,7 +48,6 @@ step:
           frame_of_reference:
             sc_fileid: 56
             sc_function: Application_Context
-            ## --- https://www.steptools.com/stds/stp_aim/html/t_application_context.html --- ##
             application: "'configuration controlled 3D designs of mechanical parts and assemblies'"
           life_cycle_stage: "'design'"
     used_representation:
@@ -92,33 +85,36 @@ step:
       context_of_items:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
-        is_complex: true
         complex_element:
-          - coordinate_space_dimension: 3
-          - uncertainty:
+          - sc_function: Geometric_Representation_Context
+            coordinate_space_dimension: 3
+          - sc_function: Global_Uncertainty_Assigned_Context
+            uncertainty:
               aggregate_element:
                 - sc_fileid: 159
                   sc_function: Uncertainty_Measure_With_Unit
                   unit_component:
                     sc_fileid: 161
                     sc_function: Conversion_Based_Unit
-                    is_complex: true
                     complex_element:
-                      - name: "'MILLIMETRE'"
+                      - sc_function: Conversion_Based_Unit
+                        name: "'MILLIMETRE'"
                         conversion_factor:
                           sc_fileid: 170
                           sc_function: Length_Measure_With_Unit
                           unit_component:
                             sc_fileid: 336
                             sc_function: Length_Unit
-                            is_complex: true
                             complex_element:
-                              - ~
-                              - dimensions: "*"
-                              - prefix: MILLI
+                              - sc_function: Length_Unit
+                              - sc_function: Named_Unit
+                                dimensions: "*"
+                              - sc_function: Si_Unit
+                                prefix: MILLI
                                 name: METRE
-                      - ~
-                      - dimensions:
+                      - sc_function: Length_Unit
+                      - sc_function: Named_Unit
+                        dimensions:
                           sc_fileid: 173
                           sc_function: Dimensional_Exponents
                           length_exponent: 1
@@ -130,10 +126,59 @@ step:
                           luminous_intensity_exponent: 0
                   name: "''"
                   description: "''"
-          - units:
+          - sc_function: Global_Unit_Assigned_Context
+            units:
               aggregate_element:
-                []
-          - context_identifier: "'NONE'"
+                - sc_fileid: 161
+                  sc_function: Conversion_Based_Unit
+                  complex_element:
+                    - sc_function: Conversion_Based_Unit
+                      name: "'MILLIMETRE'"
+                      conversion_factor:
+                        sc_fileid: 170
+                        sc_function: Length_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 336
+                          sc_function: Length_Unit
+                          complex_element:
+                            - sc_function: Length_Unit
+                            - sc_function: Named_Unit
+                              dimensions: "*"
+                            - sc_function: Si_Unit
+                              prefix: MILLI
+                              name: METRE
+                    - sc_function: Length_Unit
+                    - sc_function: Named_Unit
+                      dimensions:
+                        sc_fileid: 173
+                        sc_function: Dimensional_Exponents
+                        length_exponent: 1
+                        mass_exponent: 0
+                        time_exponent: 0
+                        electric_current_exponent: 0
+                        thermodynamic_temperature_exponent: 0
+                        amount_of_substance_exponent: 0
+                        luminous_intensity_exponent: 0
+                - sc_fileid: 162
+                  sc_function: Named_Unit
+                  complex_element:
+                    - sc_function: Named_Unit
+                      dimensions: "*"
+                    - sc_function: Plane_Angle_Unit
+                    - sc_function: Si_Unit
+                      prefix: ""
+                      name: RADIAN
+                - sc_fileid: 163
+                  sc_function: Named_Unit
+                  complex_element:
+                    - sc_function: Named_Unit
+                      dimensions: "*"
+                    - sc_function: Si_Unit
+                      prefix: ""
+                      name: STERADIAN
+                    - sc_function: Solid_Angle_Unit
+          - sc_function: Representation_Context
+            context_identifier: "'NONE'"
             context_type: "'WORKSPACE'"
   - sc_fileid: 36
     sc_function: Shape_Representation_Relationship
@@ -174,33 +219,36 @@ step:
       context_of_items:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
-        is_complex: true
         complex_element:
-          - coordinate_space_dimension: 3
-          - uncertainty:
+          - sc_function: Geometric_Representation_Context
+            coordinate_space_dimension: 3
+          - sc_function: Global_Uncertainty_Assigned_Context
+            uncertainty:
               aggregate_element:
                 - sc_fileid: 159
                   sc_function: Uncertainty_Measure_With_Unit
                   unit_component:
                     sc_fileid: 161
                     sc_function: Conversion_Based_Unit
-                    is_complex: true
                     complex_element:
-                      - name: "'MILLIMETRE'"
+                      - sc_function: Conversion_Based_Unit
+                        name: "'MILLIMETRE'"
                         conversion_factor:
                           sc_fileid: 170
                           sc_function: Length_Measure_With_Unit
                           unit_component:
                             sc_fileid: 336
                             sc_function: Length_Unit
-                            is_complex: true
                             complex_element:
-                              - ~
-                              - dimensions: "*"
-                              - prefix: MILLI
+                              - sc_function: Length_Unit
+                              - sc_function: Named_Unit
+                                dimensions: "*"
+                              - sc_function: Si_Unit
+                                prefix: MILLI
                                 name: METRE
-                      - ~
-                      - dimensions:
+                      - sc_function: Length_Unit
+                      - sc_function: Named_Unit
+                        dimensions:
                           sc_fileid: 173
                           sc_function: Dimensional_Exponents
                           length_exponent: 1
@@ -212,10 +260,59 @@ step:
                           luminous_intensity_exponent: 0
                   name: "''"
                   description: "''"
-          - units:
+          - sc_function: Global_Unit_Assigned_Context
+            units:
               aggregate_element:
-                []
-          - context_identifier: "'NONE'"
+                - sc_fileid: 161
+                  sc_function: Conversion_Based_Unit
+                  complex_element:
+                    - sc_function: Conversion_Based_Unit
+                      name: "'MILLIMETRE'"
+                      conversion_factor:
+                        sc_fileid: 170
+                        sc_function: Length_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 336
+                          sc_function: Length_Unit
+                          complex_element:
+                            - sc_function: Length_Unit
+                            - sc_function: Named_Unit
+                              dimensions: "*"
+                            - sc_function: Si_Unit
+                              prefix: MILLI
+                              name: METRE
+                    - sc_function: Length_Unit
+                    - sc_function: Named_Unit
+                      dimensions:
+                        sc_fileid: 173
+                        sc_function: Dimensional_Exponents
+                        length_exponent: 1
+                        mass_exponent: 0
+                        time_exponent: 0
+                        electric_current_exponent: 0
+                        thermodynamic_temperature_exponent: 0
+                        amount_of_substance_exponent: 0
+                        luminous_intensity_exponent: 0
+                - sc_fileid: 162
+                  sc_function: Named_Unit
+                  complex_element:
+                    - sc_function: Named_Unit
+                      dimensions: "*"
+                    - sc_function: Plane_Angle_Unit
+                    - sc_function: Si_Unit
+                      prefix: ""
+                      name: RADIAN
+                - sc_fileid: 163
+                  sc_function: Named_Unit
+                  complex_element:
+                    - sc_function: Named_Unit
+                      dimensions: "*"
+                    - sc_function: Si_Unit
+                      prefix: ""
+                      name: STERADIAN
+                    - sc_function: Solid_Angle_Unit
+          - sc_function: Representation_Context
+            context_identifier: "'NONE'"
             context_type: "'WORKSPACE'"
     rep_2:
       sc_fileid: 80
@@ -71245,33 +71342,36 @@ step:
       context_of_items:
         sc_fileid: 52
         sc_function: Geometric_Representation_Context
-        is_complex: true
         complex_element:
-          - coordinate_space_dimension: 3
-          - uncertainty:
+          - sc_function: Geometric_Representation_Context
+            coordinate_space_dimension: 3
+          - sc_function: Global_Uncertainty_Assigned_Context
+            uncertainty:
               aggregate_element:
                 - sc_fileid: 96
                   sc_function: Uncertainty_Measure_With_Unit
                   unit_component:
                     sc_fileid: 98
                     sc_function: Conversion_Based_Unit
-                    is_complex: true
                     complex_element:
-                      - name: "'MILLIMETRE'"
+                      - sc_function: Conversion_Based_Unit
+                        name: "'MILLIMETRE'"
                         conversion_factor:
                           sc_fileid: 134
                           sc_function: Length_Measure_With_Unit
                           unit_component:
                             sc_fileid: 167
                             sc_function: Length_Unit
-                            is_complex: true
                             complex_element:
-                              - ~
-                              - dimensions: "*"
-                              - prefix: MILLI
+                              - sc_function: Length_Unit
+                              - sc_function: Named_Unit
+                                dimensions: "*"
+                              - sc_function: Si_Unit
+                                prefix: MILLI
                                 name: METRE
-                      - ~
-                      - dimensions:
+                      - sc_function: Length_Unit
+                      - sc_function: Named_Unit
+                        dimensions:
                           sc_fileid: 137
                           sc_function: Dimensional_Exponents
                           length_exponent: 1
@@ -71283,9 +71383,57 @@ step:
                           luminous_intensity_exponent: 0
                   name: "''"
                   description: "''"
-          - units:
+          - sc_function: Global_Unit_Assigned_Context
+            units:
               aggregate_element:
-                []
-          - context_identifier: "'NONE'"
+                - sc_fileid: 98
+                  sc_function: Conversion_Based_Unit
+                  complex_element:
+                    - sc_function: Conversion_Based_Unit
+                      name: "'MILLIMETRE'"
+                      conversion_factor:
+                        sc_fileid: 134
+                        sc_function: Length_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 167
+                          sc_function: Length_Unit
+                          complex_element:
+                            - sc_function: Length_Unit
+                            - sc_function: Named_Unit
+                              dimensions: "*"
+                            - sc_function: Si_Unit
+                              prefix: MILLI
+                              name: METRE
+                    - sc_function: Length_Unit
+                    - sc_function: Named_Unit
+                      dimensions:
+                        sc_fileid: 137
+                        sc_function: Dimensional_Exponents
+                        length_exponent: 1
+                        mass_exponent: 0
+                        time_exponent: 0
+                        electric_current_exponent: 0
+                        thermodynamic_temperature_exponent: 0
+                        amount_of_substance_exponent: 0
+                        luminous_intensity_exponent: 0
+                - sc_fileid: 99
+                  sc_function: Named_Unit
+                  complex_element:
+                    - sc_function: Named_Unit
+                      dimensions: "*"
+                    - sc_function: Plane_Angle_Unit
+                    - sc_function: Si_Unit
+                      prefix: ""
+                      name: RADIAN
+                - sc_fileid: 100
+                  sc_function: Named_Unit
+                  complex_element:
+                    - sc_function: Named_Unit
+                      dimensions: "*"
+                    - sc_function: Si_Unit
+                      prefix: ""
+                      name: STERADIAN
+                    - sc_function: Solid_Angle_Unit
+          - sc_function: Representation_Context
+            context_identifier: "'NONE'"
             context_type: "'WORKSPACE'"
-            
