@@ -505,43 +505,45 @@ step:
         complex_element:
           - coordinate_space_dimension: 3
           - uncertainty:
-              - sc_fileid: 159
-                sc_function: Uncertainty_Measure_With_Unit
-                unit_component:
-                  sc_fileid: 161
-                  sc_function: Conversion_Based_Unit
-                  is_complex: true
-                  complex_element:
-                    - name: "'MILLIMETRE'"
-                      conversion_factor:
-                        sc_fileid: 170
-                        sc_function: Length_Measure_With_Unit
-                        unit_component:
-                          sc_fileid: 336
-                          sc_function: Length_Unit
-                          is_complex: true
-                          complex_element:
-                            - ~
-                            - dimensions: "*"
-                            - prefix: MILLI
-                              name: METRE
-                    - ~
-                    - dimensions:
-                        sc_fileid: 173
-                        sc_function: Dimensional_Exponents
-                        length_exponent: 1
-                        mass_exponent: 0
-                        time_exponent: 0
-                        electric_current_exponent: 0
-                        thermodynamic_temperature_exponent: 0
-                        amount_of_substance_exponent: 0
-                        luminous_intensity_exponent: 0
-                name: "''"
-                description: "''"
+              aggregate_element:
+                - sc_fileid: 159
+                  sc_function: Uncertainty_Measure_With_Unit
+                  unit_component:
+                    sc_fileid: 161
+                    sc_function: Conversion_Based_Unit
+                    is_complex: true
+                    complex_element:
+                      - name: "'MILLIMETRE'"
+                        conversion_factor:
+                          sc_fileid: 170
+                          sc_function: Length_Measure_With_Unit
+                          unit_component:
+                            sc_fileid: 336
+                            sc_function: Length_Unit
+                            is_complex: true
+                            complex_element:
+                              - ~
+                              - dimensions: "*"
+                              - prefix: MILLI
+                                name: METRE
+                      - ~
+                      - dimensions:
+                          sc_fileid: 173
+                          sc_function: Dimensional_Exponents
+                          length_exponent: 1
+                          mass_exponent: 0
+                          time_exponent: 0
+                          electric_current_exponent: 0
+                          thermodynamic_temperature_exponent: 0
+                          amount_of_substance_exponent: 0
+                          luminous_intensity_exponent: 0
+                  name: "''"
+                  description: "''"
           - units:
-              - "#161\x00"
-              - "#162\x00"
-              - "#163\x00"
+              aggregate_element:
+                - "#161\x00"
+                - "#162\x00"
+                - "#163\x00"
           - context_identifier: "'NONE'"
             context_type: "'WORKSPACE'"
   - sc_fileid: 23
@@ -849,43 +851,45 @@ step:
               complex_element:
                 - coordinate_space_dimension: 3
                 - uncertainty:
-                    - sc_fileid: 159
-                      sc_function: Uncertainty_Measure_With_Unit
-                      unit_component:
-                        sc_fileid: 161
-                        sc_function: Conversion_Based_Unit
-                        is_complex: true
-                        complex_element:
-                          - name: "'MILLIMETRE'"
-                            conversion_factor:
-                              sc_fileid: 170
-                              sc_function: Length_Measure_With_Unit
-                              unit_component:
-                                sc_fileid: 336
-                                sc_function: Length_Unit
-                                is_complex: true
-                                complex_element:
-                                  - ~
-                                  - dimensions: "*"
-                                  - prefix: MILLI
-                                    name: METRE
-                          - ~
-                          - dimensions:
-                              sc_fileid: 173
-                              sc_function: Dimensional_Exponents
-                              length_exponent: 1
-                              mass_exponent: 0
-                              time_exponent: 0
-                              electric_current_exponent: 0
-                              thermodynamic_temperature_exponent: 0
-                              amount_of_substance_exponent: 0
-                              luminous_intensity_exponent: 0
-                      name: "''"
-                      description: "''"
+                    aggregate_element:
+                      - sc_fileid: 159
+                        sc_function: Uncertainty_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 161
+                          sc_function: Conversion_Based_Unit
+                          is_complex: true
+                          complex_element:
+                            - name: "'MILLIMETRE'"
+                              conversion_factor:
+                                sc_fileid: 170
+                                sc_function: Length_Measure_With_Unit
+                                unit_component:
+                                  sc_fileid: 336
+                                  sc_function: Length_Unit
+                                  is_complex: true
+                                  complex_element:
+                                    - ~
+                                    - dimensions: "*"
+                                    - prefix: MILLI
+                                      name: METRE
+                            - ~
+                            - dimensions:
+                                sc_fileid: 173
+                                sc_function: Dimensional_Exponents
+                                length_exponent: 1
+                                mass_exponent: 0
+                                time_exponent: 0
+                                electric_current_exponent: 0
+                                thermodynamic_temperature_exponent: 0
+                                amount_of_substance_exponent: 0
+                                luminous_intensity_exponent: 0
+                        name: "''"
+                        description: "''"
                 - units:
-                    - "#161\x00"
-                    - "#162\x00"
-                    - "#163\x00"
+                    aggregate_element:
+                      - "#161\x00"
+                      - "#162\x00"
+                      - "#163\x00"
                 - context_identifier: "'NONE'"
                   context_type: "'WORKSPACE'"
           rep_2:
@@ -1008,43 +1012,45 @@ step:
               complex_element:
                 - coordinate_space_dimension: 3
                 - uncertainty:
-                    - sc_fileid: 159
-                      sc_function: Uncertainty_Measure_With_Unit
-                      unit_component:
-                        sc_fileid: 161
-                        sc_function: Conversion_Based_Unit
-                        is_complex: true
-                        complex_element:
-                          - name: "'MILLIMETRE'"
-                            conversion_factor:
-                              sc_fileid: 170
-                              sc_function: Length_Measure_With_Unit
-                              unit_component:
-                                sc_fileid: 336
-                                sc_function: Length_Unit
-                                is_complex: true
-                                complex_element:
-                                  - ~
-                                  - dimensions: "*"
-                                  - prefix: MILLI
-                                    name: METRE
-                          - ~
-                          - dimensions:
-                              sc_fileid: 173
-                              sc_function: Dimensional_Exponents
-                              length_exponent: 1
-                              mass_exponent: 0
-                              time_exponent: 0
-                              electric_current_exponent: 0
-                              thermodynamic_temperature_exponent: 0
-                              amount_of_substance_exponent: 0
-                              luminous_intensity_exponent: 0
-                      name: "''"
-                      description: "''"
+                    aggregate_element:
+                      - sc_fileid: 159
+                        sc_function: Uncertainty_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 161
+                          sc_function: Conversion_Based_Unit
+                          is_complex: true
+                          complex_element:
+                            - name: "'MILLIMETRE'"
+                              conversion_factor:
+                                sc_fileid: 170
+                                sc_function: Length_Measure_With_Unit
+                                unit_component:
+                                  sc_fileid: 336
+                                  sc_function: Length_Unit
+                                  is_complex: true
+                                  complex_element:
+                                    - ~
+                                    - dimensions: "*"
+                                    - prefix: MILLI
+                                      name: METRE
+                            - ~
+                            - dimensions:
+                                sc_fileid: 173
+                                sc_function: Dimensional_Exponents
+                                length_exponent: 1
+                                mass_exponent: 0
+                                time_exponent: 0
+                                electric_current_exponent: 0
+                                thermodynamic_temperature_exponent: 0
+                                amount_of_substance_exponent: 0
+                                luminous_intensity_exponent: 0
+                        name: "''"
+                        description: "''"
                 - units:
-                    - "#161\x00"
-                    - "#162\x00"
-                    - "#163\x00"
+                    aggregate_element:
+                      - "#161\x00"
+                      - "#162\x00"
+                      - "#163\x00"
                 - context_identifier: "'NONE'"
                   context_type: "'WORKSPACE'"
         - transformation_operator:
@@ -1272,43 +1278,45 @@ step:
         complex_element:
           - coordinate_space_dimension: 3
           - uncertainty:
-              - sc_fileid: 159
-                sc_function: Uncertainty_Measure_With_Unit
-                unit_component:
-                  sc_fileid: 161
-                  sc_function: Conversion_Based_Unit
-                  is_complex: true
-                  complex_element:
-                    - name: "'MILLIMETRE'"
-                      conversion_factor:
-                        sc_fileid: 170
-                        sc_function: Length_Measure_With_Unit
-                        unit_component:
-                          sc_fileid: 336
-                          sc_function: Length_Unit
-                          is_complex: true
-                          complex_element:
-                            - ~
-                            - dimensions: "*"
-                            - prefix: MILLI
-                              name: METRE
-                    - ~
-                    - dimensions:
-                        sc_fileid: 173
-                        sc_function: Dimensional_Exponents
-                        length_exponent: 1
-                        mass_exponent: 0
-                        time_exponent: 0
-                        electric_current_exponent: 0
-                        thermodynamic_temperature_exponent: 0
-                        amount_of_substance_exponent: 0
-                        luminous_intensity_exponent: 0
-                name: "''"
-                description: "''"
+              aggregate_element:
+                - sc_fileid: 159
+                  sc_function: Uncertainty_Measure_With_Unit
+                  unit_component:
+                    sc_fileid: 161
+                    sc_function: Conversion_Based_Unit
+                    is_complex: true
+                    complex_element:
+                      - name: "'MILLIMETRE'"
+                        conversion_factor:
+                          sc_fileid: 170
+                          sc_function: Length_Measure_With_Unit
+                          unit_component:
+                            sc_fileid: 336
+                            sc_function: Length_Unit
+                            is_complex: true
+                            complex_element:
+                              - ~
+                              - dimensions: "*"
+                              - prefix: MILLI
+                                name: METRE
+                      - ~
+                      - dimensions:
+                          sc_fileid: 173
+                          sc_function: Dimensional_Exponents
+                          length_exponent: 1
+                          mass_exponent: 0
+                          time_exponent: 0
+                          electric_current_exponent: 0
+                          thermodynamic_temperature_exponent: 0
+                          amount_of_substance_exponent: 0
+                          luminous_intensity_exponent: 0
+                  name: "''"
+                  description: "''"
           - units:
-              - "#161\x00"
-              - "#162\x00"
-              - "#163\x00"
+              aggregate_element:
+                - "#161\x00"
+                - "#162\x00"
+                - "#163\x00"
           - context_identifier: "'NONE'"
             context_type: "'WORKSPACE'"
   - sc_fileid: 36
@@ -1354,43 +1362,45 @@ step:
         complex_element:
           - coordinate_space_dimension: 3
           - uncertainty:
-              - sc_fileid: 159
-                sc_function: Uncertainty_Measure_With_Unit
-                unit_component:
-                  sc_fileid: 161
-                  sc_function: Conversion_Based_Unit
-                  is_complex: true
-                  complex_element:
-                    - name: "'MILLIMETRE'"
-                      conversion_factor:
-                        sc_fileid: 170
-                        sc_function: Length_Measure_With_Unit
-                        unit_component:
-                          sc_fileid: 336
-                          sc_function: Length_Unit
-                          is_complex: true
-                          complex_element:
-                            - ~
-                            - dimensions: "*"
-                            - prefix: MILLI
-                              name: METRE
-                    - ~
-                    - dimensions:
-                        sc_fileid: 173
-                        sc_function: Dimensional_Exponents
-                        length_exponent: 1
-                        mass_exponent: 0
-                        time_exponent: 0
-                        electric_current_exponent: 0
-                        thermodynamic_temperature_exponent: 0
-                        amount_of_substance_exponent: 0
-                        luminous_intensity_exponent: 0
-                name: "''"
-                description: "''"
+              aggregate_element:
+                - sc_fileid: 159
+                  sc_function: Uncertainty_Measure_With_Unit
+                  unit_component:
+                    sc_fileid: 161
+                    sc_function: Conversion_Based_Unit
+                    is_complex: true
+                    complex_element:
+                      - name: "'MILLIMETRE'"
+                        conversion_factor:
+                          sc_fileid: 170
+                          sc_function: Length_Measure_With_Unit
+                          unit_component:
+                            sc_fileid: 336
+                            sc_function: Length_Unit
+                            is_complex: true
+                            complex_element:
+                              - ~
+                              - dimensions: "*"
+                              - prefix: MILLI
+                                name: METRE
+                      - ~
+                      - dimensions:
+                          sc_fileid: 173
+                          sc_function: Dimensional_Exponents
+                          length_exponent: 1
+                          mass_exponent: 0
+                          time_exponent: 0
+                          electric_current_exponent: 0
+                          thermodynamic_temperature_exponent: 0
+                          amount_of_substance_exponent: 0
+                          luminous_intensity_exponent: 0
+                  name: "''"
+                  description: "''"
           - units:
-              - "#161\x00"
-              - "#162\x00"
-              - "#163\x00"
+              aggregate_element:
+                - "#161\x00"
+                - "#162\x00"
+                - "#163\x00"
           - context_identifier: "'NONE'"
             context_type: "'WORKSPACE'"
     rep_2:
@@ -72425,43 +72435,45 @@ step:
         complex_element:
           - coordinate_space_dimension: 3
           - uncertainty:
-              - sc_fileid: 96
-                sc_function: Uncertainty_Measure_With_Unit
-                unit_component:
-                  sc_fileid: 98
-                  sc_function: Conversion_Based_Unit
-                  is_complex: true
-                  complex_element:
-                    - name: "'MILLIMETRE'"
-                      conversion_factor:
-                        sc_fileid: 134
-                        sc_function: Length_Measure_With_Unit
-                        unit_component:
-                          sc_fileid: 167
-                          sc_function: Length_Unit
-                          is_complex: true
-                          complex_element:
-                            - ~
-                            - dimensions: "*"
-                            - prefix: MILLI
-                              name: METRE
-                    - ~
-                    - dimensions:
-                        sc_fileid: 137
-                        sc_function: Dimensional_Exponents
-                        length_exponent: 1
-                        mass_exponent: 0
-                        time_exponent: 0
-                        electric_current_exponent: 0
-                        thermodynamic_temperature_exponent: 0
-                        amount_of_substance_exponent: 0
-                        luminous_intensity_exponent: 0
-                name: "''"
-                description: "''"
+              aggregate_element:
+                - sc_fileid: 96
+                  sc_function: Uncertainty_Measure_With_Unit
+                  unit_component:
+                    sc_fileid: 98
+                    sc_function: Conversion_Based_Unit
+                    is_complex: true
+                    complex_element:
+                      - name: "'MILLIMETRE'"
+                        conversion_factor:
+                          sc_fileid: 134
+                          sc_function: Length_Measure_With_Unit
+                          unit_component:
+                            sc_fileid: 167
+                            sc_function: Length_Unit
+                            is_complex: true
+                            complex_element:
+                              - ~
+                              - dimensions: "*"
+                              - prefix: MILLI
+                                name: METRE
+                      - ~
+                      - dimensions:
+                          sc_fileid: 137
+                          sc_function: Dimensional_Exponents
+                          length_exponent: 1
+                          mass_exponent: 0
+                          time_exponent: 0
+                          electric_current_exponent: 0
+                          thermodynamic_temperature_exponent: 0
+                          amount_of_substance_exponent: 0
+                          luminous_intensity_exponent: 0
+                  name: "''"
+                  description: "''"
           - units:
-              - "#98\x00"
-              - "#99\x00"
-              - "#100\x00"
+              aggregate_element:
+                - "#98\x00"
+                - "#99\x00"
+                - "#100\x00"
           - context_identifier: "'NONE'"
             context_type: "'WORKSPACE'"
   - sc_fileid: 37
@@ -72769,43 +72781,45 @@ step:
               complex_element:
                 - coordinate_space_dimension: 3
                 - uncertainty:
-                    - sc_fileid: 159
-                      sc_function: Uncertainty_Measure_With_Unit
-                      unit_component:
-                        sc_fileid: 161
-                        sc_function: Conversion_Based_Unit
-                        is_complex: true
-                        complex_element:
-                          - name: "'MILLIMETRE'"
-                            conversion_factor:
-                              sc_fileid: 170
-                              sc_function: Length_Measure_With_Unit
-                              unit_component:
-                                sc_fileid: 336
-                                sc_function: Length_Unit
-                                is_complex: true
-                                complex_element:
-                                  - ~
-                                  - dimensions: "*"
-                                  - prefix: MILLI
-                                    name: METRE
-                          - ~
-                          - dimensions:
-                              sc_fileid: 173
-                              sc_function: Dimensional_Exponents
-                              length_exponent: 1
-                              mass_exponent: 0
-                              time_exponent: 0
-                              electric_current_exponent: 0
-                              thermodynamic_temperature_exponent: 0
-                              amount_of_substance_exponent: 0
-                              luminous_intensity_exponent: 0
-                      name: "''"
-                      description: "''"
+                    aggregate_element:
+                      - sc_fileid: 159
+                        sc_function: Uncertainty_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 161
+                          sc_function: Conversion_Based_Unit
+                          is_complex: true
+                          complex_element:
+                            - name: "'MILLIMETRE'"
+                              conversion_factor:
+                                sc_fileid: 170
+                                sc_function: Length_Measure_With_Unit
+                                unit_component:
+                                  sc_fileid: 336
+                                  sc_function: Length_Unit
+                                  is_complex: true
+                                  complex_element:
+                                    - ~
+                                    - dimensions: "*"
+                                    - prefix: MILLI
+                                      name: METRE
+                            - ~
+                            - dimensions:
+                                sc_fileid: 173
+                                sc_function: Dimensional_Exponents
+                                length_exponent: 1
+                                mass_exponent: 0
+                                time_exponent: 0
+                                electric_current_exponent: 0
+                                thermodynamic_temperature_exponent: 0
+                                amount_of_substance_exponent: 0
+                                luminous_intensity_exponent: 0
+                        name: "''"
+                        description: "''"
                 - units:
-                    - "#161\x00"
-                    - "#162\x00"
-                    - "#163\x00"
+                    aggregate_element:
+                      - "#161\x00"
+                      - "#162\x00"
+                      - "#163\x00"
                 - context_identifier: "'NONE'"
                   context_type: "'WORKSPACE'"
           rep_2:
@@ -72928,43 +72942,45 @@ step:
               complex_element:
                 - coordinate_space_dimension: 3
                 - uncertainty:
-                    - sc_fileid: 159
-                      sc_function: Uncertainty_Measure_With_Unit
-                      unit_component:
-                        sc_fileid: 161
-                        sc_function: Conversion_Based_Unit
-                        is_complex: true
-                        complex_element:
-                          - name: "'MILLIMETRE'"
-                            conversion_factor:
-                              sc_fileid: 170
-                              sc_function: Length_Measure_With_Unit
-                              unit_component:
-                                sc_fileid: 336
-                                sc_function: Length_Unit
-                                is_complex: true
-                                complex_element:
-                                  - ~
-                                  - dimensions: "*"
-                                  - prefix: MILLI
-                                    name: METRE
-                          - ~
-                          - dimensions:
-                              sc_fileid: 173
-                              sc_function: Dimensional_Exponents
-                              length_exponent: 1
-                              mass_exponent: 0
-                              time_exponent: 0
-                              electric_current_exponent: 0
-                              thermodynamic_temperature_exponent: 0
-                              amount_of_substance_exponent: 0
-                              luminous_intensity_exponent: 0
-                      name: "''"
-                      description: "''"
+                    aggregate_element:
+                      - sc_fileid: 159
+                        sc_function: Uncertainty_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 161
+                          sc_function: Conversion_Based_Unit
+                          is_complex: true
+                          complex_element:
+                            - name: "'MILLIMETRE'"
+                              conversion_factor:
+                                sc_fileid: 170
+                                sc_function: Length_Measure_With_Unit
+                                unit_component:
+                                  sc_fileid: 336
+                                  sc_function: Length_Unit
+                                  is_complex: true
+                                  complex_element:
+                                    - ~
+                                    - dimensions: "*"
+                                    - prefix: MILLI
+                                      name: METRE
+                            - ~
+                            - dimensions:
+                                sc_fileid: 173
+                                sc_function: Dimensional_Exponents
+                                length_exponent: 1
+                                mass_exponent: 0
+                                time_exponent: 0
+                                electric_current_exponent: 0
+                                thermodynamic_temperature_exponent: 0
+                                amount_of_substance_exponent: 0
+                                luminous_intensity_exponent: 0
+                        name: "''"
+                        description: "''"
                 - units:
-                    - "#161\x00"
-                    - "#162\x00"
-                    - "#163\x00"
+                    aggregate_element:
+                      - "#161\x00"
+                      - "#162\x00"
+                      - "#163\x00"
                 - context_identifier: "'NONE'"
                   context_type: "'WORKSPACE'"
         - transformation_operator:
@@ -73192,43 +73208,45 @@ step:
         complex_element:
           - coordinate_space_dimension: 3
           - uncertainty:
-              - sc_fileid: 159
-                sc_function: Uncertainty_Measure_With_Unit
-                unit_component:
-                  sc_fileid: 161
-                  sc_function: Conversion_Based_Unit
-                  is_complex: true
-                  complex_element:
-                    - name: "'MILLIMETRE'"
-                      conversion_factor:
-                        sc_fileid: 170
-                        sc_function: Length_Measure_With_Unit
-                        unit_component:
-                          sc_fileid: 336
-                          sc_function: Length_Unit
-                          is_complex: true
-                          complex_element:
-                            - ~
-                            - dimensions: "*"
-                            - prefix: MILLI
-                              name: METRE
-                    - ~
-                    - dimensions:
-                        sc_fileid: 173
-                        sc_function: Dimensional_Exponents
-                        length_exponent: 1
-                        mass_exponent: 0
-                        time_exponent: 0
-                        electric_current_exponent: 0
-                        thermodynamic_temperature_exponent: 0
-                        amount_of_substance_exponent: 0
-                        luminous_intensity_exponent: 0
-                name: "''"
-                description: "''"
+              aggregate_element:
+                - sc_fileid: 159
+                  sc_function: Uncertainty_Measure_With_Unit
+                  unit_component:
+                    sc_fileid: 161
+                    sc_function: Conversion_Based_Unit
+                    is_complex: true
+                    complex_element:
+                      - name: "'MILLIMETRE'"
+                        conversion_factor:
+                          sc_fileid: 170
+                          sc_function: Length_Measure_With_Unit
+                          unit_component:
+                            sc_fileid: 336
+                            sc_function: Length_Unit
+                            is_complex: true
+                            complex_element:
+                              - ~
+                              - dimensions: "*"
+                              - prefix: MILLI
+                                name: METRE
+                      - ~
+                      - dimensions:
+                          sc_fileid: 173
+                          sc_function: Dimensional_Exponents
+                          length_exponent: 1
+                          mass_exponent: 0
+                          time_exponent: 0
+                          electric_current_exponent: 0
+                          thermodynamic_temperature_exponent: 0
+                          amount_of_substance_exponent: 0
+                          luminous_intensity_exponent: 0
+                  name: "''"
+                  description: "''"
           - units:
-              - "#161\x00"
-              - "#162\x00"
-              - "#163\x00"
+              aggregate_element:
+                - "#161\x00"
+                - "#162\x00"
+                - "#163\x00"
           - context_identifier: "'NONE'"
             context_type: "'WORKSPACE'"
   - sc_fileid: 50
@@ -73274,43 +73292,45 @@ step:
         complex_element:
           - coordinate_space_dimension: 3
           - uncertainty:
-              - sc_fileid: 159
-                sc_function: Uncertainty_Measure_With_Unit
-                unit_component:
-                  sc_fileid: 161
-                  sc_function: Conversion_Based_Unit
-                  is_complex: true
-                  complex_element:
-                    - name: "'MILLIMETRE'"
-                      conversion_factor:
-                        sc_fileid: 170
-                        sc_function: Length_Measure_With_Unit
-                        unit_component:
-                          sc_fileid: 336
-                          sc_function: Length_Unit
-                          is_complex: true
-                          complex_element:
-                            - ~
-                            - dimensions: "*"
-                            - prefix: MILLI
-                              name: METRE
-                    - ~
-                    - dimensions:
-                        sc_fileid: 173
-                        sc_function: Dimensional_Exponents
-                        length_exponent: 1
-                        mass_exponent: 0
-                        time_exponent: 0
-                        electric_current_exponent: 0
-                        thermodynamic_temperature_exponent: 0
-                        amount_of_substance_exponent: 0
-                        luminous_intensity_exponent: 0
-                name: "''"
-                description: "''"
+              aggregate_element:
+                - sc_fileid: 159
+                  sc_function: Uncertainty_Measure_With_Unit
+                  unit_component:
+                    sc_fileid: 161
+                    sc_function: Conversion_Based_Unit
+                    is_complex: true
+                    complex_element:
+                      - name: "'MILLIMETRE'"
+                        conversion_factor:
+                          sc_fileid: 170
+                          sc_function: Length_Measure_With_Unit
+                          unit_component:
+                            sc_fileid: 336
+                            sc_function: Length_Unit
+                            is_complex: true
+                            complex_element:
+                              - ~
+                              - dimensions: "*"
+                              - prefix: MILLI
+                                name: METRE
+                      - ~
+                      - dimensions:
+                          sc_fileid: 173
+                          sc_function: Dimensional_Exponents
+                          length_exponent: 1
+                          mass_exponent: 0
+                          time_exponent: 0
+                          electric_current_exponent: 0
+                          thermodynamic_temperature_exponent: 0
+                          amount_of_substance_exponent: 0
+                          luminous_intensity_exponent: 0
+                  name: "''"
+                  description: "''"
           - units:
-              - "#161\x00"
-              - "#162\x00"
-              - "#163\x00"
+              aggregate_element:
+                - "#161\x00"
+                - "#162\x00"
+                - "#163\x00"
           - context_identifier: "'NONE'"
             context_type: "'WORKSPACE'"
     rep_2:
@@ -78464,43 +78484,45 @@ step:
         complex_element:
           - coordinate_space_dimension: 3
           - uncertainty:
-              - sc_fileid: 96
-                sc_function: Uncertainty_Measure_With_Unit
-                unit_component:
-                  sc_fileid: 98
-                  sc_function: Conversion_Based_Unit
-                  is_complex: true
-                  complex_element:
-                    - name: "'MILLIMETRE'"
-                      conversion_factor:
-                        sc_fileid: 134
-                        sc_function: Length_Measure_With_Unit
-                        unit_component:
-                          sc_fileid: 167
-                          sc_function: Length_Unit
-                          is_complex: true
-                          complex_element:
-                            - ~
-                            - dimensions: "*"
-                            - prefix: MILLI
-                              name: METRE
-                    - ~
-                    - dimensions:
-                        sc_fileid: 137
-                        sc_function: Dimensional_Exponents
-                        length_exponent: 1
-                        mass_exponent: 0
-                        time_exponent: 0
-                        electric_current_exponent: 0
-                        thermodynamic_temperature_exponent: 0
-                        amount_of_substance_exponent: 0
-                        luminous_intensity_exponent: 0
-                name: "''"
-                description: "''"
+              aggregate_element:
+                - sc_fileid: 96
+                  sc_function: Uncertainty_Measure_With_Unit
+                  unit_component:
+                    sc_fileid: 98
+                    sc_function: Conversion_Based_Unit
+                    is_complex: true
+                    complex_element:
+                      - name: "'MILLIMETRE'"
+                        conversion_factor:
+                          sc_fileid: 134
+                          sc_function: Length_Measure_With_Unit
+                          unit_component:
+                            sc_fileid: 167
+                            sc_function: Length_Unit
+                            is_complex: true
+                            complex_element:
+                              - ~
+                              - dimensions: "*"
+                              - prefix: MILLI
+                                name: METRE
+                      - ~
+                      - dimensions:
+                          sc_fileid: 137
+                          sc_function: Dimensional_Exponents
+                          length_exponent: 1
+                          mass_exponent: 0
+                          time_exponent: 0
+                          electric_current_exponent: 0
+                          thermodynamic_temperature_exponent: 0
+                          amount_of_substance_exponent: 0
+                          luminous_intensity_exponent: 0
+                  name: "''"
+                  description: "''"
           - units:
-              - "#98\x00"
-              - "#99\x00"
-              - "#100\x00"
+              aggregate_element:
+                - "#98\x00"
+                - "#99\x00"
+                - "#100\x00"
           - context_identifier: "'NONE'"
             context_type: "'WORKSPACE'"
   - sc_fileid: 51
@@ -78551,43 +78573,45 @@ step:
               complex_element:
                 - coordinate_space_dimension: 3
                 - uncertainty:
-                    - sc_fileid: 159
-                      sc_function: Uncertainty_Measure_With_Unit
-                      unit_component:
-                        sc_fileid: 161
-                        sc_function: Conversion_Based_Unit
-                        is_complex: true
-                        complex_element:
-                          - name: "'MILLIMETRE'"
-                            conversion_factor:
-                              sc_fileid: 170
-                              sc_function: Length_Measure_With_Unit
-                              unit_component:
-                                sc_fileid: 336
-                                sc_function: Length_Unit
-                                is_complex: true
-                                complex_element:
-                                  - ~
-                                  - dimensions: "*"
-                                  - prefix: MILLI
-                                    name: METRE
-                          - ~
-                          - dimensions:
-                              sc_fileid: 173
-                              sc_function: Dimensional_Exponents
-                              length_exponent: 1
-                              mass_exponent: 0
-                              time_exponent: 0
-                              electric_current_exponent: 0
-                              thermodynamic_temperature_exponent: 0
-                              amount_of_substance_exponent: 0
-                              luminous_intensity_exponent: 0
-                      name: "''"
-                      description: "''"
+                    aggregate_element:
+                      - sc_fileid: 159
+                        sc_function: Uncertainty_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 161
+                          sc_function: Conversion_Based_Unit
+                          is_complex: true
+                          complex_element:
+                            - name: "'MILLIMETRE'"
+                              conversion_factor:
+                                sc_fileid: 170
+                                sc_function: Length_Measure_With_Unit
+                                unit_component:
+                                  sc_fileid: 336
+                                  sc_function: Length_Unit
+                                  is_complex: true
+                                  complex_element:
+                                    - ~
+                                    - dimensions: "*"
+                                    - prefix: MILLI
+                                      name: METRE
+                            - ~
+                            - dimensions:
+                                sc_fileid: 173
+                                sc_function: Dimensional_Exponents
+                                length_exponent: 1
+                                mass_exponent: 0
+                                time_exponent: 0
+                                electric_current_exponent: 0
+                                thermodynamic_temperature_exponent: 0
+                                amount_of_substance_exponent: 0
+                                luminous_intensity_exponent: 0
+                        name: "''"
+                        description: "''"
                 - units:
-                    - "#161\x00"
-                    - "#162\x00"
-                    - "#163\x00"
+                    aggregate_element:
+                      - "#161\x00"
+                      - "#162\x00"
+                      - "#163\x00"
                 - context_identifier: "'NONE'"
                   context_type: "'WORKSPACE'"
           rep_2:
@@ -78710,43 +78734,45 @@ step:
               complex_element:
                 - coordinate_space_dimension: 3
                 - uncertainty:
-                    - sc_fileid: 159
-                      sc_function: Uncertainty_Measure_With_Unit
-                      unit_component:
-                        sc_fileid: 161
-                        sc_function: Conversion_Based_Unit
-                        is_complex: true
-                        complex_element:
-                          - name: "'MILLIMETRE'"
-                            conversion_factor:
-                              sc_fileid: 170
-                              sc_function: Length_Measure_With_Unit
-                              unit_component:
-                                sc_fileid: 336
-                                sc_function: Length_Unit
-                                is_complex: true
-                                complex_element:
-                                  - ~
-                                  - dimensions: "*"
-                                  - prefix: MILLI
-                                    name: METRE
-                          - ~
-                          - dimensions:
-                              sc_fileid: 173
-                              sc_function: Dimensional_Exponents
-                              length_exponent: 1
-                              mass_exponent: 0
-                              time_exponent: 0
-                              electric_current_exponent: 0
-                              thermodynamic_temperature_exponent: 0
-                              amount_of_substance_exponent: 0
-                              luminous_intensity_exponent: 0
-                      name: "''"
-                      description: "''"
+                    aggregate_element:
+                      - sc_fileid: 159
+                        sc_function: Uncertainty_Measure_With_Unit
+                        unit_component:
+                          sc_fileid: 161
+                          sc_function: Conversion_Based_Unit
+                          is_complex: true
+                          complex_element:
+                            - name: "'MILLIMETRE'"
+                              conversion_factor:
+                                sc_fileid: 170
+                                sc_function: Length_Measure_With_Unit
+                                unit_component:
+                                  sc_fileid: 336
+                                  sc_function: Length_Unit
+                                  is_complex: true
+                                  complex_element:
+                                    - ~
+                                    - dimensions: "*"
+                                    - prefix: MILLI
+                                      name: METRE
+                            - ~
+                            - dimensions:
+                                sc_fileid: 173
+                                sc_function: Dimensional_Exponents
+                                length_exponent: 1
+                                mass_exponent: 0
+                                time_exponent: 0
+                                electric_current_exponent: 0
+                                thermodynamic_temperature_exponent: 0
+                                amount_of_substance_exponent: 0
+                                luminous_intensity_exponent: 0
+                        name: "''"
+                        description: "''"
                 - units:
-                    - "#161\x00"
-                    - "#162\x00"
-                    - "#163\x00"
+                    aggregate_element:
+                      - "#161\x00"
+                      - "#162\x00"
+                      - "#163\x00"
                 - context_identifier: "'NONE'"
                   context_type: "'WORKSPACE'"
         - transformation_operator:

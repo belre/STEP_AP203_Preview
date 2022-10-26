@@ -164,6 +164,7 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 			auto head_node = attr_aggr->GetHead();
 
 			std::vector<std::string> sub_node;
+			std::vector<YAML::Node> select_node;
 			std::vector<YAML::Node> aggr_node;
 			std::map<std::string, YAML::Node> named_map;
 
@@ -173,10 +174,10 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 				auto select_node = dynamic_cast<const SelectNode*>(node);
 				auto conv_raw_node = dynamic_cast<STEPnode*>(node);
 
-
 				if(conv_node != nullptr) 
 				{
 					auto inst = conv_node->node;
+					int inst_id = inst->GetFileId();
 
 					StepComponent* child_node = new StepComposite(inst);
 					base_component->AddComponent(child_node, false);
@@ -212,9 +213,28 @@ void AddNode(InstMgr*& inst_mgr, StepComponent* base_component, SDAI_Application
 				}
 			}
 
-			if(aggr_node.size() != 0 )
+			if(is_complex) 
+			{
+				if (aggr_node.size() != 0)
+				{
+					yaml_node[attribute->Name()]["aggregate_element"] = aggr_node;
+				}
+				else if(select_node.size() != 0) 
+				{
+					yaml_node[attribute->Name()]["aggregate_element"] = select_node;
+				}
+				else if (sub_node.size() != 0)
+				{
+					yaml_node[attribute->Name()]["aggregate_element"] = sub_node;
+				}
+			}
+			else if(aggr_node.size() != 0 )
 			{
 				yaml_node[attribute->Name()] = aggr_node;
+			}
+			else if (select_node.size() != 0)
+			{
+				yaml_node[attribute->Name()] = select_node;
 			}
 			else if(sub_node.size() != 0) 
 			{
