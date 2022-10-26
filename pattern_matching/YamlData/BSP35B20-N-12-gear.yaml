@@ -1,12 +1,4 @@
 step:
-  - sc_fileid: 1
-    sc_function: Design_Context
-    name: "''"
-    frame_of_reference:
-      sc_fileid: 56
-      sc_function: Application_Context
-      application: "'configuration controlled 3D designs of mechanical parts and assemblies'"
-    life_cycle_stage: "'design'"
   - sc_fileid: 2
     sc_function: Application_Protocol_Definition
     status: "'international standard'"

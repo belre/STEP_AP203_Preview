@@ -1,7 +1,7 @@
 ISO-10303-21;
 HEADER;
 FILE_DESCRIPTION(('STEP AP203'),'1');
-FILE_NAME('p:/temp/worker_12/temp/exporttempdir_1116_122_Ki9Cs/format_0/BSP35B20-N-12.stp','2022-10-26T09:46:02',('License CC BY-ND 4.0'),('CADENAS'),' ','PARTsolutions',' ');
+FILE_NAME('p:/temp/worker_12/temp/exporttempdir_1116_122_Ki9Cs/format_0/BSP35B20-N-12.stp','2022-10-26T09:49:16',('License CC BY-ND 4.0'),('CADENAS'),' ','PARTsolutions',' ');
 FILE_SCHEMA(('CONFIG_CONTROL_DESIGN'));
 ENDSEC;
 DATA;
