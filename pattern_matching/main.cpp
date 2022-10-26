@@ -158,34 +158,9 @@ int main(int argv, char** argc)
 
 
 	// generate including indent file
-	std::ofstream ofs_indent("indent.step.txt");
-	if (!ofs_indent)
-	{
-		std::cerr << "indent.step.txt create error" << std::endl;
-		return 3;
-	}
-
-	for (auto iter = depth_count.begin(); iter != depth_count.end(); ++iter)
-	{
-		for(int j = 0 ; j < iter->_depth; j++ ) 
-		{
-			ofs_indent << "  ";
-		}
-
-		auto node = instance_list->FindFileId(iter->_id);
-		if(node == nullptr) 
-		{
-			ofs_indent << "(" << iter->_id << "):Node Not Detected" << std::endl;
-			continue;
-		}
-
-		auto inst = node->GetApplication_instance();
-
-		inst->STEPwrite(ofs_indent);
-	}
-
-	ofs_indent.close();
-
+	std::stringstream ss_indent;
+	std::stringstream ss_non_indent;
+	std::stringstream ss_non_indent_duplicated;
 
 	// Remove from instmgr
 	for(auto iter = unfiltered_id.begin(); iter != unfiltered_id.end(); ++iter )
@@ -195,7 +170,82 @@ int main(int argv, char** argc)
 	}
 	sfile->WriteExchangeFile("project.step");
 
-	
+
+	for (auto iter = depth_count.begin(); iter != depth_count.end(); ++iter)
+	{
+		bool is_duplicated_id = false;
+		if (iter != depth_count.begin())
+		{
+			is_duplicated_id = std::find_if(depth_count.begin(), iter - 1, [iter](const DepthCount& count) {
+				return count._id == iter->_id;
+				}) != iter - 1;
+		}
+
+		/*
+		if(is_duplicated_id) 
+		{
+			continue;
+		}
+		*/
+
+		for (int j = 0; j < iter->_depth; j++)
+		{
+			if(!is_duplicated_id) 
+			{
+				ss_indent << "  ";
+			}
+
+			ss_non_indent_duplicated << "  ";
+		}
+
+		auto node = instance_list->FindFileId(iter->_id);
+		if (node == nullptr)
+		{
+			ss_indent << "(" << iter->_id << "):Node Not Detected" << std::endl;
+			continue;
+		}
+
+		auto inst = node->GetApplication_instance();
+
+		std::string text;
+
+
+		inst->STEPwrite(ss_non_indent_duplicated);
+
+		if(!is_duplicated_id) 
+		{
+			inst->STEPwrite(ss_indent);
+			inst->STEPwrite(ss_non_indent);
+		}
+	}
+
+	std::ofstream ofs_indent("indent.step.txt");
+	if (!ofs_indent)
+	{
+		std::cerr << "indent.step.txt create error" << std::endl;
+		return 3;
+	}
+	ofs_indent << ss_indent.str();
+	ofs_indent.close();
+
+	std::ofstream ofs_nonindent("non_indent.step.txt");
+	if (!ofs_nonindent)
+	{
+		std::cerr << "non_indent.step.txt create error" << std::endl;
+		return 3;
+	}
+	ofs_nonindent << ss_non_indent.str();
+	ofs_nonindent.close();
+
+	std::ofstream ofs_nonindent_duplicate("non_indent_duplicated.step.txt");
+	if (!ofs_nonindent_duplicate)
+	{
+		std::cerr << "non_indent_duplicated.step.txt create error" << std::endl;
+		return 3;
+	}
+	ofs_nonindent_duplicate << ss_non_indent_duplicated.str();
+	ofs_nonindent_duplicate.close();
+
 
 	return 0;
 }
