@@ -108,8 +108,6 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 	auto instance_complex = dynamic_cast<const STEPcomplex*>(instance);
 	if(instance_complex != nullptr && !is_complex)  
 	{
-		yaml_node["is_complex"] = true;
-
 		for (auto iter = instance_complex->head; iter != nullptr; iter = iter->sc)
 		{
 			auto inst = dynamic_cast<SDAI_Application_instance*>(iter);

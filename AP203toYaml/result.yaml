@@ -710,7 +710,6 @@ step:
       context_of_items:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
-        is_complex: true
         complex_element:
           - sc_function: Geometric_Representation_Context
             coordinate_space_dimension: 3
@@ -722,7 +721,6 @@ step:
                   unit_component:
                     sc_fileid: 161
                     sc_function: Conversion_Based_Unit
-                    is_complex: true
                     complex_element:
                       - sc_function: Conversion_Based_Unit
                         name: "'MILLIMETRE'"
@@ -732,7 +730,6 @@ step:
                           unit_component:
                             sc_fileid: 336
                             sc_function: Length_Unit
-                            is_complex: true
                             complex_element:
                               - sc_function: Length_Unit
                               - sc_function: Named_Unit
@@ -759,7 +756,6 @@ step:
               aggregate_element:
                 - sc_fileid: 161
                   sc_function: Conversion_Based_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Conversion_Based_Unit
                       name: "'MILLIMETRE'"
@@ -769,7 +765,6 @@ step:
                         unit_component:
                           sc_fileid: 336
                           sc_function: Length_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Length_Unit
                             - sc_function: Named_Unit
@@ -791,7 +786,6 @@ step:
                         luminous_intensity_exponent: 0
                 - sc_fileid: 162
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -801,7 +795,6 @@ step:
                       name: RADIAN
                 - sc_fileid: 163
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -1276,7 +1269,6 @@ step:
     representation_relation:
       sc_fileid: 76
       sc_function: Representation_Relationship
-      is_complex: true
       complex_element:
         - sc_function: Representation_Relationship
           name: "''"
@@ -1316,7 +1308,6 @@ step:
             context_of_items:
               sc_fileid: 112
               sc_function: Geometric_Representation_Context
-              is_complex: true
               complex_element:
                 - sc_function: Geometric_Representation_Context
                   coordinate_space_dimension: 3
@@ -1328,7 +1319,6 @@ step:
                         unit_component:
                           sc_fileid: 161
                           sc_function: Conversion_Based_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Conversion_Based_Unit
                               name: "'MILLIMETRE'"
@@ -1338,7 +1328,6 @@ step:
                                 unit_component:
                                   sc_fileid: 336
                                   sc_function: Length_Unit
-                                  is_complex: true
                                   complex_element:
                                     - sc_function: Length_Unit
                                     - sc_function: Named_Unit
@@ -1365,7 +1354,6 @@ step:
                     aggregate_element:
                       - sc_fileid: 161
                         sc_function: Conversion_Based_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Conversion_Based_Unit
                             name: "'MILLIMETRE'"
@@ -1375,7 +1363,6 @@ step:
                               unit_component:
                                 sc_fileid: 336
                                 sc_function: Length_Unit
-                                is_complex: true
                                 complex_element:
                                   - sc_function: Length_Unit
                                   - sc_function: Named_Unit
@@ -1397,7 +1384,6 @@ step:
                               luminous_intensity_exponent: 0
                       - sc_fileid: 162
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -1407,7 +1393,6 @@ step:
                             name: RADIAN
                       - sc_fileid: 163
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -1534,7 +1519,6 @@ step:
             context_of_items:
               sc_fileid: 112
               sc_function: Geometric_Representation_Context
-              is_complex: true
               complex_element:
                 - sc_function: Geometric_Representation_Context
                   coordinate_space_dimension: 3
@@ -1546,7 +1530,6 @@ step:
                         unit_component:
                           sc_fileid: 161
                           sc_function: Conversion_Based_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Conversion_Based_Unit
                               name: "'MILLIMETRE'"
@@ -1556,7 +1539,6 @@ step:
                                 unit_component:
                                   sc_fileid: 336
                                   sc_function: Length_Unit
-                                  is_complex: true
                                   complex_element:
                                     - sc_function: Length_Unit
                                     - sc_function: Named_Unit
@@ -1583,7 +1565,6 @@ step:
                     aggregate_element:
                       - sc_fileid: 161
                         sc_function: Conversion_Based_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Conversion_Based_Unit
                             name: "'MILLIMETRE'"
@@ -1593,7 +1574,6 @@ step:
                               unit_component:
                                 sc_fileid: 336
                                 sc_function: Length_Unit
-                                is_complex: true
                                 complex_element:
                                   - sc_function: Length_Unit
                                   - sc_function: Named_Unit
@@ -1615,7 +1595,6 @@ step:
                               luminous_intensity_exponent: 0
                       - sc_fileid: 162
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -1625,7 +1604,6 @@ step:
                             name: RADIAN
                       - sc_fileid: 163
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -1858,7 +1836,6 @@ step:
       context_of_items:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
-        is_complex: true
         complex_element:
           - sc_function: Geometric_Representation_Context
             coordinate_space_dimension: 3
@@ -1870,7 +1847,6 @@ step:
                   unit_component:
                     sc_fileid: 161
                     sc_function: Conversion_Based_Unit
-                    is_complex: true
                     complex_element:
                       - sc_function: Conversion_Based_Unit
                         name: "'MILLIMETRE'"
@@ -1880,7 +1856,6 @@ step:
                           unit_component:
                             sc_fileid: 336
                             sc_function: Length_Unit
-                            is_complex: true
                             complex_element:
                               - sc_function: Length_Unit
                               - sc_function: Named_Unit
@@ -1907,7 +1882,6 @@ step:
               aggregate_element:
                 - sc_fileid: 161
                   sc_function: Conversion_Based_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Conversion_Based_Unit
                       name: "'MILLIMETRE'"
@@ -1917,7 +1891,6 @@ step:
                         unit_component:
                           sc_fileid: 336
                           sc_function: Length_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Length_Unit
                             - sc_function: Named_Unit
@@ -1939,7 +1912,6 @@ step:
                         luminous_intensity_exponent: 0
                 - sc_fileid: 162
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -1949,7 +1921,6 @@ step:
                       name: RADIAN
                 - sc_fileid: 163
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -1999,7 +1970,6 @@ step:
       context_of_items:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
-        is_complex: true
         complex_element:
           - sc_function: Geometric_Representation_Context
             coordinate_space_dimension: 3
@@ -2011,7 +1981,6 @@ step:
                   unit_component:
                     sc_fileid: 161
                     sc_function: Conversion_Based_Unit
-                    is_complex: true
                     complex_element:
                       - sc_function: Conversion_Based_Unit
                         name: "'MILLIMETRE'"
@@ -2021,7 +1990,6 @@ step:
                           unit_component:
                             sc_fileid: 336
                             sc_function: Length_Unit
-                            is_complex: true
                             complex_element:
                               - sc_function: Length_Unit
                               - sc_function: Named_Unit
@@ -2048,7 +2016,6 @@ step:
               aggregate_element:
                 - sc_fileid: 161
                   sc_function: Conversion_Based_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Conversion_Based_Unit
                       name: "'MILLIMETRE'"
@@ -2058,7 +2025,6 @@ step:
                         unit_component:
                           sc_fileid: 336
                           sc_function: Length_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Length_Unit
                             - sc_function: Named_Unit
@@ -2080,7 +2046,6 @@ step:
                         luminous_intensity_exponent: 0
                 - sc_fileid: 162
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -2090,7 +2055,6 @@ step:
                       name: RADIAN
                 - sc_fileid: 163
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -73129,7 +73093,6 @@ step:
       context_of_items:
         sc_fileid: 52
         sc_function: Geometric_Representation_Context
-        is_complex: true
         complex_element:
           - sc_function: Geometric_Representation_Context
             coordinate_space_dimension: 3
@@ -73141,7 +73104,6 @@ step:
                   unit_component:
                     sc_fileid: 98
                     sc_function: Conversion_Based_Unit
-                    is_complex: true
                     complex_element:
                       - sc_function: Conversion_Based_Unit
                         name: "'MILLIMETRE'"
@@ -73151,7 +73113,6 @@ step:
                           unit_component:
                             sc_fileid: 167
                             sc_function: Length_Unit
-                            is_complex: true
                             complex_element:
                               - sc_function: Length_Unit
                               - sc_function: Named_Unit
@@ -73178,7 +73139,6 @@ step:
               aggregate_element:
                 - sc_fileid: 98
                   sc_function: Conversion_Based_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Conversion_Based_Unit
                       name: "'MILLIMETRE'"
@@ -73188,7 +73148,6 @@ step:
                         unit_component:
                           sc_fileid: 167
                           sc_function: Length_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Length_Unit
                             - sc_function: Named_Unit
@@ -73210,7 +73169,6 @@ step:
                         luminous_intensity_exponent: 0
                 - sc_fileid: 99
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -73220,7 +73178,6 @@ step:
                       name: RADIAN
                 - sc_fileid: 100
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -73695,7 +73652,6 @@ step:
     representation_relation:
       sc_fileid: 87
       sc_function: Representation_Relationship
-      is_complex: true
       complex_element:
         - sc_function: Representation_Relationship
           name: "''"
@@ -73735,7 +73691,6 @@ step:
             context_of_items:
               sc_fileid: 112
               sc_function: Geometric_Representation_Context
-              is_complex: true
               complex_element:
                 - sc_function: Geometric_Representation_Context
                   coordinate_space_dimension: 3
@@ -73747,7 +73702,6 @@ step:
                         unit_component:
                           sc_fileid: 161
                           sc_function: Conversion_Based_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Conversion_Based_Unit
                               name: "'MILLIMETRE'"
@@ -73757,7 +73711,6 @@ step:
                                 unit_component:
                                   sc_fileid: 336
                                   sc_function: Length_Unit
-                                  is_complex: true
                                   complex_element:
                                     - sc_function: Length_Unit
                                     - sc_function: Named_Unit
@@ -73784,7 +73737,6 @@ step:
                     aggregate_element:
                       - sc_fileid: 161
                         sc_function: Conversion_Based_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Conversion_Based_Unit
                             name: "'MILLIMETRE'"
@@ -73794,7 +73746,6 @@ step:
                               unit_component:
                                 sc_fileid: 336
                                 sc_function: Length_Unit
-                                is_complex: true
                                 complex_element:
                                   - sc_function: Length_Unit
                                   - sc_function: Named_Unit
@@ -73816,7 +73767,6 @@ step:
                               luminous_intensity_exponent: 0
                       - sc_fileid: 162
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -73826,7 +73776,6 @@ step:
                             name: RADIAN
                       - sc_fileid: 163
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -73953,7 +73902,6 @@ step:
             context_of_items:
               sc_fileid: 112
               sc_function: Geometric_Representation_Context
-              is_complex: true
               complex_element:
                 - sc_function: Geometric_Representation_Context
                   coordinate_space_dimension: 3
@@ -73965,7 +73913,6 @@ step:
                         unit_component:
                           sc_fileid: 161
                           sc_function: Conversion_Based_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Conversion_Based_Unit
                               name: "'MILLIMETRE'"
@@ -73975,7 +73922,6 @@ step:
                                 unit_component:
                                   sc_fileid: 336
                                   sc_function: Length_Unit
-                                  is_complex: true
                                   complex_element:
                                     - sc_function: Length_Unit
                                     - sc_function: Named_Unit
@@ -74002,7 +73948,6 @@ step:
                     aggregate_element:
                       - sc_fileid: 161
                         sc_function: Conversion_Based_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Conversion_Based_Unit
                             name: "'MILLIMETRE'"
@@ -74012,7 +73957,6 @@ step:
                               unit_component:
                                 sc_fileid: 336
                                 sc_function: Length_Unit
-                                is_complex: true
                                 complex_element:
                                   - sc_function: Length_Unit
                                   - sc_function: Named_Unit
@@ -74034,7 +73978,6 @@ step:
                               luminous_intensity_exponent: 0
                       - sc_fileid: 162
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -74044,7 +73987,6 @@ step:
                             name: RADIAN
                       - sc_fileid: 163
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -74277,7 +74219,6 @@ step:
       context_of_items:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
-        is_complex: true
         complex_element:
           - sc_function: Geometric_Representation_Context
             coordinate_space_dimension: 3
@@ -74289,7 +74230,6 @@ step:
                   unit_component:
                     sc_fileid: 161
                     sc_function: Conversion_Based_Unit
-                    is_complex: true
                     complex_element:
                       - sc_function: Conversion_Based_Unit
                         name: "'MILLIMETRE'"
@@ -74299,7 +74239,6 @@ step:
                           unit_component:
                             sc_fileid: 336
                             sc_function: Length_Unit
-                            is_complex: true
                             complex_element:
                               - sc_function: Length_Unit
                               - sc_function: Named_Unit
@@ -74326,7 +74265,6 @@ step:
               aggregate_element:
                 - sc_fileid: 161
                   sc_function: Conversion_Based_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Conversion_Based_Unit
                       name: "'MILLIMETRE'"
@@ -74336,7 +74274,6 @@ step:
                         unit_component:
                           sc_fileid: 336
                           sc_function: Length_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Length_Unit
                             - sc_function: Named_Unit
@@ -74358,7 +74295,6 @@ step:
                         luminous_intensity_exponent: 0
                 - sc_fileid: 162
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -74368,7 +74304,6 @@ step:
                       name: RADIAN
                 - sc_fileid: 163
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -74418,7 +74353,6 @@ step:
       context_of_items:
         sc_fileid: 112
         sc_function: Geometric_Representation_Context
-        is_complex: true
         complex_element:
           - sc_function: Geometric_Representation_Context
             coordinate_space_dimension: 3
@@ -74430,7 +74364,6 @@ step:
                   unit_component:
                     sc_fileid: 161
                     sc_function: Conversion_Based_Unit
-                    is_complex: true
                     complex_element:
                       - sc_function: Conversion_Based_Unit
                         name: "'MILLIMETRE'"
@@ -74440,7 +74373,6 @@ step:
                           unit_component:
                             sc_fileid: 336
                             sc_function: Length_Unit
-                            is_complex: true
                             complex_element:
                               - sc_function: Length_Unit
                               - sc_function: Named_Unit
@@ -74467,7 +74399,6 @@ step:
               aggregate_element:
                 - sc_fileid: 161
                   sc_function: Conversion_Based_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Conversion_Based_Unit
                       name: "'MILLIMETRE'"
@@ -74477,7 +74408,6 @@ step:
                         unit_component:
                           sc_fileid: 336
                           sc_function: Length_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Length_Unit
                             - sc_function: Named_Unit
@@ -74499,7 +74429,6 @@ step:
                         luminous_intensity_exponent: 0
                 - sc_fileid: 162
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -74509,7 +74438,6 @@ step:
                       name: RADIAN
                 - sc_fileid: 163
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -79667,7 +79595,6 @@ step:
       context_of_items:
         sc_fileid: 52
         sc_function: Geometric_Representation_Context
-        is_complex: true
         complex_element:
           - sc_function: Geometric_Representation_Context
             coordinate_space_dimension: 3
@@ -79679,7 +79606,6 @@ step:
                   unit_component:
                     sc_fileid: 98
                     sc_function: Conversion_Based_Unit
-                    is_complex: true
                     complex_element:
                       - sc_function: Conversion_Based_Unit
                         name: "'MILLIMETRE'"
@@ -79689,7 +79615,6 @@ step:
                           unit_component:
                             sc_fileid: 167
                             sc_function: Length_Unit
-                            is_complex: true
                             complex_element:
                               - sc_function: Length_Unit
                               - sc_function: Named_Unit
@@ -79716,7 +79641,6 @@ step:
               aggregate_element:
                 - sc_fileid: 98
                   sc_function: Conversion_Based_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Conversion_Based_Unit
                       name: "'MILLIMETRE'"
@@ -79726,7 +79650,6 @@ step:
                         unit_component:
                           sc_fileid: 167
                           sc_function: Length_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Length_Unit
                             - sc_function: Named_Unit
@@ -79748,7 +79671,6 @@ step:
                         luminous_intensity_exponent: 0
                 - sc_fileid: 99
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -79758,7 +79680,6 @@ step:
                       name: RADIAN
                 - sc_fileid: 100
                   sc_function: Named_Unit
-                  is_complex: true
                   complex_element:
                     - sc_function: Named_Unit
                       dimensions: "*"
@@ -79774,7 +79695,6 @@ step:
     representation_relation:
       sc_fileid: 92
       sc_function: Representation_Relationship
-      is_complex: true
       complex_element:
         - sc_function: Representation_Relationship
           name: "''"
@@ -79814,7 +79734,6 @@ step:
             context_of_items:
               sc_fileid: 112
               sc_function: Geometric_Representation_Context
-              is_complex: true
               complex_element:
                 - sc_function: Geometric_Representation_Context
                   coordinate_space_dimension: 3
@@ -79826,7 +79745,6 @@ step:
                         unit_component:
                           sc_fileid: 161
                           sc_function: Conversion_Based_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Conversion_Based_Unit
                               name: "'MILLIMETRE'"
@@ -79836,7 +79754,6 @@ step:
                                 unit_component:
                                   sc_fileid: 336
                                   sc_function: Length_Unit
-                                  is_complex: true
                                   complex_element:
                                     - sc_function: Length_Unit
                                     - sc_function: Named_Unit
@@ -79863,7 +79780,6 @@ step:
                     aggregate_element:
                       - sc_fileid: 161
                         sc_function: Conversion_Based_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Conversion_Based_Unit
                             name: "'MILLIMETRE'"
@@ -79873,7 +79789,6 @@ step:
                               unit_component:
                                 sc_fileid: 336
                                 sc_function: Length_Unit
-                                is_complex: true
                                 complex_element:
                                   - sc_function: Length_Unit
                                   - sc_function: Named_Unit
@@ -79895,7 +79810,6 @@ step:
                               luminous_intensity_exponent: 0
                       - sc_fileid: 162
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -79905,7 +79819,6 @@ step:
                             name: RADIAN
                       - sc_fileid: 163
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -80032,7 +79945,6 @@ step:
             context_of_items:
               sc_fileid: 112
               sc_function: Geometric_Representation_Context
-              is_complex: true
               complex_element:
                 - sc_function: Geometric_Representation_Context
                   coordinate_space_dimension: 3
@@ -80044,7 +79956,6 @@ step:
                         unit_component:
                           sc_fileid: 161
                           sc_function: Conversion_Based_Unit
-                          is_complex: true
                           complex_element:
                             - sc_function: Conversion_Based_Unit
                               name: "'MILLIMETRE'"
@@ -80054,7 +79965,6 @@ step:
                                 unit_component:
                                   sc_fileid: 336
                                   sc_function: Length_Unit
-                                  is_complex: true
                                   complex_element:
                                     - sc_function: Length_Unit
                                     - sc_function: Named_Unit
@@ -80081,7 +79991,6 @@ step:
                     aggregate_element:
                       - sc_fileid: 161
                         sc_function: Conversion_Based_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Conversion_Based_Unit
                             name: "'MILLIMETRE'"
@@ -80091,7 +80000,6 @@ step:
                               unit_component:
                                 sc_fileid: 336
                                 sc_function: Length_Unit
-                                is_complex: true
                                 complex_element:
                                   - sc_function: Length_Unit
                                   - sc_function: Named_Unit
@@ -80113,7 +80021,6 @@ step:
                               luminous_intensity_exponent: 0
                       - sc_fileid: 162
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
@@ -80123,7 +80030,6 @@ step:
                             name: RADIAN
                       - sc_fileid: 163
                         sc_function: Named_Unit
-                        is_complex: true
                         complex_element:
                           - sc_function: Named_Unit
                             dimensions: "*"
