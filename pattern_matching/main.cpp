@@ -300,12 +300,6 @@ int main(int argv, char** argc)
 		{
 			continue;
 		}
-
-		if(file_schema != "Shape_Definition_Representation" && 
-			 file_schema != "Shape_Representation_Relationship") 
-		{
-			continue;
-		}
 		
 		// read valid node recursively
 		YAML::Node tmp_node = *tmp;
@@ -318,6 +312,7 @@ int main(int argv, char** argc)
 				return std::find(all_stock_id.begin(), all_stock_id.end(), i) == all_stock_id.end();
 			});
 	}
+	std::sort(all_stock_id.begin(), all_stock_id.end());
 
 	// Extract unfiltered id
 	std::vector<int> unregistered_id;
