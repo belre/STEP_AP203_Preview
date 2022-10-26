@@ -96,8 +96,44 @@
     62:level:'SOLID MODEL'
   13:aggregate(items)
     13:node
+    64:name:''
+    64:purpose:''
+    64:instance(security_level)
+      106:name:'unclassified'
     13:node
+    65:id:' '
+    65:description:'NONE'
+    65:instance(of_product)
+      67:id:'BSP35B20-N-12'
+      67:name:'BSP35B20-N-12'
+      67:description:'PART-BSP35B20-N-12-DESC'
+      67:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    65:make_or_buy:NOT_KNOWN
     13:node
+    66:id:'NONE'
+    66:description:'NONE'
+    66:instance(formation)
+      65:id:' '
+      65:description:'NONE'
+      65:instance(of_product)
+        67:id:'BSP35B20-N-12'
+        67:name:'BSP35B20-N-12'
+        67:description:'PART-BSP35B20-N-12-DESC'
+        67:aggregate(frame_of_reference)
+          107:name:''
+          107:instance(frame_of_reference)
+            56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+          107:discipline_type:'mechanical'
+      65:make_or_buy:NOT_KNOWN
+    66:instance(frame_of_reference)
+      1:name:''
+      1:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      1:life_cycle_stage:'design'
 14:root(Cc_Design_Date_And_Time_Assignment)
   14:instance(assigned_date_and_time)
     4:instance(date_component)
@@ -116,6 +152,26 @@
     5:name:'creation_date'
   14:aggregate(items)
     14:node
+    66:id:'NONE'
+    66:description:'NONE'
+    66:instance(formation)
+      65:id:' '
+      65:description:'NONE'
+      65:instance(of_product)
+        67:id:'BSP35B20-N-12'
+        67:name:'BSP35B20-N-12'
+        67:description:'PART-BSP35B20-N-12-DESC'
+        67:aggregate(frame_of_reference)
+          107:name:''
+          107:instance(frame_of_reference)
+            56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+          107:discipline_type:'mechanical'
+      65:make_or_buy:NOT_KNOWN
+    66:instance(frame_of_reference)
+      1:name:''
+      1:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      1:life_cycle_stage:'design'
 15:root(Cc_Design_Date_And_Time_Assignment)
   15:instance(assigned_date_and_time)
     4:instance(date_component)
@@ -134,6 +190,10 @@
     6:name:'classification_date'
   15:aggregate(items)
     15:node
+    64:name:''
+    64:purpose:''
+    64:instance(security_level)
+      106:name:'unclassified'
 16:root(Cc_Design_Person_And_Organization_Assignment)
   16:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -151,6 +211,14 @@
     10:name:'design_owner'
   16:aggregate(items)
     16:node
+    67:id:'BSP35B20-N-12'
+    67:name:'BSP35B20-N-12'
+    67:description:'PART-BSP35B20-N-12-DESC'
+    67:aggregate(frame_of_reference)
+      107:name:''
+      107:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      107:discipline_type:'mechanical'
 17:root(Cc_Design_Person_And_Organization_Assignment)
   17:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -168,6 +236,26 @@
     7:name:'creator'
   17:aggregate(items)
     17:node
+    66:id:'NONE'
+    66:description:'NONE'
+    66:instance(formation)
+      65:id:' '
+      65:description:'NONE'
+      65:instance(of_product)
+        67:id:'BSP35B20-N-12'
+        67:name:'BSP35B20-N-12'
+        67:description:'PART-BSP35B20-N-12-DESC'
+        67:aggregate(frame_of_reference)
+          107:name:''
+          107:instance(frame_of_reference)
+            56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+          107:discipline_type:'mechanical'
+      65:make_or_buy:NOT_KNOWN
+    66:instance(frame_of_reference)
+      1:name:''
+      1:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      1:life_cycle_stage:'design'
 18:root(Cc_Design_Person_And_Organization_Assignment)
   18:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -185,6 +273,18 @@
     7:name:'creator'
   18:aggregate(items)
     18:node
+    65:id:' '
+    65:description:'NONE'
+    65:instance(of_product)
+      67:id:'BSP35B20-N-12'
+      67:name:'BSP35B20-N-12'
+      67:description:'PART-BSP35B20-N-12-DESC'
+      67:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    65:make_or_buy:NOT_KNOWN
 19:root(Cc_Design_Person_And_Organization_Assignment)
   19:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -202,6 +302,18 @@
     8:name:'design_supplier'
   19:aggregate(items)
     19:node
+    65:id:' '
+    65:description:'NONE'
+    65:instance(of_product)
+      67:id:'BSP35B20-N-12'
+      67:name:'BSP35B20-N-12'
+      67:description:'PART-BSP35B20-N-12-DESC'
+      67:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    65:make_or_buy:NOT_KNOWN
 20:root(Cc_Design_Security_Classification)
   20:instance(assigned_security_classification)
     64:name:''
@@ -210,6 +322,18 @@
       106:name:'unclassified'
   20:aggregate(items)
     20:node
+    65:id:' '
+    65:description:'NONE'
+    65:instance(of_product)
+      67:id:'BSP35B20-N-12'
+      67:name:'BSP35B20-N-12'
+      67:description:'PART-BSP35B20-N-12-DESC'
+      67:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    65:make_or_buy:NOT_KNOWN
 21:root(Cc_Design_Person_And_Organization_Assignment)
   21:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -227,6 +351,10 @@
     9:name:'classification_officer'
   21:aggregate(items)
     21:node
+    64:name:''
+    64:purpose:''
+    64:instance(security_level)
+      106:name:'unclassified'
 22:root(Shape_Definition_Representation)
   22:instance(definition)
     68:name:'NONE'
@@ -355,8 +483,29 @@
           159:description:''
         112:aggregate(units)
           112:node
+            161:name:'MILLIMETRE'
+            161:instance(conversion_factor)
+              170:selector(value_component)
+              170:selector(unit_component)
+                  336:derived(dimensions)
+                  336:prefix:MILLI
+                  336:name:METRE
+            161:instance(dimensions)
+              173:length_exponent:1
+              173:mass_exponent:0
+              173:time_exponent:0
+              173:electric_current_exponent:0
+              173:thermodynamic_temperature_exponent:0
+              173:amount_of_substance_exponent:0
+              173:luminous_intensity_exponent:0
           112:node
+            162:derived(dimensions)
+            162:prefix:
+            162:name:RADIAN
           112:node
+            163:derived(dimensions)
+            163:prefix:
+            163:name:STERADIAN
         112:context_identifier:'NONE'
         112:context_type:'WORKSPACE'
 23:root(Product_Category_Relationship)
@@ -415,8 +564,44 @@
     62:level:'SOLID MODEL'
   26:aggregate(items)
     26:node
+    64:name:''
+    64:purpose:''
+    64:instance(security_level)
+      106:name:'unclassified'
     26:node
+    73:id:' '
+    73:description:'NONE'
+    73:instance(of_product)
+      75:id:'_BSP35B20-N-12_b'
+      75:name:'_BSP35B20-N-12_b'
+      75:description:'PART-_BSP35B20-N-12_b-DESC'
+      75:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    73:make_or_buy:NOT_KNOWN
     26:node
+    74:id:'_BSP35B20-N-12_b'
+    74:description:'_BSP35B20-N-12_b'
+    74:instance(formation)
+      73:id:' '
+      73:description:'NONE'
+      73:instance(of_product)
+        75:id:'_BSP35B20-N-12_b'
+        75:name:'_BSP35B20-N-12_b'
+        75:description:'PART-_BSP35B20-N-12_b-DESC'
+        75:aggregate(frame_of_reference)
+          107:name:''
+          107:instance(frame_of_reference)
+            56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+          107:discipline_type:'mechanical'
+      73:make_or_buy:NOT_KNOWN
+    74:instance(frame_of_reference)
+      1:name:''
+      1:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      1:life_cycle_stage:'design'
 27:root(Cc_Design_Date_And_Time_Assignment)
   27:instance(assigned_date_and_time)
     24:instance(date_component)
@@ -435,6 +620,26 @@
     5:name:'creation_date'
   27:aggregate(items)
     27:node
+    74:id:'_BSP35B20-N-12_b'
+    74:description:'_BSP35B20-N-12_b'
+    74:instance(formation)
+      73:id:' '
+      73:description:'NONE'
+      73:instance(of_product)
+        75:id:'_BSP35B20-N-12_b'
+        75:name:'_BSP35B20-N-12_b'
+        75:description:'PART-_BSP35B20-N-12_b-DESC'
+        75:aggregate(frame_of_reference)
+          107:name:''
+          107:instance(frame_of_reference)
+            56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+          107:discipline_type:'mechanical'
+      73:make_or_buy:NOT_KNOWN
+    74:instance(frame_of_reference)
+      1:name:''
+      1:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      1:life_cycle_stage:'design'
 28:root(Cc_Design_Date_And_Time_Assignment)
   28:instance(assigned_date_and_time)
     24:instance(date_component)
@@ -453,6 +658,10 @@
     6:name:'classification_date'
   28:aggregate(items)
     28:node
+    64:name:''
+    64:purpose:''
+    64:instance(security_level)
+      106:name:'unclassified'
 29:root(Cc_Design_Person_And_Organization_Assignment)
   29:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -470,6 +679,14 @@
     10:name:'design_owner'
   29:aggregate(items)
     29:node
+    75:id:'_BSP35B20-N-12_b'
+    75:name:'_BSP35B20-N-12_b'
+    75:description:'PART-_BSP35B20-N-12_b-DESC'
+    75:aggregate(frame_of_reference)
+      107:name:''
+      107:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      107:discipline_type:'mechanical'
 30:root(Cc_Design_Person_And_Organization_Assignment)
   30:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -487,6 +704,26 @@
     7:name:'creator'
   30:aggregate(items)
     30:node
+    74:id:'_BSP35B20-N-12_b'
+    74:description:'_BSP35B20-N-12_b'
+    74:instance(formation)
+      73:id:' '
+      73:description:'NONE'
+      73:instance(of_product)
+        75:id:'_BSP35B20-N-12_b'
+        75:name:'_BSP35B20-N-12_b'
+        75:description:'PART-_BSP35B20-N-12_b-DESC'
+        75:aggregate(frame_of_reference)
+          107:name:''
+          107:instance(frame_of_reference)
+            56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+          107:discipline_type:'mechanical'
+      73:make_or_buy:NOT_KNOWN
+    74:instance(frame_of_reference)
+      1:name:''
+      1:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      1:life_cycle_stage:'design'
 31:root(Cc_Design_Person_And_Organization_Assignment)
   31:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -504,6 +741,18 @@
     7:name:'creator'
   31:aggregate(items)
     31:node
+    73:id:' '
+    73:description:'NONE'
+    73:instance(of_product)
+      75:id:'_BSP35B20-N-12_b'
+      75:name:'_BSP35B20-N-12_b'
+      75:description:'PART-_BSP35B20-N-12_b-DESC'
+      75:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    73:make_or_buy:NOT_KNOWN
 32:root(Cc_Design_Person_And_Organization_Assignment)
   32:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -521,6 +770,18 @@
     8:name:'design_supplier'
   32:aggregate(items)
     32:node
+    73:id:' '
+    73:description:'NONE'
+    73:instance(of_product)
+      75:id:'_BSP35B20-N-12_b'
+      75:name:'_BSP35B20-N-12_b'
+      75:description:'PART-_BSP35B20-N-12_b-DESC'
+      75:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    73:make_or_buy:NOT_KNOWN
 33:root(Cc_Design_Security_Classification)
   33:instance(assigned_security_classification)
     64:name:''
@@ -529,6 +790,18 @@
       106:name:'unclassified'
   33:aggregate(items)
     33:node
+    73:id:' '
+    73:description:'NONE'
+    73:instance(of_product)
+      75:id:'_BSP35B20-N-12_b'
+      75:name:'_BSP35B20-N-12_b'
+      75:description:'PART-_BSP35B20-N-12_b-DESC'
+      75:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    73:make_or_buy:NOT_KNOWN
 34:root(Context_Dependent_Shape_Representation)
   34:instance(representation_relation)
       76:name:''
@@ -579,8 +852,29 @@
               159:description:''
             112:aggregate(units)
               112:node
+                161:name:'MILLIMETRE'
+                161:instance(conversion_factor)
+                  170:selector(value_component)
+                  170:selector(unit_component)
+                      336:derived(dimensions)
+                      336:prefix:MILLI
+                      336:name:METRE
+                161:instance(dimensions)
+                  173:length_exponent:1
+                  173:mass_exponent:0
+                  173:time_exponent:0
+                  173:electric_current_exponent:0
+                  173:thermodynamic_temperature_exponent:0
+                  173:amount_of_substance_exponent:0
+                  173:luminous_intensity_exponent:0
               112:node
+                162:derived(dimensions)
+                162:prefix:
+                162:name:RADIAN
               112:node
+                163:derived(dimensions)
+                163:prefix:
+                163:name:STERADIAN
             112:context_identifier:'NONE'
             112:context_type:'WORKSPACE'
       76:instance(rep_2)
@@ -686,8 +980,29 @@
               159:description:''
             112:aggregate(units)
               112:node
+                161:name:'MILLIMETRE'
+                161:instance(conversion_factor)
+                  170:selector(value_component)
+                  170:selector(unit_component)
+                      336:derived(dimensions)
+                      336:prefix:MILLI
+                      336:name:METRE
+                161:instance(dimensions)
+                  173:length_exponent:1
+                  173:mass_exponent:0
+                  173:time_exponent:0
+                  173:electric_current_exponent:0
+                  173:thermodynamic_temperature_exponent:0
+                  173:amount_of_substance_exponent:0
+                  173:luminous_intensity_exponent:0
               112:node
+                162:derived(dimensions)
+                162:prefix:
+                162:name:RADIAN
               112:node
+                163:derived(dimensions)
+                163:prefix:
+                163:name:STERADIAN
             112:context_identifier:'NONE'
             112:context_type:'WORKSPACE'
       76:selector(transformation_operator)
@@ -854,8 +1169,29 @@
           159:description:''
         112:aggregate(units)
           112:node
+            161:name:'MILLIMETRE'
+            161:instance(conversion_factor)
+              170:selector(value_component)
+              170:selector(unit_component)
+                  336:derived(dimensions)
+                  336:prefix:MILLI
+                  336:name:METRE
+            161:instance(dimensions)
+              173:length_exponent:1
+              173:mass_exponent:0
+              173:time_exponent:0
+              173:electric_current_exponent:0
+              173:thermodynamic_temperature_exponent:0
+              173:amount_of_substance_exponent:0
+              173:luminous_intensity_exponent:0
           112:node
+            162:derived(dimensions)
+            162:prefix:
+            162:name:RADIAN
           112:node
+            163:derived(dimensions)
+            163:prefix:
+            163:name:STERADIAN
         112:context_identifier:'NONE'
         112:context_type:'WORKSPACE'
 36:root(Shape_Representation_Relationship)
@@ -907,8 +1243,29 @@
           159:description:''
         112:aggregate(units)
           112:node
+            161:name:'MILLIMETRE'
+            161:instance(conversion_factor)
+              170:selector(value_component)
+              170:selector(unit_component)
+                  336:derived(dimensions)
+                  336:prefix:MILLI
+                  336:name:METRE
+            161:instance(dimensions)
+              173:length_exponent:1
+              173:mass_exponent:0
+              173:time_exponent:0
+              173:electric_current_exponent:0
+              173:thermodynamic_temperature_exponent:0
+              173:amount_of_substance_exponent:0
+              173:luminous_intensity_exponent:0
           112:node
+            162:derived(dimensions)
+            162:prefix:
+            162:name:RADIAN
           112:node
+            163:derived(dimensions)
+            163:prefix:
+            163:name:STERADIAN
         112:context_identifier:'NONE'
         112:context_type:'WORKSPACE'
   36:instance(rep_2)
@@ -50594,8 +50951,29 @@
           96:description:''
         52:aggregate(units)
           52:node
+            98:name:'MILLIMETRE'
+            98:instance(conversion_factor)
+              134:selector(value_component)
+              134:selector(unit_component)
+                  167:derived(dimensions)
+                  167:prefix:MILLI
+                  167:name:METRE
+            98:instance(dimensions)
+              137:length_exponent:1
+              137:mass_exponent:0
+              137:time_exponent:0
+              137:electric_current_exponent:0
+              137:thermodynamic_temperature_exponent:0
+              137:amount_of_substance_exponent:0
+              137:luminous_intensity_exponent:0
           52:node
+            99:derived(dimensions)
+            99:prefix:
+            99:name:RADIAN
           52:node
+            100:derived(dimensions)
+            100:prefix:
+            100:name:STERADIAN
         52:context_identifier:'NONE'
         52:context_type:'WORKSPACE'
 37:root(Product_Category_Relationship)
@@ -50654,8 +51032,44 @@
     62:level:'SOLID MODEL'
   40:aggregate(items)
     40:node
+    64:name:''
+    64:purpose:''
+    64:instance(security_level)
+      106:name:'unclassified'
     40:node
+    84:id:' '
+    84:description:'NONE'
+    84:instance(of_product)
+      86:id:'_SET-SCREW5-5'
+      86:name:'_SET-SCREW5-5'
+      86:description:'PART-_SET-SCREW5-5-DESC'
+      86:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    84:make_or_buy:NOT_KNOWN
     40:node
+    85:id:'_SET-SCREW5-5'
+    85:description:'_SET-SCREW5-5'
+    85:instance(formation)
+      84:id:' '
+      84:description:'NONE'
+      84:instance(of_product)
+        86:id:'_SET-SCREW5-5'
+        86:name:'_SET-SCREW5-5'
+        86:description:'PART-_SET-SCREW5-5-DESC'
+        86:aggregate(frame_of_reference)
+          107:name:''
+          107:instance(frame_of_reference)
+            56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+          107:discipline_type:'mechanical'
+      84:make_or_buy:NOT_KNOWN
+    85:instance(frame_of_reference)
+      1:name:''
+      1:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      1:life_cycle_stage:'design'
 41:root(Cc_Design_Date_And_Time_Assignment)
   41:instance(assigned_date_and_time)
     38:instance(date_component)
@@ -50674,6 +51088,26 @@
     5:name:'creation_date'
   41:aggregate(items)
     41:node
+    85:id:'_SET-SCREW5-5'
+    85:description:'_SET-SCREW5-5'
+    85:instance(formation)
+      84:id:' '
+      84:description:'NONE'
+      84:instance(of_product)
+        86:id:'_SET-SCREW5-5'
+        86:name:'_SET-SCREW5-5'
+        86:description:'PART-_SET-SCREW5-5-DESC'
+        86:aggregate(frame_of_reference)
+          107:name:''
+          107:instance(frame_of_reference)
+            56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+          107:discipline_type:'mechanical'
+      84:make_or_buy:NOT_KNOWN
+    85:instance(frame_of_reference)
+      1:name:''
+      1:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      1:life_cycle_stage:'design'
 42:root(Cc_Design_Date_And_Time_Assignment)
   42:instance(assigned_date_and_time)
     38:instance(date_component)
@@ -50692,6 +51126,10 @@
     6:name:'classification_date'
   42:aggregate(items)
     42:node
+    64:name:''
+    64:purpose:''
+    64:instance(security_level)
+      106:name:'unclassified'
 43:root(Cc_Design_Person_And_Organization_Assignment)
   43:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -50709,6 +51147,14 @@
     10:name:'design_owner'
   43:aggregate(items)
     43:node
+    86:id:'_SET-SCREW5-5'
+    86:name:'_SET-SCREW5-5'
+    86:description:'PART-_SET-SCREW5-5-DESC'
+    86:aggregate(frame_of_reference)
+      107:name:''
+      107:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      107:discipline_type:'mechanical'
 44:root(Cc_Design_Person_And_Organization_Assignment)
   44:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -50726,6 +51172,26 @@
     7:name:'creator'
   44:aggregate(items)
     44:node
+    85:id:'_SET-SCREW5-5'
+    85:description:'_SET-SCREW5-5'
+    85:instance(formation)
+      84:id:' '
+      84:description:'NONE'
+      84:instance(of_product)
+        86:id:'_SET-SCREW5-5'
+        86:name:'_SET-SCREW5-5'
+        86:description:'PART-_SET-SCREW5-5-DESC'
+        86:aggregate(frame_of_reference)
+          107:name:''
+          107:instance(frame_of_reference)
+            56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+          107:discipline_type:'mechanical'
+      84:make_or_buy:NOT_KNOWN
+    85:instance(frame_of_reference)
+      1:name:''
+      1:instance(frame_of_reference)
+        56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+      1:life_cycle_stage:'design'
 45:root(Cc_Design_Person_And_Organization_Assignment)
   45:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -50743,6 +51209,18 @@
     7:name:'creator'
   45:aggregate(items)
     45:node
+    84:id:' '
+    84:description:'NONE'
+    84:instance(of_product)
+      86:id:'_SET-SCREW5-5'
+      86:name:'_SET-SCREW5-5'
+      86:description:'PART-_SET-SCREW5-5-DESC'
+      86:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    84:make_or_buy:NOT_KNOWN
 46:root(Cc_Design_Person_And_Organization_Assignment)
   46:instance(assigned_person_and_organization)
     61:instance(the_person)
@@ -50760,6 +51238,18 @@
     8:name:'design_supplier'
   46:aggregate(items)
     46:node
+    84:id:' '
+    84:description:'NONE'
+    84:instance(of_product)
+      86:id:'_SET-SCREW5-5'
+      86:name:'_SET-SCREW5-5'
+      86:description:'PART-_SET-SCREW5-5-DESC'
+      86:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    84:make_or_buy:NOT_KNOWN
 47:root(Cc_Design_Security_Classification)
   47:instance(assigned_security_classification)
     64:name:''
@@ -50768,6 +51258,18 @@
       106:name:'unclassified'
   47:aggregate(items)
     47:node
+    84:id:' '
+    84:description:'NONE'
+    84:instance(of_product)
+      86:id:'_SET-SCREW5-5'
+      86:name:'_SET-SCREW5-5'
+      86:description:'PART-_SET-SCREW5-5-DESC'
+      86:aggregate(frame_of_reference)
+        107:name:''
+        107:instance(frame_of_reference)
+          56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
+        107:discipline_type:'mechanical'
+    84:make_or_buy:NOT_KNOWN
 48:root(Context_Dependent_Shape_Representation)
   48:instance(representation_relation)
       87:name:''
@@ -50818,8 +51320,29 @@
               159:description:''
             112:aggregate(units)
               112:node
+                161:name:'MILLIMETRE'
+                161:instance(conversion_factor)
+                  170:selector(value_component)
+                  170:selector(unit_component)
+                      336:derived(dimensions)
+                      336:prefix:MILLI
+                      336:name:METRE
+                161:instance(dimensions)
+                  173:length_exponent:1
+                  173:mass_exponent:0
+                  173:time_exponent:0
+                  173:electric_current_exponent:0
+                  173:thermodynamic_temperature_exponent:0
+                  173:amount_of_substance_exponent:0
+                  173:luminous_intensity_exponent:0
               112:node
+                162:derived(dimensions)
+                162:prefix:
+                162:name:RADIAN
               112:node
+                163:derived(dimensions)
+                163:prefix:
+                163:name:STERADIAN
             112:context_identifier:'NONE'
             112:context_type:'WORKSPACE'
       87:instance(rep_2)
@@ -50925,8 +51448,29 @@
               159:description:''
             112:aggregate(units)
               112:node
+                161:name:'MILLIMETRE'
+                161:instance(conversion_factor)
+                  170:selector(value_component)
+                  170:selector(unit_component)
+                      336:derived(dimensions)
+                      336:prefix:MILLI
+                      336:name:METRE
+                161:instance(dimensions)
+                  173:length_exponent:1
+                  173:mass_exponent:0
+                  173:time_exponent:0
+                  173:electric_current_exponent:0
+                  173:thermodynamic_temperature_exponent:0
+                  173:amount_of_substance_exponent:0
+                  173:luminous_intensity_exponent:0
               112:node
+                162:derived(dimensions)
+                162:prefix:
+                162:name:RADIAN
               112:node
+                163:derived(dimensions)
+                163:prefix:
+                163:name:STERADIAN
             112:context_identifier:'NONE'
             112:context_type:'WORKSPACE'
       87:selector(transformation_operator)
@@ -51093,8 +51637,29 @@
           159:description:''
         112:aggregate(units)
           112:node
+            161:name:'MILLIMETRE'
+            161:instance(conversion_factor)
+              170:selector(value_component)
+              170:selector(unit_component)
+                  336:derived(dimensions)
+                  336:prefix:MILLI
+                  336:name:METRE
+            161:instance(dimensions)
+              173:length_exponent:1
+              173:mass_exponent:0
+              173:time_exponent:0
+              173:electric_current_exponent:0
+              173:thermodynamic_temperature_exponent:0
+              173:amount_of_substance_exponent:0
+              173:luminous_intensity_exponent:0
           112:node
+            162:derived(dimensions)
+            162:prefix:
+            162:name:RADIAN
           112:node
+            163:derived(dimensions)
+            163:prefix:
+            163:name:STERADIAN
         112:context_identifier:'NONE'
         112:context_type:'WORKSPACE'
 50:root(Shape_Representation_Relationship)
@@ -51146,8 +51711,29 @@
           159:description:''
         112:aggregate(units)
           112:node
+            161:name:'MILLIMETRE'
+            161:instance(conversion_factor)
+              170:selector(value_component)
+              170:selector(unit_component)
+                  336:derived(dimensions)
+                  336:prefix:MILLI
+                  336:name:METRE
+            161:instance(dimensions)
+              173:length_exponent:1
+              173:mass_exponent:0
+              173:time_exponent:0
+              173:electric_current_exponent:0
+              173:thermodynamic_temperature_exponent:0
+              173:amount_of_substance_exponent:0
+              173:luminous_intensity_exponent:0
           112:node
+            162:derived(dimensions)
+            162:prefix:
+            162:name:RADIAN
           112:node
+            163:derived(dimensions)
+            163:prefix:
+            163:name:STERADIAN
         112:context_identifier:'NONE'
         112:context_type:'WORKSPACE'
   50:instance(rep_2)
@@ -54600,8 +55186,29 @@
           96:description:''
         52:aggregate(units)
           52:node
+            98:name:'MILLIMETRE'
+            98:instance(conversion_factor)
+              134:selector(value_component)
+              134:selector(unit_component)
+                  167:derived(dimensions)
+                  167:prefix:MILLI
+                  167:name:METRE
+            98:instance(dimensions)
+              137:length_exponent:1
+              137:mass_exponent:0
+              137:time_exponent:0
+              137:electric_current_exponent:0
+              137:thermodynamic_temperature_exponent:0
+              137:amount_of_substance_exponent:0
+              137:luminous_intensity_exponent:0
           52:node
+            99:derived(dimensions)
+            99:prefix:
+            99:name:RADIAN
           52:node
+            100:derived(dimensions)
+            100:prefix:
+            100:name:STERADIAN
         52:context_identifier:'NONE'
         52:context_type:'WORKSPACE'
 51:root(Context_Dependent_Shape_Representation)
@@ -54654,8 +55261,29 @@
               159:description:''
             112:aggregate(units)
               112:node
+                161:name:'MILLIMETRE'
+                161:instance(conversion_factor)
+                  170:selector(value_component)
+                  170:selector(unit_component)
+                      336:derived(dimensions)
+                      336:prefix:MILLI
+                      336:name:METRE
+                161:instance(dimensions)
+                  173:length_exponent:1
+                  173:mass_exponent:0
+                  173:time_exponent:0
+                  173:electric_current_exponent:0
+                  173:thermodynamic_temperature_exponent:0
+                  173:amount_of_substance_exponent:0
+                  173:luminous_intensity_exponent:0
               112:node
+                162:derived(dimensions)
+                162:prefix:
+                162:name:RADIAN
               112:node
+                163:derived(dimensions)
+                163:prefix:
+                163:name:STERADIAN
             112:context_identifier:'NONE'
             112:context_type:'WORKSPACE'
       92:instance(rep_2)
@@ -54761,8 +55389,29 @@
               159:description:''
             112:aggregate(units)
               112:node
+                161:name:'MILLIMETRE'
+                161:instance(conversion_factor)
+                  170:selector(value_component)
+                  170:selector(unit_component)
+                      336:derived(dimensions)
+                      336:prefix:MILLI
+                      336:name:METRE
+                161:instance(dimensions)
+                  173:length_exponent:1
+                  173:mass_exponent:0
+                  173:time_exponent:0
+                  173:electric_current_exponent:0
+                  173:thermodynamic_temperature_exponent:0
+                  173:amount_of_substance_exponent:0
+                  173:luminous_intensity_exponent:0
               112:node
+                162:derived(dimensions)
+                162:prefix:
+                162:name:RADIAN
               112:node
+                163:derived(dimensions)
+                163:prefix:
+                163:name:STERADIAN
             112:context_identifier:'NONE'
             112:context_type:'WORKSPACE'
       92:selector(transformation_operator)
@@ -54858,14 +55507,6 @@
             56:application:'configuration controlled 3D designs of mechanical parts and assemblies'
           1:life_cycle_stage:'design'
       131:reference_designator:
-99:root(Named_Unit)
-    99:derived(dimensions)
-    99:prefix:
-    99:name:RADIAN
-100:root(Named_Unit)
-    100:derived(dimensions)
-    100:prefix:
-    100:name:STERADIAN
 139:root(Dimensional_Exponents)
   139:length_exponent:0
   139:mass_exponent:0
@@ -54874,14 +55515,6 @@
   139:thermodynamic_temperature_exponent:0
   139:amount_of_substance_exponent:0
   139:luminous_intensity_exponent:0
-162:root(Named_Unit)
-    162:derived(dimensions)
-    162:prefix:
-    162:name:RADIAN
-163:root(Named_Unit)
-    163:derived(dimensions)
-    163:prefix:
-    163:name:STERADIAN
 175:root(Dimensional_Exponents)
   175:length_exponent:0
   175:mass_exponent:0

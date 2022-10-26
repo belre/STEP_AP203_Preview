@@ -100,9 +100,10 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 	if(!is_complex) 
 	{
 		yaml_node["sc_fileid"] = id;
-		yaml_node["sc_function"] = instance->EntityName();
 		stock_id.push_back(id);
 	}
+	yaml_node["sc_function"] = instance->EntityName();
+
 
 	auto instance_complex = dynamic_cast<const STEPcomplex*>(instance);
 	if(instance_complex != nullptr && !is_complex)  
@@ -158,7 +159,6 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 				if(conv_node != nullptr) 
 				{
 					auto inst = conv_node->node;
-					int inst_id = inst->GetFileId();
 
 					YAML::Node yaml_child_node;
 					AddNode(inst_mgr, stock_id, inst, debug_log, yaml_child_node, loop_count + 1, false);
@@ -169,9 +169,33 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 				{
 					PrintDebugMessage(id, nullptr, debug_log, loop_count + 1);
 
-					std::string str;
-					conv_raw_node->asStr(str);
-					sub_node_vec.push_back(str);
+					BASE_TYPE recog_type;
+					int answer_id;
+					if(!ExtractSelectInstanceId(inst_mgr, select_node->node, recog_type, answer_id)) 
+					{
+						continue;
+					}
+
+					if((recog_type & sdaiINSTANCE) != 0) 
+					{
+						auto select_entity = inst_mgr->FindFileId(answer_id);
+						if (select_entity == nullptr)
+						{
+							std::cout << "Regex Conversion error" << std::endl;
+							continue;
+						}
+						auto select_instance = select_entity->GetApplication_instance();
+
+						YAML::Node yaml_child_node;
+						AddNode(inst_mgr, stock_id, select_instance, debug_log, yaml_child_node, loop_count + 1, false);
+						aggr_node_vec.push_back(yaml_child_node);
+					}
+					else 
+					{
+						std::string str;
+						conv_raw_node->asStr(str);
+						sub_node_vec.push_back(str);
+					}
 				}
 				else if(conv_raw_node != nullptr) 
 				{
@@ -227,7 +251,6 @@ void AddNode(InstMgr*& inst_mgr, std::vector<int>& stock_id, SDAI_Application_in
 				std::cout << "Regex Conversion error" << std::endl;
 				continue;
 			}
-
 			auto select_instance = select_entity->GetApplication_instance();
 
 			YAML::Node yaml_child_node;
