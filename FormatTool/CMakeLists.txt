@@ -1,9 +1,9 @@
 
-
-project(FormatTool)
 cmake_minimum_required(VERSION 3.12)
+project(FormatTool)
 
-set(STEPCODE_ROOT_DIR "$ENV{STEPCODE_INSTALL_DIR}")
+# Set STEPCODE_ROOT_PATH
+set(STEPCODE_ROOT_DIR "${CMAKE_SOURCE_DIR}/../stepcode" CACHE STRING "${CMAKE_SOURCE_DIR}/../stepcode")
 
 # Set STEPCODE_ROOT_DIR to point to the root of the STEPcode source tree.
 if(NOT DEFINED STEPCODE_ROOT_DIR)
@@ -99,6 +99,14 @@ add_executable(${PROJECT_NAME} ${SRCS} ${HDRS})
 target_link_libraries(${PROJECT_NAME} ${STEPCODE_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} yaml-cpp)
 
-set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+# Visual Studio Working Folder
+if (CMAKE_GENERATOR MATCHES "Visual Studio")
+  set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+endif()
+
+# Check .gitignore
+if(NOT EXISTS ${CMAKE_BINARY_DIR}/.gitignore)
+  file(WRITE ${CMAKE_BINARY_DIR}/.gitignore "*")
+endif()
 
 

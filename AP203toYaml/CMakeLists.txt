@@ -1,9 +1,9 @@
 
-
-project(AP203toYaml)
 cmake_minimum_required(VERSION 3.12)
+project(AP203toYaml)
 
-set(STEPCODE_ROOT_DIR "$ENV{STEPCODE_INSTALL_DIR}")
+# Set STEPCODE_ROOT_PATH
+set(STEPCODE_ROOT_DIR "${CMAKE_SOURCE_DIR}/../stepcode" CACHE STRING "${CMAKE_SOURCE_DIR}/../stepcode")
 
 # Set STEPCODE_ROOT_DIR to point to the root of the STEPcode source tree.
 if(NOT DEFINED STEPCODE_ROOT_DIR)
@@ -76,7 +76,6 @@ set(YAML_CPP_LIBRARIES ${YAML_CPP_INCLUDE_DIR})
 
 add_subdirectory(${YAML_CPP_LIBRARY_DIR} "${CMAKE_CURRENT_BINARY_DIR}/yaml-cpp" EXCLUDE_FROM_ALL)
 
-
 # Reset sane values for build destination.  Otherwise, everything ends up in ${CMAKE_BINARY_DIR}/sc
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
@@ -99,6 +98,12 @@ add_executable(${PROJECT_NAME} ${SRCS} ${HDRS})
 target_link_libraries(${PROJECT_NAME} ${STEPCODE_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} yaml-cpp)
 
-set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+# Visual Studio Working Folder
+if (CMAKE_GENERATOR MATCHES "Visual Studio")
+  set_property(TARGET ${PROJECT_NAME} PROPERTY VS_DEBUGGER_WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})
+endif()
 
-
+# Check .gitignore
+if(NOT EXISTS ${CMAKE_BINARY_DIR}/.gitignore)
+  file(WRITE ${CMAKE_BINARY_DIR}/.gitignore "*")
+endif()
