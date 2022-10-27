@@ -167,7 +167,7 @@ int main(int argv, char** argc)
 	// generate including indent file
 	std::stringstream ss_indent;
 	std::stringstream ss_non_indent;
-	std::stringstream ss_non_indent_duplicated;
+	std::stringstream ss_indent_duplicated;
 
 	// Remove from instmgr
 	for(auto iter = unfiltered_id.begin(); iter != unfiltered_id.end(); ++iter )
@@ -195,7 +195,7 @@ int main(int argv, char** argc)
 				ss_indent << "  ";
 			}
 
-			ss_non_indent_duplicated << "  ";
+			ss_indent_duplicated << "  ";
 		}
 
 		auto node = instance_list->FindFileId(iter->_id);
@@ -210,7 +210,7 @@ int main(int argv, char** argc)
 		std::string text;
 
 
-		inst->STEPwrite(ss_non_indent_duplicated);
+		inst->STEPwrite(ss_indent_duplicated);
 
 		if(!is_duplicated_id) 
 		{
@@ -237,14 +237,14 @@ int main(int argv, char** argc)
 	ofs_nonindent << ss_non_indent.str();
 	ofs_nonindent.close();
 
-	std::ofstream ofs_nonindent_duplicate("non_indent_duplicated.step.txt");
-	if (!ofs_nonindent_duplicate)
+	std::ofstream ofs_indent_duplicate("indent_duplicated.step.txt");
+	if (!ofs_indent_duplicate)
 	{
 		std::cerr << "non_indent_duplicated.step.txt create error" << std::endl;
 		return 3;
 	}
-	ofs_nonindent_duplicate << ss_non_indent_duplicated.str();
-	ofs_nonindent_duplicate.close();
+	ofs_indent_duplicate << ss_indent_duplicated.str();
+	ofs_indent_duplicate.close();
 
 
 	return 0;
