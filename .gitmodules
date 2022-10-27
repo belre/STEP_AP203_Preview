@@ -5,3 +5,7 @@
 	path = stepcode
 	url = https://github.com/stepcode/stepcode/
 	branch = master
+[submodule "boost"]
+	path = boost
+	url = https://github.com/boostorg/boost
+	branch = master

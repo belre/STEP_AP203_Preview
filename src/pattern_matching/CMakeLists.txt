@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.12)
 project(pattern_matching)
 
 # Set STEPCODE_ROOT_PATH
-set(STEPCODE_ROOT_DIR "${CMAKE_SOURCE_DIR}/../stepcode" CACHE STRING "${CMAKE_SOURCE_DIR}/../stepcode")
+set(STEPCODE_ROOT_DIR "${CMAKE_SOURCE_DIR}/../../stepcode" CACHE STRING "${CMAKE_SOURCE_DIR}/../../stepcode")
 
 # Set STEPCODE_ROOT_DIR to point to the root of the STEPcode source tree.
 if(NOT DEFINED STEPCODE_ROOT_DIR)
