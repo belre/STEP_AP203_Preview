@@ -1,0 +1,358 @@
+step:
+  - sc_fileid: 1
+    sc_function: Application_Protocol_Definition
+    status: "'international standard'"
+    application_interpreted_model_schema_name: "'automotive_design'"
+    application_protocol_year: 2000
+    application:
+      sc_fileid: 2
+      sc_function: Application_Context
+      application: "'core data for automotive mechanical design processes'"
+  - sc_fileid: 3
+    sc_function: Shape_Definition_Representation
+    definition:
+      sc_fileid: 4
+      sc_function: Product_Definition_Shape
+      name: "''"
+      description: "''"
+      definition:
+        sc_fileid: 5
+        sc_function: Product_Definition
+        id: "'design'"
+        description: "''"
+        formation:
+          sc_fileid: 6
+          sc_function: Product_Definition_Formation
+          id: "''"
+          description: "''"
+          of_product:
+            sc_fileid: 7
+            sc_function: Product
+            id: "'simple_shape'"
+            name: "'simple_shape'"
+            description: "''"
+            frame_of_reference:
+              - sc_fileid: 8
+                sc_function: Product_Context
+                name: "''"
+                frame_of_reference:
+                  sc_fileid: 2
+                  sc_function: Application_Context
+                  application: "'core data for automotive mechanical design processes'"
+                discipline_type: "'mechanical'"
+        frame_of_reference:
+          sc_fileid: 9
+          sc_function: Product_Definition_Context
+          name: "'part definition'"
+          frame_of_reference:
+            sc_fileid: 2
+            sc_function: Application_Context
+            application: "'core data for automotive mechanical design processes'"
+          life_cycle_stage: "'design'"
+    used_representation:
+      sc_fileid: 10
+      sc_function: Manifold_Surface_Shape_Representation
+      name: "''"
+      items:
+        - sc_fileid: 11
+          sc_function: Axis2_Placement_3d
+          name: "''"
+          location:
+            sc_fileid: 12
+            sc_function: Cartesian_Point
+            name: "''"
+            coordinates:
+              - 0.
+              - 0.
+              - 0.
+          axis:
+            sc_fileid: 13
+            sc_function: Direction
+            name: "''"
+            direction_ratios:
+              - 0.
+              - 0.
+              - 1.
+          ref_direction:
+            sc_fileid: 14
+            sc_function: Direction
+            name: "''"
+            direction_ratios:
+              - 1.
+              - 0.
+              - -0.
+        - sc_fileid: 15
+          sc_function: Shell_Based_Surface_Model
+          name: "''"
+          sbsm_boundary:
+            - sc_fileid: 16
+              sc_function: Open_Shell
+              name: "''"
+              cfs_faces:
+                - sc_fileid: 17
+                  sc_function: Advanced_Face
+                  name: "''"
+                  bounds:
+                    - sc_fileid: 18
+                      sc_function: Face_Bound
+                      name: "''"
+                      bound:
+                        sc_fileid: 19
+                        sc_function: Edge_Loop
+                        name: "''"
+                        edge_list:
+                          - sc_fileid: 20
+                            sc_function: Oriented_Edge
+                            name: "''"
+                            edge_start: "*"
+                            edge_end: "*"
+                            edge_element:
+                              sc_fileid: 21
+                              sc_function: Edge_Curve
+                              name: "''"
+                              edge_start:
+                                sc_fileid: 22
+                                sc_function: Vertex_Point
+                                name: "''"
+                                vertex_geometry:
+                                  sc_fileid: 23
+                                  sc_function: Cartesian_Point
+                                  name: "''"
+                                  coordinates:
+                                    - 0.
+                                    - 0.
+                                    - -5.
+                              edge_end:
+                                sc_fileid: 22
+                                sc_function: Vertex_Point
+                                name: "''"
+                                vertex_geometry:
+                                  sc_fileid: 23
+                                  sc_function: Cartesian_Point
+                                  name: "''"
+                                  coordinates:
+                                    - 0.
+                                    - 0.
+                                    - -5.
+                              edge_geometry:
+                                sc_fileid: 24
+                                sc_function: Surface_Curve
+                                name: "''"
+                                curve_3d:
+                                  sc_fileid: 25
+                                  sc_function: Circle
+                                  name: "''"
+                                  position:
+                                    sc_fileid: 26
+                                    sc_function: Axis2_Placement_3d
+                                    name: "''"
+                                    location:
+                                      sc_fileid: 27
+                                      sc_function: Cartesian_Point
+                                      name: "''"
+                                      coordinates:
+                                        - 0.
+                                        - 0.
+                                        - 0.
+                                    axis:
+                                      sc_fileid: 28
+                                      sc_function: Direction
+                                      name: "''"
+                                      direction_ratios:
+                                        - 1.
+                                        - 0.
+                                        - -0.
+                                    ref_direction:
+                                      sc_fileid: 29
+                                      sc_function: Direction
+                                      name: "''"
+                                      direction_ratios:
+                                        - -0.
+                                        - 0.
+                                        - -1.
+                                  radius: 5
+                                associated_geometry:
+                                  - sc_fileid: 30
+                                    sc_function: Pcurve
+                                    name: "''"
+                                    basis_surface:
+                                      sc_fileid: 31
+                                      sc_function: Plane
+                                      name: "''"
+                                      position:
+                                        sc_fileid: 32
+                                        sc_function: Axis2_Placement_3d
+                                        name: "''"
+                                        location:
+                                          sc_fileid: 33
+                                          sc_function: Cartesian_Point
+                                          name: "''"
+                                          coordinates:
+                                            - 0.
+                                            - 0.
+                                            - 0.
+                                        axis:
+                                          sc_fileid: 34
+                                          sc_function: Direction
+                                          name: "''"
+                                          direction_ratios:
+                                            - 1.
+                                            - 0.
+                                            - -0.
+                                        ref_direction:
+                                          sc_fileid: 35
+                                          sc_function: Direction
+                                          name: "''"
+                                          direction_ratios:
+                                            - -0.
+                                            - 0.
+                                            - -1.
+                                    reference_to_curve:
+                                      sc_fileid: 36
+                                      sc_function: Definitional_Representation
+                                      name: "''"
+                                      items:
+                                        - sc_fileid: 37
+                                          sc_function: Circle
+                                          name: "''"
+                                          position:
+                                            sc_fileid: 38
+                                            sc_function: Axis2_Placement_2d
+                                            name: "''"
+                                            location:
+                                              sc_fileid: 39
+                                              sc_function: Cartesian_Point
+                                              name: "''"
+                                              coordinates:
+                                                - 0.
+                                                - 0.
+                                            ref_direction:
+                                              sc_fileid: 40
+                                              sc_function: Direction
+                                              name: "''"
+                                              direction_ratios:
+                                                - 1.
+                                                - 0.
+                                          radius: 5
+                                      context_of_items:
+                                        sc_fileid: 41
+                                        sc_function: Geometric_Representation_Context
+                                        complex_element:
+                                          - sc_function: Geometric_Representation_Context
+                                            coordinate_space_dimension: 2
+                                          - sc_function: Parametric_Representation_Context
+                                          - sc_function: Representation_Context
+                                            context_identifier: "'2D SPACE'"
+                                            context_type: "''"
+                                master_representation: PCURVE_S1
+                              same_sense: T
+                            orientation: T
+                      orientation: T
+                  face_geometry:
+                    sc_fileid: 31
+                    sc_function: Plane
+                    name: "''"
+                    position:
+                      sc_fileid: 32
+                      sc_function: Axis2_Placement_3d
+                      name: "''"
+                      location:
+                        sc_fileid: 33
+                        sc_function: Cartesian_Point
+                        name: "''"
+                        coordinates:
+                          - 0.
+                          - 0.
+                          - 0.
+                      axis:
+                        sc_fileid: 34
+                        sc_function: Direction
+                        name: "''"
+                        direction_ratios:
+                          - 1.
+                          - 0.
+                          - -0.
+                      ref_direction:
+                        sc_fileid: 35
+                        sc_function: Direction
+                        name: "''"
+                        direction_ratios:
+                          - -0.
+                          - 0.
+                          - -1.
+                  same_sense: T
+      context_of_items:
+        sc_fileid: 42
+        sc_function: Geometric_Representation_Context
+        complex_element:
+          - sc_function: Geometric_Representation_Context
+            coordinate_space_dimension: 3
+          - sc_function: Global_Uncertainty_Assigned_Context
+            uncertainty:
+              aggregate_element:
+                - sc_fileid: 46
+                  sc_function: Uncertainty_Measure_With_Unit
+                  unit_component:
+                    sc_fileid: 43
+                    sc_function: Length_Unit
+                    complex_element:
+                      - sc_function: Length_Unit
+                      - sc_function: Named_Unit
+                        dimensions: "*"
+                      - sc_function: Si_Unit
+                        prefix: MILLI
+                        name: METRE
+                  name: "'distance_accuracy_value'"
+                  description: "'confusion accuracy'"
+          - sc_function: Global_Unit_Assigned_Context
+            units:
+              aggregate_element:
+                - sc_fileid: 43
+                  sc_function: Length_Unit
+                  complex_element:
+                    - sc_function: Length_Unit
+                    - sc_function: Named_Unit
+                      dimensions: "*"
+                    - sc_function: Si_Unit
+                      prefix: MILLI
+                      name: METRE
+                - sc_fileid: 44
+                  sc_function: Named_Unit
+                  complex_element:
+                    - sc_function: Named_Unit
+                      dimensions: "*"
+                    - sc_function: Plane_Angle_Unit
+                    - sc_function: Si_Unit
+                      prefix: ""
+                      name: RADIAN
+                - sc_fileid: 45
+                  sc_function: Named_Unit
+                  complex_element:
+                    - sc_function: Named_Unit
+                      dimensions: "*"
+                    - sc_function: Si_Unit
+                      prefix: ""
+                      name: STERADIAN
+                    - sc_function: Solid_Angle_Unit
+          - sc_function: Representation_Context
+            context_identifier: "'Context #1'"
+            context_type: "'3D Context with UNIT and UNCERTAINTY'"
+  - sc_fileid: 47
+    sc_function: Product_Related_Product_Category
+    name: "'part'"
+    description: ""
+    products:
+      - sc_fileid: 7
+        sc_function: Product
+        id: "'simple_shape'"
+        name: "'simple_shape'"
+        description: "''"
+        frame_of_reference:
+          - sc_fileid: 8
+            sc_function: Product_Context
+            name: "''"
+            frame_of_reference:
+              sc_fileid: 2
+              sc_function: Application_Context
+              application: "'core data for automotive mechanical design processes'"
+            discipline_type: "'mechanical'"
