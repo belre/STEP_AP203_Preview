@@ -1,0 +1,78 @@
+ISO-10303-21;
+HEADER;
+ FILE_DESCRIPTION( ( 'STEP AP203' ), '1' );
+ FILE_NAME( 'simple_shapes.stp', '2022-10-26T06:46:25', ('o yucho'), ( 'Hoge Inc.' ), 'Piyo App', 'Piyo App', 'o yuchoの上司:aaa@bbb.com' );
+ FILE_SCHEMA( ( 'CONFIG_CONTROL_DESIGN' ) );
+ENDSEC;
+
+
+DATA;
+
+/** https://www.steptools.com/stds/stp_aim/html/t_application_protocol_definition.html **/
+#1=APPLICATION_PROTOCOL_DEFINITION('international standard','automotive_design',2000,#2);
+  /** https://www.steptools.com/stds/stp_aim/html/t_application_context.html **/
+  #2=APPLICATION_CONTEXT('core data for automotive mechanical design processes');
+
+/** https://www.steptools.com/stds/stp_aim/html/t_shape_definition_representation.html **/
+#3=SHAPE_DEFINITION_REPRESENTATION(#4,#10);
+  /** https://www.steptools.com/stds/stp_aim/html/t_product_definition_shape.html **/
+  #4=PRODUCT_DEFINITION_SHAPE('','',#5);
+    /** https://www.steptools.com/stds/stp_aim/html/t_product_definition.html **/
+    #5=PRODUCT_DEFINITION('design','',#6,#9);
+	  /** https://www.steptools.com/stds/stp_aim/html/t_product_definition_formation.html **/
+      #6=PRODUCT_DEFINITION_FORMATION('','',#7);
+	    /** https://www.steptools.com/stds/stp_aim/html/t_product.html **/
+        #7=PRODUCT('simple_shape','simple_shape','',(#8));
+		  /** https://www.steptools.com/stds/stp_aim/html/t_product_context.html **/
+          #8=PRODUCT_CONTEXT('',#2,'mechanical');
+	  /** https://www.steptools.com/stds/stp_aim/html/t_product_definition_context.html **/
+      #9=PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
+
+  /** https://www.steptools.com/stds/stp_aim/html/t_manifold_surface_shape_representation.html **/
+  #10=MANIFOLD_SURFACE_SHAPE_REPRESENTATION('',(#15),#42);
+    /** https://www.steptools.com/stds/stp_aim/html/t_shell_based_surface_model.html **/
+    #15=SHELL_BASED_SURFACE_MODEL('',(#16));
+	  /** https://www.steptools.com/stds/stp_aim/html/t_open_shell.html **/
+      #16=OPEN_SHELL('',(#17));
+	    /** https://www.steptools.com/stds/stp_aim/html/t_advanced_face.html **/
+        #17=ADVANCED_FACE('',(#18),#31,.T.);
+		  /** https://www.steptools.com/stds/stp_aim/html/t_face_bound.html **/
+          #18=FACE_BOUND('',#19,.T.);
+		    /** https://www.steptools.com/stds/stp_aim/html/t_edge_loop.html **/
+            #19=EDGE_LOOP('',(#20));
+			  /** https://www.steptools.com/stds/stp_aim/html/t_oriented_edge.html **/
+              #20=ORIENTED_EDGE('',*,*,#21,.T.);
+			    /** https://www.steptools.com/stds/stp_aim/html/t_edge_curve.html **/
+                #21=EDGE_CURVE('',#22,#22,#25,.T.);
+				  /** https://www.steptools.com/stds/stp_aim/html/t_vertex_point.html **/
+                  #22=VERTEX_POINT('',#23);
+				    /** https://www.steptools.com/stds/stp_aim/html/t_cartesian_point.html **/
+                    #23=CARTESIAN_POINT('',(-5.,0.,0.));
+				  /** https://www.steptools.com/stds/stp_aim/html/t_circle.html **/
+                  #25=CIRCLE('',#26,5.);
+				    /** https://www.steptools.com/stds/stp_aim/html/t_axis2_placement_3d.html **/
+                    #26=AXIS2_PLACEMENT_3D('',#27,#28,#29);
+					  /** https://www.steptools.com/stds/stp_aim/html/t_cartesian_point.html **/
+                      #27=CARTESIAN_POINT('',(0.,0.,0.));
+					  /** https://www.steptools.com/stds/stp_aim/html/t_direction.html **/
+                      #28=DIRECTION('',(0.,0.,1.));
+                      #29=DIRECTION('',(1.,0.,0.));
+					/** https://www.steptools.com/stds/stp_aim/html/t_plane.html **/
+                    #31=PLANE('',#32);
+                      #32=AXIS2_PLACEMENT_3D('',#33,#34,#35);
+                        #33=CARTESIAN_POINT('',(0.,0.,0.));
+                        #34=DIRECTION('',(0.,0.,1.));
+                        #35=DIRECTION('',(1.,0.,0.));
+
+    /** 
+	   https://www.steptools.com/stds/stp_aim/html/t_geometric_representation_context.html
+	   https://www.steptools.com/stds/stp_aim/html/t_representation_context.html
+    **/
+    #42=(
+      GEOMETRIC_REPRESENTATION_CONTEXT(3)
+      REPRESENTATION_CONTEXT('','3D Context with UNIT and UNCERTAINTY')
+    );
+
+
+ENDSEC;
+END-ISO-10303-21;
