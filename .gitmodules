@@ -1,3 +1,7 @@
 [submodule "yaml-cpp"]
 	path = yaml-cpp
 	url = https://github.com/jbeder/yaml-cpp
+[submodule "stepcode"]
+	path = stepcode
+	url = https://github.com/stepcode/stepcode/
+	branch = master
