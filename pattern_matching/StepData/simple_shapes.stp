@@ -8,99 +8,43 @@ ENDSEC;
 
 DATA;
 
-#2=APPLICATION_PROTOCOL_DEFINITION('international standard','config_control_design',1994,#56);
-  #56=APPLICATION_CONTEXT('configuration controlled 3D designs of mechanical parts and assemblies');
-#35=SHAPE_DEFINITION_REPRESENTATION(#78,#79);
-  #78=PRODUCT_DEFINITION_SHAPE('NONE','NONE',#74);
-    #74=PRODUCT_DEFINITION('_BSP35B20-N-12_b','_BSP35B20-N-12_b',#73,#1);
-      #73=PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE(' ','NONE',#75,.NOT_KNOWN.);
-        #75=PRODUCT('_BSP35B20-N-12_b','_BSP35B20-N-12_b','PART-_BSP35B20-N-12_b-DESC',(#107));
-          #107=MECHANICAL_CONTEXT('',#56,'mechanical');
-      #1=DESIGN_CONTEXT('',#56,'design');
-  #79=SHAPE_REPRESENTATION('_BSP35B20-N-12_b',(#108),#112);
-    #108=AXIS2_PLACEMENT_3D('',#145,#146,#147);
-      #145=CARTESIAN_POINT('',(0.,0.,0.));
-      #146=DIRECTION('',(0.,0.,1.));
-      #147=DIRECTION('',(1.,0.,0.));
-    #112=(GEOMETRIC_REPRESENTATION_CONTEXT(3)
-          REPRESENTATION_CONTEXT('NONE','WORKSPACE'));
+#1=APPLICATION_PROTOCOL_DEFINITION('international standard','automotive_design',2000,#2);
+  #2=APPLICATION_CONTEXT('core data for automotive mechanical design processes');
+#3=SHAPE_DEFINITION_REPRESENTATION(#4,#10);
+  #4=PRODUCT_DEFINITION_SHAPE('','',#5);
+    #5=PRODUCT_DEFINITION('design','',#6,#9);
+      #6=PRODUCT_DEFINITION_FORMATION('','',#7);
+        #7=PRODUCT('simple_shape','simple_shape','',(#8));
+          #8=PRODUCT_CONTEXT('',#2,'mechanical');
+      #9=PRODUCT_DEFINITION_CONTEXT('part definition',#2,'design');
 
-#36=SHAPE_REPRESENTATION_RELATIONSHIP('NONE','NONE',#79,#80);
-  #80=ADVANCED_BREP_SHAPE_REPRESENTATION('_BSP35B20-N-12_b',(#119),#52);
-    #119=MANIFOLD_SOLID_BREP('_BSP35B20-N-12_b',#165);
-      #165=CLOSED_SHELL('',(#275));
-        #275=ADVANCED_FACE('',(#535),#536,.T.);
-          #535=FACE_OUTER_BOUND('',#861,.T.);
-            #861=EDGE_LOOP('',(#1799,#1800,#1801,#1802));
-              #1799=ORIENTED_EDGE('',*,*,#2347,.F.);
-                #2347=EDGE_CURVE('',#2813,#2760,#2815,.T.);
-                  #2813=VERTEX_POINT('',#3664);
-                    #3664=CARTESIAN_POINT('',(-1.11762031629104,32.9810691886818,3.02385093961796));
-                  #2760=VERTEX_POINT('',#3526);
-                    #3526=CARTESIAN_POINT('',(-1.11762031629105,32.9810691886818,1.27614906038204));
-                  #2815=LINE('',#3671,#3672);
-                    #3671=CARTESIAN_POINT('',(-1.11762031629105,32.9810691886818,0.));
-                    #3672=VECTOR('',#5377,1000.);
-                      #5377=DIRECTION('',(-0.,-0.,-1.));
-              #1800=ORIENTED_EDGE('',*,*,#2652,.T.);
-                #2652=EDGE_CURVE('',#2813,#3061,#3338,.T.);
-                  #3338=CIRCLE('',#5183,33.);
-                    #5183=AXIS2_PLACEMENT_3D('',#5718,#5719,#5720);
-                      #5718=CARTESIAN_POINT('',(0.,0.,3.02385093961796));
-                      #5719=DIRECTION('',(-0.,0.,-1.));
-                      #5720=DIRECTION('',(-1.,0.,0.));
-              #1801=ORIENTED_EDGE('',*,*,#2485,.F.);
-                #2485=EDGE_CURVE('',#2752,#3061,#3062,.F.);
-                  #2752=VERTEX_POINT('',#3501);
-                    #3501=CARTESIAN_POINT('',(1.11762031629105,32.9810691886818,1.27614906038204));
-                  #3061=VERTEX_POINT('',#4380);
-                    #4380=CARTESIAN_POINT('',(1.11762031629104,32.9810691886818,3.02385093961795));
-                  #3062=LINE('',#4381,#4382);
-                    #4381=CARTESIAN_POINT('',(1.11762031629105,32.9810691886818,0.));
-                    #4382=VECTOR('',#5569,1000.);
-                      #5569=DIRECTION('',(-0.,-0.,-1.));
-              #1802=ORIENTED_EDGE('',*,*,#2319,.F.);
-                #2319=EDGE_CURVE('',#2760,#2752,#2762,.T.);
-                  #2762=CIRCLE('',#3533,33.);
-                    #3533=AXIS2_PLACEMENT_3D('',#5353,#5354,#5355);
-                      #5353=CARTESIAN_POINT('',(0.,0.,1.27614906038204));
-                      #5354=DIRECTION('',(-0.,0.,-1.));
-                      #5355=DIRECTION('',(-1.,0.,0.));
-          #536=CYLINDRICAL_SURFACE('',#862,33.);
-            #862=AXIS2_PLACEMENT_3D('',#1803,#1804,#1805);
-              #1803=CARTESIAN_POINT('',(0.,0.,0.));
-              #1804=DIRECTION('',(0.,-0.,1.));
-              #1805=DIRECTION('',(-1.,0.,0.));
+  #10=MANIFOLD_SURFACE_SHAPE_REPRESENTATION('',(#15),#42);
+    #15=SHELL_BASED_SURFACE_MODEL('',(#16));
+      #16=OPEN_SHELL('',(#17));
+        #17=ADVANCED_FACE('',(#18),#31,.T.);
+          #18=FACE_BOUND('',#19,.T.);
+            #19=EDGE_LOOP('',(#20));
+              #20=ORIENTED_EDGE('',*,*,#21,.T.);
+                #21=EDGE_CURVE('',#22,#22,#25,.T.);
+                  #22=VERTEX_POINT('',#23);
+                    #23=CARTESIAN_POINT('',(-5.,0.,0.));
+                  #25=CIRCLE('',#26,5.);
+                    #26=AXIS2_PLACEMENT_3D('',#27,#28,#29);
+                      #27=CARTESIAN_POINT('',(0.,0.,0.));
+                      #28=DIRECTION('',(0.,0.,1.));
+                      #29=DIRECTION('',(1.,0.,0.));
+                    #31=PLANE('',#32);
+                      #32=AXIS2_PLACEMENT_3D('',#33,#34,#35);
+                        #33=CARTESIAN_POINT('',(0.,0.,0.));
+                        #34=DIRECTION('',(0.,0.,1.));
+                        #35=DIRECTION('',(1.,0.,0.));
 
-    #52=(
-GEOMETRIC_REPRESENTATION_CONTEXT(3)
-GLOBAL_UNCERTAINTY_ASSIGNED_CONTEXT((#96))
-GLOBAL_UNIT_ASSIGNED_CONTEXT((#98,#99,#100))
-REPRESENTATION_CONTEXT('NONE','WORKSPACE')
-);
-      #96=UNCERTAINTY_MEASURE_WITH_UNIT(LENGTH_MEASURE(0.001),#98,'','');
-        #98=(
-CONVERSION_BASED_UNIT('MILLIMETRE',#134)
-LENGTH_UNIT()
-NAMED_UNIT(#137)
-);
-          #134=LENGTH_MEASURE_WITH_UNIT(LENGTH_MEASURE(1.),#167);
-            #167=(
-LENGTH_UNIT()
-NAMED_UNIT(*)
-SI_UNIT(.MILLI.,.METRE.)
-);
-          #137=DIMENSIONAL_EXPONENTS(1.,0.,0.,0.,0.,0.,0.);
-      #99=(
-NAMED_UNIT(*)
-PLANE_ANGLE_UNIT()
-SI_UNIT($,.RADIAN.)
-);
-      #100=(
-NAMED_UNIT(*)
-SI_UNIT($,.STERADIAN.)
-SOLID_ANGLE_UNIT()
-);
+    #42=(
+		GEOMETRIC_REPRESENTATION_CONTEXT(3)
+		REPRESENTATION_CONTEXT('','3D Context with UNIT and UNCERTAINTY')
+	);
+#47=PRODUCT_RELATED_PRODUCT_CATEGORY('part',$,(#7));
+
 
 ENDSEC;
 END-ISO-10303-21;
