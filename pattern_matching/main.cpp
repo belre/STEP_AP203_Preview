@@ -119,8 +119,10 @@ void ExtractUnfilteredId(InstMgr* instance_list, YAML::Node yaml_map, std::vecto
 
 int main(int argv, char** argc)
 {
-	std::string step_path = ".\\StepData\\BSP35B20-N-12.stp";
+	std::string step_path = ".\\StepData\\simple_shapes.stp";
 	std::string yaml_path = ".\\YamlData\\BSP35B20-N-12-gear.yaml";
+
+	int filter_mode = 0;
 
 	if (argv >= 3)
 	{
@@ -140,6 +142,11 @@ int main(int argv, char** argc)
 	// STEPfile takes care of reading and writing Part 21 files
 	STEPfile* sfile = new STEPfile(*registry, *instance_list, step_path.c_str(), false);
 
+
+	if(!filter_mode) 
+	{
+		return 0;
+	}
 
 	std::ifstream ifs(yaml_path, std::ios::in);
 	if(!ifs) 
@@ -180,13 +187,6 @@ int main(int argv, char** argc)
 				return count._id == iter->_id;
 				}) != iter - 1;
 		}
-
-		/*
-		if(is_duplicated_id) 
-		{
-			continue;
-		}
-		*/
 
 		for (int j = 0; j < iter->_depth; j++)
 		{
