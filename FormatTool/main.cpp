@@ -119,10 +119,10 @@ void ExtractUnfilteredId(InstMgr* instance_list, YAML::Node yaml_map, std::vecto
 
 int main(int argv, char** argc)
 {
-	std::string step_path = ".\\StepData\\simple_shapes.stp";
-	std::string yaml_path = ".\\YamlData\\simple_shapes.yaml";
+	std::string step_path = ".\\StepData\\BSP35B20-N-12.stp";
+	std::string yaml_path = ".\\YamlData\\BSP35B20-N-12.yaml";
 
-	int filter_mode = 0;
+	int filter_mode = 1;
 
 	if (argv >= 3)
 	{
